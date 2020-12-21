@@ -1,13 +1,14 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <form class="search-form" action="#">
-    </form>
+  <div class="logo">
+    <a href="#">TEAM-PLZ</a>
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <li><%= link_to 'Friend', "#", class: "friend-list" %></li>
+      <li><%= link_to 'Party', "#", class: "party-list" %></li>
+      <li><%= link_to 'Scout', "#", class: "scout-list" %></li>
+      <li><%= link_to 'Team', "#", class: "team-list" %></li>
     </ul>
     <ul class='lists-right'>
 
@@ -16,10 +17,9 @@
         <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'LOGIN', new_user_session_path, class: "login" %></li>
+        <li><%= link_to 'JOIN NOW', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
-      
     </ul>
   </div>
 </header>

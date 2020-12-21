@@ -4,19 +4,35 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 15vw;
+  height: 80px;
   display: flex;
-  flex-direction: column;
-  background-color: #000;
+  justify-content: space-between;
+  background-color: #111;
+}
+
+.logo {
+  width: 150px;
+  line-height: 80px;
+  margin: 0 2vw;
+  font-size: 20px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .nav {
-  font-size: 18px;
+  font-size: 12px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  line-height: 80px;
+}
+
+li {
+  height: 80px;
+  line-height: 80px;
 }
 
 .lists-left {
@@ -24,18 +40,42 @@
   min-width: 200px;
 }
 
-.category-list {
+.friend-list {
+  padding: 30px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
 }
 
-.brand-list {
+.party-list {
+  padding: 30px 8px;
   text-decoration: none;
+  margin-right: 3vw;
   color: #fff;
 }
 
+.scout-list {
+  padding: 30px 8px;
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+}
+.team-list {
+  padding: 30px 8px;
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+}
+
+.friend-list:hover,
+.party-list:hover,
+.scout-list:hover,
+.team-list:hover {
+  border-bottom: #ff4655 solid 4px;
+}
+
 .lists-right {
+  margin-right: 2vw;
   display: flex;
   list-style: none;
   align-items: flex-end;
@@ -54,13 +94,18 @@
 }
 
 .login {
+  padding: 16px 40px;
+  border: #fff solid 1px;
+  border-radius: 2px;
   text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
+  margin-right: 1vw;
   color: #fff;
 }
 
 .sign-up {
+  padding: 16px 40px;
+  border-radius: 2px;
+  background-color: #ff4655;
   text-decoration: none;
   color: #fff;
 }
