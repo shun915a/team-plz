@@ -13,7 +13,7 @@
 .logo {
   width: 150px;
   line-height: 80px;
-  margin: 0 2vw;
+  margin: 0 50px;
   font-size: 20px;
 }
 
@@ -75,13 +75,14 @@ li {
 }
 
 .lists-right {
-  margin-right: 2vw;
+  margin-right: 50px;
   display: flex;
   list-style: none;
   align-items: flex-end;
 }
 
 .user-nickname {
+  font-size: 16px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
@@ -89,8 +90,16 @@ li {
 }
 
 .logout {
+  padding: 16px 40px;
+  border: #fff solid 1px;
+  border-radius: 2px;
   text-decoration: none;
+  margin-right: 1vw;
   color: #fff;
+}
+
+.logout:hover {
+  border: #ff4655 solid 1px;
 }
 
 .login {
