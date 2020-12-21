@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #111;
+}
+
+.logo {
+  width: 150px;
+  line-height: 80px;
+  margin: 0 50px;
+  font-size: 20px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 80px;
+}
+
+li {
+  height: 80px;
+  line-height: 80px;
+}
+
+.lists-left {
+  display: flex;
+  min-width: 200px;
+}
+
+.friend-list {
+  padding: 30px 8px;
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+}
+
+.party-list {
+  padding: 30px 8px;
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+}
+
+.scout-list {
+  padding: 30px 8px;
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+}
+.team-list {
+  padding: 30px 8px;
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+}
+
+.friend-list:hover,
+.party-list:hover,
+.scout-list:hover,
+.team-list:hover {
+  border-bottom: #ff4655 solid 4px;
+}
+
+.lists-right {
+  margin-right: 50px;
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-nickname {
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+  font-weight: bold;
+}
+
+.logout {
+  padding: 16px 40px;
+  border: #fff solid 1px;
+  border-radius: 2px;
+  text-decoration: none;
+  margin-right: 1vw;
+  color: #fff;
+}
+
+.logout:hover {
+  border: #ff4655 solid 1px;
+}
+
+.login {
+  padding: 16px 40px;
+  border: #fff solid 1px;
+  border-radius: 2px;
+  text-decoration: none;
+  margin-right: 1vw;
+  color: #fff;
+}
+
+.sign-up {
+  padding: 16px 40px;
+  border-radius: 2px;
+  background-color: #ff4655;
+  text-decoration: none;
+  color: #fff;
+}

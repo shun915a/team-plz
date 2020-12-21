@@ -132,16 +132,17 @@
 
 ## users table
 
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| email        | string  | null: false |
-| nickname     | string  | null: false |
-| gender_id    | integer |             |
-| birthday     | date    |             |
-| profile      | text    |             |
-| twitter_name | string  |             |
-| twitch_name  | string  |             |
-| mildom_id    | string  |             |
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| email              | string  | null: false |
+| encrypted_password | string  | null: false |
+| nickname           | string  | null: false |
+| gender_id          | integer |             |
+| birthday           | date    |             |
+| profile            | text    |             |
+| twitter_name       | string  |             |
+| twitch_name        | string  |             |
+| mildom_name        | string  |             |
 
 ## users association
 

@@ -1,0 +1,25 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class="logo">
+    <%= link_to 'TEAM-PLZ', root_path %>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to 'FRIEND', "#", class: "friend-list" %></li>
+      <li><%= link_to 'PARTY', "#", class: "party-list" %></li>
+      <li><%= link_to 'TEAM', "#", class: "team-list" %></li>
+      <li><%= link_to 'SCOUT', "#", class: "scout-list" %></li>
+    </ul>
+    <ul class='lists-right'>
+
+      <%# ログイン状態でheaderの表示を変更 %>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+        <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "logout"%></li>
+      <% else %>
+        <li><%= link_to 'LOGIN', new_user_session_path, class: "login" %></li>
+        <li><%= link_to 'JOIN NOW', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
