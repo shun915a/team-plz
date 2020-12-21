@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.lists-left {
+  display: flex;
+  min-width: 200px;
+}
+
+.category-list {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+}
+
+.brand-list {
+  text-decoration: none;
+  color: #fff;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #fff;
+  font-weight: bold;
+}
+
+.logout {
+  text-decoration: none;
+  color: #fff;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #fff;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #fff;
+}
