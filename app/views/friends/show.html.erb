@@ -1,1 +1,28 @@
 <%= render 'shared/header' %>
+
+<div class="friend-contents">
+  <%= link_to '投稿', new_friend_path, class: "new-rec-button"%>
+  <div class="show-main">
+    <div class="show-info">
+
+      <div class="show-title">
+        <h3><%= @friend.friend_title %></h3>
+      </div>
+
+      <div class="show-game-id">
+        <%= @friend.friend_game_id %>
+      </div>
+
+      <div class="show-text">
+        <%= @friend.friend_text %>
+      </div>
+
+    </div>
+
+    <div class="show-buttons">
+          <%= link_to '編集', edit_friend_path(@friend), class: "edit-btn" %>
+          <%= link_to '削除', friend_path(@friend), method: :delete, class: "delete-btn" %>
+    </div>
+  </div>
+
+</div>

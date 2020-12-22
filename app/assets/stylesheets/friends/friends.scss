@@ -29,18 +29,18 @@ a {
 .friend-lists > .list {
   width: 37vh;
   margin: 16px;
-  background-color: #ece8e1;
-  border: #cf3642 solid 2px;
-  border-radius: 6px;
-}
-
-.friend-lists > .list:hover {
-  border: #fff solid 2px;
 }
 
 .friend-info {
   width: 100%;
+  background-color: #ece8e1;
+  border: #cf3642 solid 2px;
+  border-radius: 6px;
   color: #3f3f3f;
+}
+
+.friend-info:hover {
+  border: #fff solid 2px;
 }
 
 .friend-title {
