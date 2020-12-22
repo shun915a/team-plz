@@ -1,0 +1,28 @@
+<%= render 'shared/header' %>
+<div class="friend-contents">
+  <%= link_to '投稿', new_friend_path, class: "new-rec-button"%>
+
+  <ul class="friend-lists">
+    <% @friends.each do |friend| %>
+    <li class="list">
+      <%= link_to friend_path(friend) do %>
+      <div class="friend-info">
+
+        <div class="friend-title">
+          <h3><%= friend.friend_title %></h3>
+        </div>
+
+        <div class="friend-game-id">
+          <%= friend.friend_game_id %>
+        </div>
+
+        <div class="friend-text">
+          <%= friend.friend_text %>
+        </div>
+
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
