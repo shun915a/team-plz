@@ -1,4 +1,7 @@
 class FriendsController < ApplicationController
+  # ログインしていないユーザーをログインページへ遷移
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
+
   def index
     @friends = Friend.order('created_at DESC')
   end
@@ -9,6 +12,16 @@ class FriendsController < ApplicationController
 
   def create
     @friend = Friend.new(friend_params)
+
+    if @friend.save
+      redirect_to friends_path
+    else
+      render :new
+    end
+  end
+
+  def show
+    @friend = Friend.find(params[:id])
   end
 
   private
