@@ -2,30 +2,27 @@
 
 <div class="item-contents">
   <div class="item-main">
-    <h2 class="item-title">フレンド募集</h2>
+    <h2 class="item-title">編集</h2>
     <%= form_with model: @friend, local: true do |f| %>
 
     <div class="new-item">
       <div class="weight-bold-text">
         タイトル
-        <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :friend_title, class: "text-area", id: "item-title", placeholder: "募集タイトル", maxlength: "40"%>
       <div class="weight-bold-text">
         ゲームID
-        <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :friend_game_id, class: "text-area", id: "item-game-id", placeholder:"Cypher#0010" %>
       <div class="item-text">
         <div class="weight-bold-text">
           募集内容
-          <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :friend_text, class: "text-area text-box", id: "item-text", placeholder: "VALORANTを一緒にプレイするフレンドを探しています。活動している時間帯は平日は20:00〜23:00くらいです。", rows: "7", maxlength: "1000" %>
       </div>
 
       <div class="submit-btn-contents">
-        <%= f.submit "掲載する", class: "submit-btn" %>
+        <%= f.submit "UPDATE", class: "submit-btn" %>
         <%= link_to 'BACK', root_path, class: "back-btn" %>
       </div>
     </div>

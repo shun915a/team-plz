@@ -23,6 +23,18 @@ class FriendsController < ApplicationController
 
   def show; end
 
+  def edit
+    redirect_to root_path unless current_user.id == @friend.user_id
+  end
+
+  def update
+    if @friend.update(friend_params)
+      redirect_to friend_path(@friend)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     redirect_to root_path unless current_user.id == @friend.user_id
     redirect_to friends_path if @friend.destroy

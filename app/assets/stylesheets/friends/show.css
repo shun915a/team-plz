@@ -6,7 +6,7 @@
 
 .show-info {
   margin: 17px;
-  width: 70%;
+  width: 400px;
   background-color: #ece8e1;
   border: #cf3642 solid 2px;
   border-radius: 6px;
@@ -43,8 +43,10 @@
 .edit-btn {
   margin-top: 2vh;
   padding: 16px 80px;
-  border: #ebebeb solid 1px;
+  border: #ff4655 solid 1px;
+  border-radius: 6px;
   color: #ebebeb;
+  background-color: #ff4655;
   text-decoration: none;
 }
 
@@ -52,6 +54,7 @@
   margin-top: 2vh;
   padding: 16px 80px;
   border: #ebebeb solid 1px;
+  border-radius: 6px;
   color: #ebebeb;
   text-decoration: none;
 }
