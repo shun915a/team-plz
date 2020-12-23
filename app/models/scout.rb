@@ -1,9 +1,9 @@
 class Scout < ApplicationRecord
   belongs_to :user
-  
+
   with_options presence: true do
-    validates :sout_title
-    validates :sout_game_id
-    validates :sout_text
+    validates :scout_title
+    validates :scout_game_id
+    validates :scout_text
   end
 end

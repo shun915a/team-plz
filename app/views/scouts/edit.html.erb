@@ -3,22 +3,22 @@
 <div class="item-contents">
   <div class="new-item-main">
     <h2 class="new-item-title">編集</h2>
-    <%= form_with model: @friend, local: true do |f| %>
+    <%= form_with model: @scout, local: true do |f| %>
 
     <div class="new-item">
       <div class="weight-bold-text">
         タイトル
       </div>
-      <%= f.text_area :friend_title, class: "text-area", id: "item-title", placeholder: "募集タイトル", maxlength: "40"%>
+      <%= f.text_area :scout_title, class: "text-area", id: "item-title", placeholder: "募集タイトル", maxlength: "40"%>
       <div class="weight-bold-text">
         ゲームID
       </div>
-      <%= f.text_area :friend_game_id, class: "text-area", id: "item-game-id", placeholder:"Cypher#0010" %>
+      <%= f.text_area :scout_game_id, class: "text-area", id: "item-game-id", placeholder:"Cypher#0010" %>
       <div class="new-item-text">
         <div class="weight-bold-text">
           募集内容
         </div>
-        <%= f.text_area :friend_text, class: "text-area text-box", id: "item-text", placeholder: "VALORANTを一緒にプレイするフレンドを探しています。活動している時間帯は平日は20:00〜23:00くらいです。", rows: "7", maxlength: "1000" %>
+        <%= f.text_area :scout_text, class: "text-area text-box", id: "item-text", placeholder: "VALORANTを一緒にプレイするフレンドを探しています。活動している時間帯は平日は20:00〜23:00くらいです。", rows: "7", maxlength: "1000" %>
       </div>
 
       <div class="submit-btn-contents">

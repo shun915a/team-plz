@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :recruitments, only: [:index]
   resources :friends
   resources :parties
+  resources :scouts
 end

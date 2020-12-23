@@ -1,0 +1,28 @@
+<%= render 'shared/header' %>
+<div class="item-contents">
+  <%= link_to '投稿', new_scout_path, class: "new-rec-button"%>
+
+  <ul class="item-lists">
+    <% @scouts.each do |scout| %>
+    <li class="list">
+      <%= link_to scout_path(scout) do %>
+      <div class="item-info">
+
+        <div class="item-title">
+          <h3><%= scout.scout_title %></h3>
+        </div>
+
+        <div class="item-game-id">
+          <%= scout.scout_game_id %>
+        </div>
+
+        <div class="item-text">
+          <%= scout.scout_text %>
+        </div>
+
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
