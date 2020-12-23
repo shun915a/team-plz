@@ -1,8 +1,8 @@
 <%= render 'shared/header' %>
 
 <div class="item-contents">
-  <div class="item-main">
-    <h2 class="item-title">フレンド募集</h2>
+  <div class="new-item-main">
+    <h2 class="new-item-title">フレンド募集</h2>
     <%= form_with model: @friend, local: true do |f| %>
 
     <div class="new-item">
@@ -16,7 +16,7 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :friend_game_id, class: "text-area", id: "item-game-id", placeholder:"Cypher#0010" %>
-      <div class="item-text">
+      <div class="new-item-text">
         <div class="weight-bold-text">
           募集内容
           <span class="indispensable">必須</span>

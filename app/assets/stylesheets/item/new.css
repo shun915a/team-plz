@@ -1,14 +1,11 @@
 .item-contents {
-  height: 100vh;
-  background-color: #101922;
   font-size: 14px;
-  display: flex;
   align-items: center;
   flex-direction: column;
   min-width: 500px;
 }
 
-.item-main {
+.new-item-main {
   margin-top: 2vh;
   height: 620px;
   width: 300px;
@@ -17,7 +14,7 @@
   min-width: 450px;
 }
 
-.item-title {
+.new-item-title {
   margin-top: 2vh;
   text-align: center;
   font-size: 24px;
@@ -33,7 +30,7 @@
   background: #ff4465;
   margin-left: 8px;
   padding: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
@@ -68,7 +65,7 @@
   height: 160px;
 }
 
-.item-text {
+.new-item-text {
   width: 100%;
   display: flex;
 
