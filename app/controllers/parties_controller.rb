@@ -22,6 +22,23 @@ class PartiesController < ApplicationController
 
   def show; end
 
+  def edit
+    redirect_to root_path unless current_user.id == @party.user_id
+  end
+
+  def update
+    if @party.update(party_params)
+      redirect_to party_path(@party)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    redirect_to root_path unless current_user.id == @party.user_id
+    redirect_to parties_path if @party.destroy
+  end
+
   private
 
   def set_party
