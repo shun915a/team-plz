@@ -44,6 +44,17 @@ a {
 .item-title {
   background-color: #cf3642;
   color: #ece8e1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  margin-right: 8px;
+  padding: 2px 4px;
+  font-size: 8px;
+  border: #ece8e1 solid 1px;
+  border-radius: 4px;
 }
 
 .item-title h3 {
