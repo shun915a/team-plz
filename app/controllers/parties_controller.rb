@@ -1,4 +1,7 @@
 class PartiesController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :set_party, only: %i[show edit update destroy]
+
   def index
     @parties = Party.order('created_at DESC')
   end
@@ -16,6 +19,8 @@ class PartiesController < ApplicationController
       render :new
     end
   end
+
+  def show; end
 
   private
 
