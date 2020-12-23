@@ -3,12 +3,11 @@ a {
 }
 
 .item-contents {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #101922;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .new-rec-button {
@@ -47,6 +46,17 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.border-line-container {
+  display: flex;
+  justify-content: center;
+}
+
+.border-line {
+  padding: 5px;
+  width: 30%;
+  border-bottom: #ff4465 solid 2px;
 }
 
 .category {

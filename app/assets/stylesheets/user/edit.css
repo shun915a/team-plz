@@ -1,0 +1,21 @@
+.edit-profile {
+  height: 1000px;
+}
+
+.sns-container {
+  width: 70%;
+  height: 20px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+
+.sns-url {
+  color: grey;
+}
+
+.text-sns {
+  width: 160px;
+  height: 32px;
+  font-size: 12px;
+}

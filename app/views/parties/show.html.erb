@@ -20,8 +20,10 @@
     </div>
 
     <div class="show-buttons">
-          <%= link_to '編集', edit_party_path(@party), class: "edit-btn" %>
-          <%= link_to '削除', party_path(@party), method: :delete, class: "delete-btn" %>
+      <% if current_user == @party.user %>
+        <%= link_to '編集', edit_party_path(@party), class: "edit-btn" %>
+        <%= link_to '削除', party_path(@party), method: :delete, class: "delete-btn" %>
+      <% end %> 
     </div>
   </div>
 

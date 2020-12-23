@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
       :sign_up, keys: %i[
         nickname
         gender_id
-        birtthday
+        birthday
         profile
         twitter_name
         twitch_name

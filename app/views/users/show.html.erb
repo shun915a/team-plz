@@ -1,0 +1,62 @@
+<%= render 'shared/header' %>
+
+<div class="item-contents">
+  <div class="profile-main">
+
+    <div class="profile-title">
+      PROFILE
+    </div>
+
+    <div class="profile-item">
+      <p class="label-text">NAME:</p>
+      <div class="nickname">
+        <%= @user.nickname %>
+      </div>
+    </div>
+
+    <div class="gender-and-birthday-container">
+      <div class="profile-item">
+        <p class="label-text">GENDER:</p>
+        <%= @user.gender.name %>
+      </div>
+
+      <div class="profile-item item-birthday">
+        <p class="label-text">BIRTHDAY:</p>
+        <div class="birthday">
+          <%= @user.birthday %>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <p class="label-text">SNS:</p>
+      <div class="twitter">
+        <a href="https://twitter.com/<%= @user.twitter_name %>">twitter.com/<%= @user.twitter_name %></a>
+      </div>
+
+      <div class="twitch">
+        <a href="https://www.twitch.tv/<%= @user.twitch_name %>">twitch.tv/<%= @user.twitch_name %></a>
+      </div>
+
+      <div class="mildom">
+        <a href="https://www.mildom.com/<%= @user.mildom_name %>">mildom.com/<%= @user.mildom_name %></a>
+      </div>
+
+    </div>
+
+    <div class="profile-item">
+      <p class="label-text">ABOUT ME:</p>
+      <div class="profile">
+        <%= @user.profile %>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="show-buttons">
+      <% if current_user == @user %>
+        <%= link_to '編集', edit_user_path(@user), class: "edit-btn" %>
+        <%# link_to '削除', friend_path(@friend), method: :delete, class: "delete-btn" %>
+      <% end %>
+    </div>
+</div>
