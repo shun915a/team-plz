@@ -1,0 +1,60 @@
+.show-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.show-info {
+  margin: 17px;
+  width: 400px;
+  background-color: #ece8e1;
+  border: #cf3642 solid 2px;
+  border-radius: 6px;
+  color: #3f3f3f;
+}
+
+.show-title {
+  background-color: #cf3642;
+  color: #ece8e1;
+}
+
+.show-title h3 {
+  padding: 8px 16px;
+}
+
+.show-game-id {
+  padding: 8px 12px;
+  color: #cf3642;
+}
+
+.show-text {
+  height: 100%;
+  padding: 0 16px 8px;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.show-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-btn {
+  margin-top: 2vh;
+  padding: 16px 80px;
+  border: #ff4655 solid 1px;
+  border-radius: 6px;
+  color: #ebebeb;
+  background-color: #ff4655;
+  text-decoration: none;
+}
+
+.delete-btn {
+  margin-top: 2vh;
+  padding: 16px 80px;
+  border: #ebebeb solid 1px;
+  border-radius: 6px;
+  color: #ebebeb;
+  text-decoration: none;
+}
