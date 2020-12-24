@@ -1,4 +1,7 @@
 <%= render 'shared/header' %>
+<% unless Desk.exists?(user_id: @user.id) %>
+  <%= link_to 'デスク投稿', new_user_desk_path(@user), class: "new-rec-button"%>
+<% end %>
 
 <div class="item-contents">
   <div class="profile-main">
@@ -62,18 +65,45 @@
     </div>
 
     <div class="profile-item">
-      <p class="label-text">ABOUT ME:</p>
-      <div class="profile">
-        <%= @user.profile %>
+      <div class="profile-bg">      
+        <p class="label-text">ABOUT ME:</p>
+        <div class="profile">
+          <%= @user.profile %>
+        </div>
       </div>
     </div>
 
   </div>
 
-    <div class="show-buttons">
+      <div class="show-buttons">
       <% if current_user == @user %>
         <%= link_to '編集', edit_user_path(@user), class: "edit-btn" %>
         <%# link_to '削除', friend_path(@friend), method: :delete, class: "delete-btn" %>
       <% end %>
     </div>
+
+  <% if Desk.exists?(user_id: @user.id) %>
+    <div class="item-contents">
+      <div class="profile-main">
+        <div class="profile-title">
+          DESK
+        </div>
+        <div class="desk-img-container">
+          <%= image_tag @desk.image %>
+        </div>
+
+        <div class="profile-item">
+          <div class="profile-bg">          
+            <p class="label-text">ABOUT DESK:</p>
+            <div class="profile">
+              <%= @desk.desk_text %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+
+
 </div>

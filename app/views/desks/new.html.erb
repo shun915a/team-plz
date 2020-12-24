@@ -1,0 +1,23 @@
+<%= render 'shared/header' %>
+
+<div class="item-contents">
+  <div class="profile-main">
+    <%= form_with model: [@user, @desk], local: true do |f|%>
+
+      <div class="field">
+        <%= f.label :image, "デスク画像" %><br />
+        <%= f.file_field :image %>
+      </div>
+
+        <div class="field">
+        <%= f.label :desk_text, "コメント" %><br />
+        <%= f.text_area :desk_text%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "保存する", class: :form__btn  %>
+      </div>
+    <% end %>  
+  </div>
+</div>
+

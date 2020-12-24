@@ -1,5 +1,5 @@
 .profile-main {
-  margin-top: 2vh;
+  margin: 4vh auto;
   padding: 3vh 4vh;
   width: 300px;
   background-color: #ebebeb;
@@ -31,4 +31,10 @@
 
 .item-birthday {
   margin-left: 2vh;
+}
+
+.profile-bg {
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
 }
