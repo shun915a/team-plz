@@ -2,6 +2,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :gender
 
+  has_one :desk
   has_many :friends
   has_many :parties
   has_many :scouts
