@@ -1,0 +1,68 @@
+<%= render 'shared/header' %>
+
+<div class="item-contents">
+  <div class="new-item-main">
+    <h2 class="new-item-title">プロフィール編集</h2>
+    <%= form_with model: @user, local: true do |f| %>
+
+    <div class="new-item">
+
+      <div class="weight-bold-text">
+        ニックネーム
+      </div>
+      <%= f.text_area :nickname, class: "text-area", id: "item-title", placeholder: "Nickname", maxlength: "40"%>
+
+      <div class="weight-bold-text">
+        性別 <%= f.collection_select :gender_id, Gender.all, :id, :name, {include_blank: "---"}, {class: ""}%><br>
+      </div>
+
+      <div class="weight-bold-text">
+      誕生日 <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year),
+                    date_separator: '%s'),
+                  "年", "月") + "日" %>
+      </div>
+
+      <div class="weight-bold-text">
+        Twitter
+      </div>
+      <div class="sns-container">
+        <p class="sns-url">twitter.com/</p><%= f.text_area :twitter_name, class: "text-area text-sns", id: "item-title", placeholder: "name", maxlength: "40"%>
+      </div>
+      
+      <div class="weight-bold-text">
+        Twitch
+      </div>
+      <div class="sns-container">
+        <p class="sns-url">twitch.tv/</p><%= f.text_area :twitch_name, class: "text-area text-sns", id: "item-title", placeholder: "name", maxlength: "40"%>
+      </div>
+      
+      <div class="weight-bold-text">
+        Mildom
+      </div>
+      <div class="sns-container">
+        <p class="sns-url">mildom.com/</p><%= f.text_area :mildom_name, class: "text-area text-sns", id: "item-title", placeholder: "00000000", maxlength: "40"%>
+      </div>
+      
+      <div class="new-item-text">
+        <div class="weight-bold-text">
+          プロフィール
+        </div>
+        <%= f.text_area :profile, class: "text-area text-box", id: "item-text", placeholder: "VALORANTをメインに活動中。メインキャラクターはソーヴァ、レイズやセージなども好きです。", rows: "7", maxlength: "1000" %>
+      </div>
+
+      <div class="submit-btn-contents">
+        <%= f.submit "UPDATE", class: "submit-btn" %>
+        <%= link_to 'BACK', root_path, class: "back-btn" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

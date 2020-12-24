@@ -20,8 +20,10 @@
     </div>
 
     <div class="show-buttons">
-          <%= link_to '編集', edit_scout_path(@scout), class: "edit-btn" %>
-          <%= link_to '削除', scout_path(@scout), method: :delete, class: "delete-btn" %>
+      <% if current_user == @scout.user %>
+        <%= link_to '編集', edit_scout_path(@scout), class: "edit-btn" %>
+        <%= link_to '削除', scout_path(@scout), method: :delete, class: "delete-btn" %>
+      <% end %>
     </div>
   </div>
 

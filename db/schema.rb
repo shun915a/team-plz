@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_050931) do
+ActiveRecord::Schema.define(version: 2020_12_23_064608) do
 
   create_table "friends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_12_23_050931) do
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
     t.integer "gender_id"
-    t.date "birtthday"
+    t.date "birthday"
     t.text "profile"
     t.string "twitter_name"
     t.string "twitch_name"
