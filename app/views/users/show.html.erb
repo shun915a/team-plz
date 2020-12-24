@@ -1,6 +1,8 @@
 <%= render 'shared/header' %>
 <% unless Desk.exists?(user_id: @user.id) %>
-  <%= link_to 'デスク投稿', new_user_desk_path(@user), class: "new-rec-button"%>
+  <div class="new-rec-button">
+    <%= link_to 'デスク投稿', new_user_desk_path(@user), class: "new-rec-button-text"%>
+  </div>
 <% end %>
 
 <div class="item-contents">
@@ -35,6 +37,13 @@
           </div>
         </div>
       <% end %>
+
+      <div class="profile-item item-birthday">
+        <p class="label-text">JOIN DATE:</p>
+        <div class="joindate">
+          <%= @user.created_at.strftime('%Y/%m/%d') %>
+        </div>
+      </div>
 
     </div>
 
@@ -89,7 +98,7 @@
         DESK
       </div>
       <div class="desk-img-container">
-        <%= image_tag @desk.image %>
+        <%= image_tag @desk.image, class: "img-desk" %>
       </div>
 
       <div class="profile-item">

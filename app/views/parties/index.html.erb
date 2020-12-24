@@ -1,7 +1,10 @@
 <%= render 'shared/header' %>
 
+<div class="new-rec-button">
+  <%= link_to '投稿', new_party_path, class: "new-rec-button-text"%>
+</div>
+
 <div class="item-contents">
-  <%= link_to '投稿', new_party_path, class: "new-rec-button"%>
 
   <ul class="item-lists">
     <% @parties.each do |party| %>

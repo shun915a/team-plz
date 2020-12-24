@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_24_030732) do
+ActiveRecord::Schema.define(version: 2020_12_24_084340) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_12_24_030732) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_friends_on_user_id"
+  end
+
+  create_table "myteams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "team_name", null: false
+    t.text "team_profile", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_myteams_on_user_id"
   end
 
   create_table "parties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,6 +102,7 @@ ActiveRecord::Schema.define(version: 2020_12_24_030732) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "desks", "users"
   add_foreign_key "friends", "users"
+  add_foreign_key "myteams", "users"
   add_foreign_key "parties", "users"
   add_foreign_key "scouts", "users"
 end
