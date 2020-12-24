@@ -14,33 +14,50 @@
       </div>
     </div>
 
-    <div class="gender-and-birthday-container">
-      <div class="profile-item">
-        <p class="label-text">GENDER:</p>
-        <%= @user.gender.name %>
-      </div>
 
-      <div class="profile-item item-birthday">
-        <p class="label-text">BIRTHDAY:</p>
-        <div class="birthday">
-          <%= @user.birthday %>
+    <div class="gender-and-birthday-container">
+    
+      <% unless @user.gender_id.blank? %>
+        <div class="profile-item">
+          <p class="label-text">GENDER:</p>
+          <%= @user.gender.name %>
         </div>
-      </div>
+      <% end %>
+
+      <% unless @user.birthday.blank? %>
+        <div class="profile-item item-birthday">
+          <p class="label-text">BIRTHDAY:</p>
+          <div class="birthday">
+            <%= @user.birthday %>
+          </div>
+        </div>
+      <% end %>
+
     </div>
 
     <div class="profile-item">
-      <p class="label-text">SNS:</p>
-      <div class="twitter">
-        <a href="https://twitter.com/<%= @user.twitter_name %>">twitter.com/<%= @user.twitter_name %></a>
-      </div>
 
-      <div class="twitch">
-        <a href="https://www.twitch.tv/<%= @user.twitch_name %>">twitch.tv/<%= @user.twitch_name %></a>
-      </div>
+      <% unless @user.twitter_name.empty? && @user.twitch_name.empty? && @user.mildom_name.empty? %>
+        <p class="label-text">SNS:</p>
+      <% end %>
 
-      <div class="mildom">
-        <a href="https://www.mildom.com/<%= @user.mildom_name %>">mildom.com/<%= @user.mildom_name %></a>
-      </div>
+      <% unless @user.twitter_name.empty? %>
+        <div class="twitter">
+          <a href="https://twitter.com/<%= @user.twitter_name %>">twitter.com/<%= @user.twitter_name %></a>
+        </div>
+      <% end %>
+
+      <% unless @user.twitch_name.empty? %>
+        <div class="twitch">
+          <a href="https://www.twitch.tv/<%= @user.twitch_name %>">twitch.tv/<%= @user.twitch_name %></a>
+        </div>
+      <% end %>
+
+      <% unless @user.mildom_name.empty? %>
+        <div class="mildom">
+          <a href="https://www.mildom.com/<%= @user.mildom_name %>">mildom.com/<%= @user.mildom_name %></a>
+        </div>
+      <% end %>
 
     </div>
 

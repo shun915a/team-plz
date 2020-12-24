@@ -6,8 +6,8 @@
 }
 
 .new-item-main {
-  margin-top: 2vh;
-  height: 620px;
+  margin: 4vh auto;
+
   width: 300px;
   background-color: #f8f8f8;
   border-radius: 8px;
@@ -98,4 +98,8 @@
   color: #fff;
   padding: 15px 35%;
   text-decoration: none;
+}
+
+.submit-btn-contents {
+  margin-bottom: 6vh;
 }
