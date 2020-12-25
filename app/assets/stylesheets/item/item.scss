@@ -72,6 +72,11 @@ a {
   word-break: break-all;
 }
 
+.login-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .login-btn {
   margin-top: 2vh;
   padding: 16px 80px;

@@ -12,33 +12,52 @@ header {
   width: 100vw;
   height: 80px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   background-color: #111;
 }
 
 .logo {
-  width: 150px;
-  line-height: 80px;
+  height: 40px;
+  width: 160px;
   margin: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  height: 100%;
+}
+
+.logo-text {
+  position: relative;
+  margin-left: 1vh;
+  height: 40px;
+  width: 120px;
+  color: #ebebeb;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.logo-name {
+  position: absolute;
+  top: -5px;
   font-size: 20px;
 }
 
-.logo a {
-  text-decoration: none;
-  color: #fff;
+.logo-sub-name {
+  position: absolute;
+  top: 20px;
+  font-size: 8px;
 }
 
 .nav {
+  width: 100%;
   font-size: 12px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  line-height: 80px;
-}
-
-.lists-left li {
-  height: 80px;
-  line-height: 80px;
 }
 
 .lists-left {
@@ -84,7 +103,6 @@ header {
   margin-right: 50px;
   display: flex;
   list-style: none;
-  align-items: flex-end;
 }
 
 .user-nickname {

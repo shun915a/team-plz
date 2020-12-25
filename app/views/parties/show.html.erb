@@ -16,7 +16,7 @@
 
     <div class="show-item">
       <p class="label-text">NAME:</p>
-      <%= @party.party_game_id %>
+      <%= link_to @party.party_game_id, user_path(@party.user_id) %>
     </div>
 
     <div class="show-item show-about-bg">
