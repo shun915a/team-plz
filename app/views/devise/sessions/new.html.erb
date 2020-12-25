@@ -4,25 +4,25 @@
 
 
 
-<%= form_with model: @user, url: new_user_session_path, class: 'login-main', local: true do |f| %>
+<%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
 
-<div class="item-contents">
-  <div class="show-main">
-    <div class="show-title">LOGIN</div>
+<div class="container">
+  <div class="login-wrapper">
+    <h1 class="login-title">ログイン</h1>
 
     <div class='login-flash-message'>
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
 
-    <div class="show-item">
-      <p class="label-text">メールアドレス</p>
-      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"sample@email.com", autofocus: true %>
+    <div class="login-group">
+      <div class="weight-bold-text">メールアドレス</div>
+      <%= f.email_field :email, class:"text-input", id:"email", placeholder:"sample@email.com", autofocus: true %>
     </div>
 
-    <div class="show-item">
-      <p class="label-text">パスワード</p>
-      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+    <div class="login-group">
+      <p class="weight-bold-text">パスワード</p>
+      <%= f.password_field :password, class:"text-input", id:"password", placeholder:"" %>
     </div>
 
     <div class="login-btn-container">

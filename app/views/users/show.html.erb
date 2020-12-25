@@ -5,12 +5,12 @@
   </div>
 <% end %>
 
-<div class="item-contents">
+<div class="container">
   <div class="show-main">
 
-    <div class="show-title">
+    <h1 class="show-title">
       PROFILE
-    </div>
+    </h1>
 
     <div class="show-item">
       <p class="label-text">NAME:</p>
@@ -20,7 +20,7 @@
     </div>
 
 
-    <div class="gender-and-birthday-container">
+    <div class="gender-date-group">
     
       <% unless @user.gender_id.blank? %>
         <div class="show-item">
@@ -94,9 +94,9 @@
   <% if Desk.exists?(user_id: @user.id) %>
 
     <div class="show-main">
-      <div class="show-title">
+      <h1 class="show-title">
         DESK
-      </div>
+      </h1>
       <div class="desk-img-container">
         <%= image_tag @desk.image, class: "img-desk" %>
       </div>

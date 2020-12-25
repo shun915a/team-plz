@@ -1,31 +1,8 @@
-.show-main {
-  padding: 3vh 4vh;
-  width: 300px;
-  background-color: #ebebeb;
-  border-radius: 8px;
-  min-width: 450px;
-}
-
-.show-title {
-  padding: 4px 8px;
-  text-align: center;
-  font-size: 24px;
-  background-color: #cf3642;
-  border: #ebebeb solid 2px;
-  border-radius: 8px;
-  color: #fff;
-}
-
-.label-text {
-  font-size: 8px;
-}
-.show-item {
-  font-size: 20px;
-  margin-top: 16px;
-}
-
-.gender-and-birthday-container {
+.gender-date-group {
   display: flex;
+  justify-content: left;
+  word-break: keep-all;
+  font-size: 11px;
 }
 
 .item-birthday {
@@ -37,4 +14,29 @@
   background-color: #ffffff;
   border-radius: 8px;
   word-break: break-all;
+}
+
+.show-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-btn {
+  margin-top: 2vh;
+  padding: 16px 80px;
+  border: #ff4655 solid 1px;
+  border-radius: 6px;
+  color: #ebebeb;
+  background-color: #ff4655;
+  text-decoration: none;
+}
+
+.delete-btn {
+  margin-top: 2vh;
+  padding: 16px 80px;
+  border: #ebebeb solid 1px;
+  border-radius: 6px;
+  color: #ebebeb;
+  text-decoration: none;
 }
