@@ -6,21 +6,25 @@
 
 <div class="item-contents">
   <div class="show-main">
-    <div class="show-info">
 
-      <div class="show-title">
-        <h3><%= @scout.scout_title %></h3>
-      </div>
+    <div class="show-title">SCOUT</div>
 
-      <div class="show-game-id">
-        <%= @scout.scout_game_id %>
-      </div>
-
-      <div class="show-text">
-        <%= @scout.scout_text %>
-      </div>
-
+    <div class="show-item">
+      <p class="label-text">TITLE:</p>
+      <h3><%= @scout.scout_title %></h3>
     </div>
+
+    <div class="show-item">
+      <p class="label-text">NAME:</p>
+      <%= @scout.scout_game_id %>
+    </div>
+
+    <div class="show-item show-about-bg">
+      <p class="label-text">DESCRIPTION:</p>
+      <%= @scout.scout_text %>
+    </div>
+
+  </div>
 
     <div class="show-buttons">
       <% if current_user == @scout.user %>
@@ -28,6 +32,5 @@
         <%= link_to '削除', scout_path(@scout), method: :delete, class: "delete-btn" %>
       <% end %>
     </div>
-  </div>
 
 </div>

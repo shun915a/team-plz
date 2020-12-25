@@ -6,13 +6,13 @@
 <% end %>
 
 <div class="item-contents">
-  <div class="profile-main">
+  <div class="show-main">
 
-    <div class="profile-title">
+    <div class="show-title">
       PROFILE
     </div>
 
-    <div class="profile-item">
+    <div class="show-item">
       <p class="label-text">NAME:</p>
       <div class="nickname">
         <%= @user.nickname %>
@@ -23,14 +23,14 @@
     <div class="gender-and-birthday-container">
     
       <% unless @user.gender_id.blank? %>
-        <div class="profile-item">
+        <div class="show-item">
           <p class="label-text">GENDER:</p>
           <%= @user.gender.name %>
         </div>
       <% end %>
 
       <% unless @user.birthday.blank? %>
-        <div class="profile-item item-birthday">
+        <div class="show-item item-birthday">
           <p class="label-text">BIRTHDAY:</p>
           <div class="birthday">
             <%= @user.birthday %>
@@ -38,7 +38,7 @@
         </div>
       <% end %>
 
-      <div class="profile-item item-birthday">
+      <div class="show-item item-birthday">
         <p class="label-text">JOIN DATE:</p>
         <div class="joindate">
           <%= @user.created_at.strftime('%Y/%m/%d') %>
@@ -47,7 +47,7 @@
 
     </div>
 
-    <div class="profile-item">
+    <div class="show-item">
 
       <% unless @user.twitter_name.empty? && @user.twitch_name.empty? && @user.mildom_name.empty? %>
         <p class="label-text">SNS:</p>
@@ -73,8 +73,8 @@
 
     </div>
 
-    <div class="profile-item">
-      <div class="profile-bg">      
+    <div class="show-item">
+      <div class="show-about-bg">      
         <p class="label-text">ABOUT ME:</p>
         <div class="profile">
           <%= @user.profile %>
@@ -93,16 +93,16 @@
 
   <% if Desk.exists?(user_id: @user.id) %>
 
-    <div class="profile-main">
-      <div class="profile-title">
+    <div class="show-main">
+      <div class="show-title">
         DESK
       </div>
       <div class="desk-img-container">
         <%= image_tag @desk.image, class: "img-desk" %>
       </div>
 
-      <div class="profile-item">
-        <div class="profile-bg">          
+      <div class="show-item">
+        <div class="show-about-bg">          
           <p class="label-text">ABOUT DESK:</p>
           <div class="profile">
             <%= @desk.desk_text %>

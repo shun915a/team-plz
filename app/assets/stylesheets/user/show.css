@@ -1,4 +1,4 @@
-.profile-main {
+.show-main {
   padding: 3vh 4vh;
   width: 300px;
   background-color: #ebebeb;
@@ -6,7 +6,7 @@
   min-width: 450px;
 }
 
-.profile-title {
+.show-title {
   padding: 4px 8px;
   text-align: center;
   font-size: 24px;
@@ -19,7 +19,7 @@
 .label-text {
   font-size: 8px;
 }
-.profile-item {
+.show-item {
   font-size: 20px;
   margin-top: 16px;
 }
@@ -32,8 +32,9 @@
   margin-left: 2vh;
 }
 
-.profile-bg {
+.show-about-bg {
   padding: 8px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 8px;
+  word-break: break-all;
 }

@@ -1,5 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap");
+
 * {
   box-sizing: border-box;
+}
+
+header {
+  font-family: "Ramabhadra", sans-serif;
 }
 
 .top-page-header {
@@ -41,27 +47,27 @@
 }
 
 .friend-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
 }
 
 .party-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
 }
 
 .scout-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
 }
 .team-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
@@ -90,7 +96,7 @@
 }
 
 .logout {
-  padding: 16px 40px;
+  padding: 12px 40px;
   border: #fff solid 1px;
   border-radius: 2px;
   text-decoration: none;
@@ -103,7 +109,7 @@
 }
 
 .login {
-  padding: 16px 40px;
+  padding: 12px 40px;
   border: #fff solid 1px;
   border-radius: 2px;
   text-decoration: none;
@@ -112,7 +118,7 @@
 }
 
 .sign-up {
-  padding: 16px 40px;
+  padding: 12px 40px;
   border-radius: 2px;
   background-color: #ff4655;
   text-decoration: none;
