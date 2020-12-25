@@ -1,0 +1,2 @@
+class MyteamsController < ApplicationController
+end

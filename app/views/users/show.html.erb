@@ -1,4 +1,5 @@
 <%= render 'shared/header' %>
+<%= link_to 'チーム作成', new_myteam_path %>
 <% unless Desk.exists?(user_id: @user.id) %>
   <div class="new-rec-button">
     <%= link_to 'デスク投稿', new_user_desk_path(@user), class: "new-rec-button-text"%>

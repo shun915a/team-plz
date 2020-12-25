@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :desks
   end
+  resources :myteams
   resources :recruitments, only: [:index]
   resources :friends
   resources :parties
