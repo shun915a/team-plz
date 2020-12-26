@@ -62,6 +62,7 @@ header {
 
 .lists-left {
   display: flex;
+  align-items: center;
   min-width: 200px;
 }
 
@@ -102,6 +103,7 @@ header {
 .lists-right {
   margin-right: 50px;
   display: flex;
+  align-items: center;
   list-style: none;
 }
 

@@ -9,10 +9,9 @@
 
 .show-main {
   padding: 3vh 4vh;
-  width: 300px;
+  min-width: 400px;
   background-color: #ebebeb;
   border-radius: 8px;
-  min-width: 450px;
   display: flex;
   justify-content: center;
   flex-direction: column;

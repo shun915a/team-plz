@@ -1,0 +1,28 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+
+  <%= form_with model: @myteam, local: true do |f| %>
+    <div class="new-main">
+      <div class="new-item-title">チーム作成</div>
+
+      <div class="form-group">
+        <div class="weight-bold-text">
+          チーム名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :team_name, class: "text-input", id: "team-name", placeholder: "チーム名", maxlength: "24" %>
+      </div>
+
+      <div class="form-group">
+        <div class="weight-bold-text">
+          チーム紹介
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :team_profile, class: "text-input text-box", id: "team-profile", placeholder: "チーム紹介", rows: "7", maxlength: "1000" %>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>

@@ -7,6 +7,7 @@ a {
   min-height: 100vh;
   min-width: 500px;
   background-color: #101922;
+  background: linear-gradient(to bottom right, #101922, #ddd);
   font-size: 14px;
   align-items: center;
   display: flex;
@@ -22,12 +23,13 @@ a {
 }
 
 .item-lists > .list {
-  width: 30vh;
+  width: 36vh;
   height: 100%;
   margin: 16px;
   background-color: #cf3642;
   border: #cf3642 solid 2px;
   border-radius: 8px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
 }
 .item-lists > .list:hover {
   border: #fff solid 2px;
@@ -41,13 +43,6 @@ a {
   align-items: center;
 }
 
-.item-info {
-  background-color: #ece8e1;
-  border: #cf3642 solid 2px;
-  border-radius: 6px;
-  color: #3f3f3f;
-}
-
 .category {
   margin-right: 8px;
   padding: 2px 4px;
@@ -56,12 +51,21 @@ a {
   border-radius: 4px;
 }
 
+.item-info {
+  background-color: #ece8e1;
+  border: #cf3642 solid 2px;
+  border-radius: 6px;
+  color: #3f3f3f;
+}
+
 .item-title h3 {
   padding: 8px 16px;
 }
 
 .item-game-id {
-  padding: 8px 12px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
   color: #cf3642;
 }
 
