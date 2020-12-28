@@ -1,14 +1,21 @@
 <%= render 'shared/header' %>
 
 <div class="btn-container">
-  <div class="new-rec-button">
-    <%= link_to 'チーム作成', new_myteam_path, class: "new-rec-button-text" %>
-  </div>
+
+  <%= link_to new_myteam_path do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">チーム作成</p>
+    </div>
+  <% end %>
+
 <% unless Desk.exists?(user_id: @user.id) %>
-  <div class="new-rec-button">
-    <%= link_to 'デスク投稿', new_user_desk_path(@user), class: "new-rec-button-text"%>
-  </div>
+  <%= link_to new_user_desk_path(@user) do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">デスク投稿</p>
+    </div>
+  <% end %>
 <% end %>
+
 </div>
 
 <div class="container">

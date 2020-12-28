@@ -1,9 +1,11 @@
 <%= render 'shared/header' %>
 
 <div class="btn-container">
-  <div class="new-rec-button">
-    <%= link_to '投稿', new_party_path, class: "new-rec-button-text"%>
-  </div>
+  <%= link_to new_party_path do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">投稿</p>
+    </div>
+  <% end %>
 </div>
 
 <div class="container">
