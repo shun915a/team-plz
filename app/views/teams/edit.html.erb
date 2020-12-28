@@ -1,0 +1,44 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <div class="new-main">
+      <h2 class="new-item-title">チームメンバー募集</h2>
+      <%= form_with model: @team, local: true do |f| %>
+
+      <div class="new-item">
+
+        <div class="weight-bold-text">
+          タイトル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :team_title, class: "text-input", id: "item-title", placeholder: "募集タイトル", maxlength: "40"%>
+
+        <div class="weight-bold-text">
+          ゲームID
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :team_game_id, class: "text-input", id: "item-game-id", placeholder:"Cypher#0010" %>
+
+        <div class="weight-bold-text">
+          チーム選択
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select :myteam_id, Myteam.where(user_id: current_user.id).order('created_at DESC'), :id, :team_name, {include_blank: "---"} %> <br>
+
+        <div class="new-item-text">
+          <div class="weight-bold-text">
+            募集内容
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :team_text, class: "text-input text-box", id: "item-text", placeholder: "VALORANTを一緒にプレイするチームメンバーを募集。", rows: "7", maxlength: "600" %>
+
+        </div>
+
+        <div class="submit-btn-contents">
+          <%= f.submit "掲載する", class: "submit-btn" %>
+          <%= link_to 'BACK', root_path, class: "back-btn" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>

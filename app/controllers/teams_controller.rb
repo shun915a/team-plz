@@ -1,5 +1,7 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :set_team, only: %i[show edit update destroy]
+  before_action :user_id_check, only: %i[edit destroy]
 
   def index
     @teams = Team.order('created_at DESC')
@@ -10,7 +12,6 @@ class TeamsController < ApplicationController
   end
 
   def create
-    binding.pry
     @team = Team.new(team_params)
 
     if @team.save
@@ -20,9 +21,28 @@ class TeamsController < ApplicationController
     end
   end
 
+  def show; end
+
+  def edit; end
+
+  def update
+    if @team.update(team_params)
+      redirect_to team_path(@team)
+    else
+      render :edit
+    end
+  end
+
   private
 
-  # myteam_id は new action を作成後設定
+  def user_id_check
+    redirect_to root_path unless current_user.id == @team.user_id
+  end
+
+  def set_team
+    @team = Team.find(params[:id])
+  end
+
   def team_params
     params.require(:team).permit(
       :myteam_id,
