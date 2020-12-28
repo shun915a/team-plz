@@ -257,7 +257,7 @@
 | user_id       | references | null: false, foreign_key: true |
 | party_id      | references | null: false, foreign_key: true |
 
-## teams table
+## team table
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
