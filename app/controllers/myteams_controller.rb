@@ -1,6 +1,7 @@
 class MyteamsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
-  before_action :set_myteam, only: %i[show]
+  before_action :set_myteam, only: %i[show edit update destroy]
+  before_action :user_id_check, only: %i[edit destroy]
 
   def new
     @myteam = Myteam.new
@@ -18,7 +19,25 @@ class MyteamsController < ApplicationController
 
   def show; end
 
+  def edit; end
+
+  def update
+    if @myteam.update(myteam_params)
+      redirect_to myteam_path(@myteam)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    redirect_to root_path if @myteam.destroy
+  end
+
   private
+
+  def user_id_check
+    redirect_to root_path unless current_user.id == @myteam.user_id
+  end
 
   def set_myteam
     @myteam = Myteam.find(params[:id])

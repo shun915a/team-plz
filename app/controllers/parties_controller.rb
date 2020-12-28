@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_party, only: %i[show edit update destroy]
+  before_action :user_id_check, only: %i[edit destroy]
 
   def index
     @parties = Party.order('created_at DESC')
@@ -22,9 +23,7 @@ class PartiesController < ApplicationController
 
   def show; end
 
-  def edit
-    redirect_to root_path unless current_user.id == @party.user_id
-  end
+  def edit; end
 
   def update
     if @party.update(party_params)
@@ -35,11 +34,14 @@ class PartiesController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path unless current_user.id == @party.user_id
     redirect_to parties_path if @party.destroy
   end
 
   private
+
+  def user_id_check
+    redirect_to root_path unless current_user.id == @party.user_id
+  end
 
   def set_party
     @party = Party.find(params[:id])

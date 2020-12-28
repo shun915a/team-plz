@@ -2,6 +2,7 @@ class FriendsController < ApplicationController
   # ログインしていないユーザーをログインページへ遷移
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_friend, only: %i[show edit update destroy]
+  before_action :user_id_check, only: %i[edit destroy]
 
   def index
     @friends = Friend.order('created_at DESC')
@@ -23,9 +24,7 @@ class FriendsController < ApplicationController
 
   def show; end
 
-  def edit
-    redirect_to root_path unless current_user.id == @friend.user_id
-  end
+  def edit; end
 
   def update
     if @friend.update(friend_params)
@@ -36,11 +35,14 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path unless current_user.id == @friend.user_id
     redirect_to friends_path if @friend.destroy
   end
 
   private
+
+  def user_id_check
+    redirect_to root_path unless current_user.id == @friend.user_id
+  end
 
   def set_friend
     @friend = Friend.find(params[:id])

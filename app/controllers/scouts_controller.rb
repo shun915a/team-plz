@@ -1,6 +1,7 @@
 class ScoutsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_scout, only: %i[show edit update destroy]
+  before_action :user_id_check, only: %i[edit destroy]
 
   def index
     @scouts = Scout.order('created_at DESC')
@@ -22,9 +23,7 @@ class ScoutsController < ApplicationController
 
   def show; end
 
-  def edit
-    redirect_to root_path unless current_user.id == @scout.user_id
-  end
+  def edit; end
 
   def update
     if @scout.update(scout_params)
@@ -35,11 +34,14 @@ class ScoutsController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path unless current_user.id == @scout.user_id
     redirect_to scouts_path if @scout.destroy
   end
 
   private
+
+  def user_id_check
+    redirect_to root_path unless current_user.id == @scout.user_id
+  end
 
   def set_scout
     @scout = Scout.find(params[:id])
