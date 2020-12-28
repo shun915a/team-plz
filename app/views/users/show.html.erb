@@ -1,16 +1,31 @@
 <%= render 'shared/header' %>
+
+<div class="btn-container">
+
+  <%= link_to new_myteam_path do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">チーム作成</p>
+    </div>
+  <% end %>
+
 <% unless Desk.exists?(user_id: @user.id) %>
-  <%= link_to 'デスク投稿', new_user_desk_path(@user), class: "new-rec-button"%>
+  <%= link_to new_user_desk_path(@user) do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">デスク投稿</p>
+    </div>
+  <% end %>
 <% end %>
 
-<div class="item-contents">
-  <div class="profile-main">
+</div>
 
-    <div class="profile-title">
+<div class="container">
+  <div class="show-main">
+
+    <h1 class="show-title">
       PROFILE
-    </div>
+    </h1>
 
-    <div class="profile-item">
+    <div class="show-item">
       <p class="label-text">NAME:</p>
       <div class="nickname">
         <%= @user.nickname %>
@@ -18,17 +33,17 @@
     </div>
 
 
-    <div class="gender-and-birthday-container">
+    <div class="gender-date-group">
     
       <% unless @user.gender_id.blank? %>
-        <div class="profile-item">
+        <div class="show-item">
           <p class="label-text">GENDER:</p>
           <%= @user.gender.name %>
         </div>
       <% end %>
 
       <% unless @user.birthday.blank? %>
-        <div class="profile-item item-birthday">
+        <div class="show-item item-birthday">
           <p class="label-text">BIRTHDAY:</p>
           <div class="birthday">
             <%= @user.birthday %>
@@ -36,9 +51,16 @@
         </div>
       <% end %>
 
+      <div class="show-item item-birthday">
+        <p class="label-text">JOIN DATE:</p>
+        <div class="joindate">
+          <%= @user.created_at.strftime('%Y/%m/%d') %>
+        </div>
+      </div>
+
     </div>
 
-    <div class="profile-item">
+    <div class="show-item">
 
       <% unless @user.twitter_name.empty? && @user.twitch_name.empty? && @user.mildom_name.empty? %>
         <p class="label-text">SNS:</p>
@@ -64,8 +86,8 @@
 
     </div>
 
-    <div class="profile-item">
-      <div class="profile-bg">      
+    <div class="show-item">
+      <div class="show-about-bg">      
         <p class="label-text">ABOUT ME:</p>
         <div class="profile">
           <%= @user.profile %>
@@ -84,16 +106,16 @@
 
   <% if Desk.exists?(user_id: @user.id) %>
 
-    <div class="profile-main">
-      <div class="profile-title">
+    <div class="show-main">
+      <h1 class="show-title">
         DESK
-      </div>
+      </h1>
       <div class="desk-img-container">
-        <%= image_tag @desk.image %>
+        <%= image_tag @desk.image, class: "img-desk" %>
       </div>
 
-      <div class="profile-item">
-        <div class="profile-bg">          
+      <div class="show-item">
+        <div class="show-about-bg">          
           <p class="label-text">ABOUT DESK:</p>
           <div class="profile">
             <%= @desk.desk_text %>
@@ -112,6 +134,22 @@
     
   <% end %>
 
+  <% if Myteam.exists?(user_id: @user.id) %>
 
+    <div class="show-main">
+      <h1 class="show-title">MYTEAM</h1>
+
+      <ul class="myteam-lists">
+        <% @myteams.each do |myteam| %>
+          <li class="myteam-list">
+            <%= link_to myteam_path(myteam) do %>
+              <%= myteam.team_name %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+  <% end %>
 
 </div>

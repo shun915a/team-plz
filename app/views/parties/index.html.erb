@@ -1,19 +1,28 @@
 <%= render 'shared/header' %>
 
-<div class="item-contents">
-  <%= link_to '投稿', new_party_path, class: "new-rec-button"%>
+<div class="btn-container">
+  <%= link_to new_party_path do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">投稿</p>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
 
   <ul class="item-lists">
     <% @parties.each do |party| %>
+
     <li class="list">
       <%= link_to party_path(party) do %>
-      <div class="item-info">
 
         <div class="item-title">
           <h3><%= party.party_title %></h3>
           <span class="category">PARTY</span>
         </div>
 
+      <div class="item-info">
+      
         <div class="item-game-id">
           <%= party.party_game_id %>
         </div>
@@ -25,6 +34,7 @@
       </div>
       <% end %>
     </li>
+
     <% end %>
   </ul>
 </div>

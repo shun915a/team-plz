@@ -1,67 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap");
+
 * {
   box-sizing: border-box;
+}
+
+header {
+  font-family: "Ramabhadra", sans-serif;
 }
 
 .top-page-header {
   width: 100vw;
   height: 80px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   background-color: #111;
 }
 
 .logo {
-  width: 150px;
-  line-height: 80px;
+  height: 40px;
+  width: 160px;
   margin: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  height: 100%;
+}
+
+.logo-text {
+  position: relative;
+  margin-left: 1vh;
+  height: 40px;
+  width: 120px;
+  color: #ebebeb;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.logo-name {
+  position: absolute;
+  top: -5px;
   font-size: 20px;
 }
 
-.logo a {
-  text-decoration: none;
-  color: #fff;
+.logo-sub-name {
+  position: absolute;
+  top: 20px;
+  font-size: 8px;
 }
 
 .nav {
+  width: 100%;
   font-size: 12px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  line-height: 80px;
-}
-
-.lists-left li {
-  height: 80px;
-  line-height: 80px;
 }
 
 .lists-left {
   display: flex;
+  align-items: center;
   min-width: 200px;
 }
 
 .friend-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
 }
 
 .party-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
 }
 
 .scout-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
 }
 .team-list {
-  padding: 30px 8px;
+  padding: 24px 8px;
   text-decoration: none;
   margin-right: 3vw;
   color: #fff;
@@ -77,8 +103,8 @@
 .lists-right {
   margin-right: 50px;
   display: flex;
+  align-items: center;
   list-style: none;
-  align-items: flex-end;
 }
 
 .user-nickname {
@@ -90,7 +116,7 @@
 }
 
 .logout {
-  padding: 16px 40px;
+  padding: 12px 40px;
   border: #fff solid 1px;
   border-radius: 2px;
   text-decoration: none;
@@ -103,7 +129,7 @@
 }
 
 .login {
-  padding: 16px 40px;
+  padding: 12px 40px;
   border: #fff solid 1px;
   border-radius: 2px;
   text-decoration: none;
@@ -112,7 +138,7 @@
 }
 
 .sign-up {
-  padding: 16px 40px;
+  padding: 12px 40px;
   border-radius: 2px;
   background-color: #ff4655;
   text-decoration: none;

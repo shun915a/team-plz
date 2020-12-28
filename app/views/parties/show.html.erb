@@ -1,30 +1,40 @@
 <%= render 'shared/header' %>
 
-<div class="item-contents">
-  <%= link_to '投稿', new_party_path, class: "new-rec-button"%>
-  <div class="show-main">
-    <div class="show-info">
-
-      <div class="show-title">
-        <h3><%= @party.party_title %></h3>
-      </div>
-
-      <div class="show-game-id">
-        <%= @party.party_game_id %>
-      </div>
-
-      <div class="show-text">
-        <%= @party.party_text %>
-      </div>
-
+<div class="btn-container">
+  <%= link_to new_party_path do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">投稿</p>
     </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="show-main">
+
+    <h1 class="show-title">PARTY</h1>
+
+    <div class="show-item">
+      <p class="label-text">TITLE:</p>
+      <h3><%= @party.party_title %></h3>
+    </div>
+
+    <div class="show-item">
+      <p class="label-text">NAME:</p>
+      <%= link_to @party.party_game_id, user_path(@party.user_id) %>
+    </div>
+
+    <div class="show-item show-about-bg">
+      <p class="label-text">DESCRIPTION:</p>
+      <%= @party.party_text %>
+    </div>
+
+  </div>
 
     <div class="show-buttons">
       <% if current_user == @party.user %>
         <%= link_to '編集', edit_party_path(@party), class: "edit-btn" %>
         <%= link_to '削除', party_path(@party), method: :delete, class: "delete-btn" %>
-      <% end %> 
+      <% end %>
     </div>
-  </div>
 
 </div>

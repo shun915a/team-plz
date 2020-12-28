@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @desk = Desk.find_by(user_id: @user.id)
+    @myteams = Myteam.where(user_id: @user.id).order('created_at DESC')
   end
 
   def edit

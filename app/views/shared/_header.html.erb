@@ -1,17 +1,28 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
-  <div class="logo">
-    <%= link_to 'TEAM-PLZ', root_path %>
-  </div>
+  <%= link_to root_path do %>
+    <div class="logo">
+
+      <%= image_tag 'logo.png', class: "logo-img" %>
+
+      <div class="logo-text">
+        <div class="logo-name">TEAM - PLZ</div>
+        <div class="logo-sub-name">For Gamers</div>
+      </div>
+
+    </div>
+  <% end %>
+
   <div class='nav'>
+
     <ul class='lists-left'>
       <li><%= link_to 'FRIEND', friends_path, class: "friend-list" %></li>
       <li><%= link_to 'PARTY', parties_path, class: "party-list" %></li>
       <li><%= link_to 'TEAM', "#", class: "team-list" %></li>
       <li><%= link_to 'SCOUT', scouts_path, class: "scout-list" %></li>
     </ul>
-    <ul class='lists-right'>
 
+    <ul class='lists-right'>
       <%# ログイン状態でheaderの表示を変更 %>
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, user_path(current_user), class: "user-nickname" %></li>
@@ -21,5 +32,6 @@
         <li><%= link_to 'JOIN NOW', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
     </ul>
+
   </div>
 </header>

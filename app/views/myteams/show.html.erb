@@ -1,0 +1,25 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <div class="show-main">
+    <h1 class="show-title">TEAM PROFILE</h1>
+    
+    <div class="show-item">
+      <p class="label-text">TEAM NAME:</p>
+      <%= @myteam.team_name %>
+    </div>
+
+    <div class="show-item show-about-bg">
+      <p class="label-text">DESCRIPTION:</p>
+      <%= @myteam.team_profile %>
+    </div>
+  </div>
+
+  <% if current_user.id == @myteam.user_id %>
+    <div class="show-buttons">
+      <%= link_to '編集', edit_myteam_path(@myteam), class: "edit-btn" %>
+      <%= link_to '削除', myteam_path(@myteam), method: :delete, class: "delete-btn" %>
+    </div>
+  <% end %>
+  
+</div>

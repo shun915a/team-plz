@@ -1,7 +1,8 @@
 <%= render 'shared/header' %>
 
-<div class="item-contents">
-  <div class="profile-main">
+<div class="container">
+  <div class="show-main">
+    <div class="show-title">デスク画像フォーム</div>
     <%= form_with model: [@user, @desk], local: true do |f|%>
 
       <div class="field">
