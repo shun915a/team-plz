@@ -7,7 +7,7 @@ a {
   min-height: 100vh;
   min-width: 500px;
   background-color: #101922;
-  background: linear-gradient(to bottom right, #101922, #ddd);
+  background: linear-gradient(to bottom right, #101922, #555);
   font-size: 14px;
   align-items: center;
   display: flex;
@@ -23,13 +23,11 @@ a {
 }
 
 .item-lists > .list {
-  width: 360px;
+  width: 320px;
   height: 100%;
   margin: 16px;
-  background-color: #cf3642;
-  border: #cf3642 solid 2px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+  border: #ebebeb55 solid 2px;
+  border-radius: 6px;
 }
 .item-lists > .list:hover {
   border: #fff solid 2px;
@@ -37,7 +35,8 @@ a {
 
 .item-title {
   width: 100%;
-  color: #ece8e1;
+  font-size: 20px;
+  color: #e8ecf1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,16 +46,17 @@ a {
   margin-right: 8px;
   padding: 2px 4px;
   font-size: 8px;
-  border: #ece8e1 solid 1px;
+  border: #ff4465 solid 1px;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .item-info {
+  margin: 0 8px 8px;
   height: 300px;
-  background-color: #ece8e1;
-  border: #cf3642 solid 2px;
+  background-color: #ffffff11;
   border-radius: 6px;
-  color: #3f3f3f;
+  color: #d2d9e2;
 }
 
 .item-title h3 {
@@ -65,13 +65,13 @@ a {
 
 .item-game-id {
   padding: 8px 16px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  color: #cf3642;
 }
 
 .item-text {
   padding: 0 16px 8px;
+  font-size: 16px;
   text-decoration: none;
   word-break: break-all;
 }
