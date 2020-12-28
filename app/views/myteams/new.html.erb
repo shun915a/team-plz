@@ -22,6 +22,11 @@
         <%= f.text_area :team_profile, class: "text-input text-box", id: "team-profile", placeholder: "チーム紹介", rows: "7", maxlength: "1000" %>
       </div>
 
+      <div class="submit-btn-contents">
+        <%= f.submit "チームを作成", class: "submit-btn" %>
+        <%= link_to 'BACK', root_path, class: "back-btn" %>
+      </div>
+
     </div>
 
   <% end %>

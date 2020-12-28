@@ -9,21 +9,20 @@
 
 .show-main {
   padding: 3vh 4vh;
-  min-width: 400px;
+  width: 400px;
   background-color: #ebebeb;
   border-radius: 8px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
 .show-title {
   padding: 4px 8px;
   text-align: center;
-  font-size: 24px;
   background-color: #cf3642;
   border: #ebebeb solid 2px;
   border-radius: 8px;
+  font-size: 24px;
   color: #fff;
 }
 
@@ -34,7 +33,6 @@
   font-size: 20px;
   margin-top: 16px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
