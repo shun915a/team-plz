@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_091728) do
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "myteam_id", null: false
     t.string "team_title", null: false
     t.string "team_game_id", null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_091728) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["myteam_id"], name: "index_teams_on_myteam_id"
-    t.index ["users_id"], name: "index_teams_on_users_id"
+    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -118,5 +118,5 @@ ActiveRecord::Schema.define(version: 2020_12_28_091728) do
   add_foreign_key "parties", "users"
   add_foreign_key "scouts", "users"
   add_foreign_key "teams", "myteams"
-  add_foreign_key "teams", "users", column: "users_id"
+  add_foreign_key "teams", "users"
 end

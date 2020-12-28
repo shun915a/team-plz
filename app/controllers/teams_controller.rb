@@ -1,13 +1,16 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
 
-  def index; end
+  def index
+    @teams = Team.order('created_at DESC')
+  end
 
   def new
     @team = Team.new
   end
 
   def create
+    binding.pry
     @team = Team.new(team_params)
 
     if @team.save
@@ -26,6 +29,6 @@ class TeamsController < ApplicationController
       :team_title,
       :team_game_id,
       :team_text
-    ).merge(user_id: current_user.id, myteam_id: 1)
+    ).merge(user_id: current_user.id, myteam_id: params[:team][:myteam_id])
   end
 end
