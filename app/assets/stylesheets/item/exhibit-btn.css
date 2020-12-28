@@ -2,9 +2,11 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
+  display: flex;
 }
 
 .new-rec-button {
+  margin-left: 1vh;
   padding: 30px 10px;
   width: 80px;
   height: 80px;

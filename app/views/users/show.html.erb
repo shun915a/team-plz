@@ -1,6 +1,9 @@
 <%= render 'shared/header' %>
-<%= link_to 'チーム作成', new_myteam_path %>
+
 <div class="btn-container">
+  <div class="new-rec-button">
+    <%= link_to 'チーム作成', new_myteam_path, class: "new-rec-button-text" %>
+  </div>
 <% unless Desk.exists?(user_id: @user.id) %>
   <div class="new-rec-button">
     <%= link_to 'デスク投稿', new_user_desk_path(@user), class: "new-rec-button-text"%>
@@ -124,6 +127,22 @@
     
   <% end %>
 
+  <% if Myteam.exists?(user_id: @user.id) %>
 
+    <div class="show-main">
+      <h1 class="show-title">MYTEAM</h1>
+
+      <ul class="myteam-lists">
+        <% @myteams.each do |myteam| %>
+          <li class="myteam-list">
+            <%= link_to root_path do %>
+              <%= myteam.team_name %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+  <% end %>
 
 </div>
