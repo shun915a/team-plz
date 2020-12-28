@@ -1,0 +1,29 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <div class="new-main">
+    <h2 class="new-item-title">編集</h2>
+    <%= form_with model: @myteam, local: true do |f| %>
+
+    <div class="new-item">
+
+      <div class="weight-bold-text">
+        TEAM NAME
+      </div>
+      <%= f.text_area :team_name, class: "text-input", id: "item-title", placeholder: "チーム名", maxlength: "40"%>
+      
+      <div class="new-item-text">
+        <div class="weight-bold-text">
+          TEAM PROFILE
+        </div>
+        <%= f.text_area :team_profile, class: "text-input text-box", id: "item-text", placeholder: "チームの説明", rows: "7", maxlength: "1000" %>
+      </div>
+
+      <div class="submit-btn-contents">
+        <%= f.submit "UPDATE", class: "submit-btn" %>
+        <%= link_to 'BACK', root_path, class: "back-btn" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

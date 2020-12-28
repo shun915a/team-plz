@@ -79,9 +79,10 @@
 
 .submit-btn-contents {
   width: 50%;
-  text-align: center;
+  display: flex;
+  align-items: center;
   flex-direction: column;
-  margin-top: 4vh;
+  margin: 4vh 0;
 }
 
 .submit-btn {
@@ -100,8 +101,4 @@
   color: #fff;
   padding: 15px 35%;
   text-decoration: none;
-}
-
-.submit-btn-contents {
-  margin-bottom: 6vh;
 }
