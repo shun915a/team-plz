@@ -1,3 +1,8 @@
+.user-select select {
+  padding: 4px;
+  background-color: #00000000;
+}
+
 .sns-container {
   width: 70%;
   height: 20px;
