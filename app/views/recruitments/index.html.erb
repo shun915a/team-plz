@@ -1,0 +1,10 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <ul class="item-lists">
+    <%= render partial: 'friends/friend', collection: @friends%>
+    <%= render partial: 'parties/party', collection: @parties %>
+    <%= render partial: 'teams/team', collection: @teams %>
+    <%= render partial: 'scouts/scout', collection: @scouts %>
+  </ul>
+</div>
