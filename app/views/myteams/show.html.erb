@@ -17,8 +17,8 @@
 
   <% if current_user.id == @myteam.user_id %>
     <div class="show-buttons">
-      <%= link_to '編集', edit_myteam_path(@myteam), class: "edit-btn" %>
-      <%= link_to '削除', myteam_path(@myteam), method: :delete, class: "delete-btn" %>
+      <%= link_to '編集', edit_myteam_path(@myteam), class: "btn edit-btn" %>
+      <%= link_to '削除', myteam_path(@myteam), method: :delete, class: "btn delete-btn" %>
     </div>
   <% end %>
   

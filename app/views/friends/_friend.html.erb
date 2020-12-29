@@ -1,0 +1,21 @@
+<li class="list">
+  <%= link_to friend_path(friend) do %>
+
+    <div class="item-title">
+      <h3><%= friend.friend_title %></h3>
+      <span class="category">FRIEND</span>
+    </div>
+
+    <div class="item-info">
+    
+      <div class="item-game-id">
+        <%= friend.friend_game_id %>
+      </div>
+
+      <div class="item-text">
+        <%= friend.friend_text %>
+      </div>
+
+    </div>
+  <% end %>
+</li>

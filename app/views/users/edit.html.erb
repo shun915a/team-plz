@@ -12,15 +12,14 @@
       </div>
       <%= f.text_area :nickname, class: "text-input", id: "item-title", placeholder: "Nickname", maxlength: "40"%>
 
-      <div class="weight-bold-text">
+      <div class="weight-bold-text user-select">
         性別 <%= f.collection_select :gender_id, Gender.all, :id, :name, {include_blank: "---"}, {class: ""}%><br>
       </div>
 
-      <div class="weight-bold-text">
+      <div class="weight-bold-text user-select">
       誕生日 <%= raw sprintf(
                   f.date_select(
                     :birthday,
-                    class:'select-birth',
                     id:"birth-date",
                     use_month_numbers: true,
                     prompt:'--',
@@ -59,8 +58,8 @@
       </div>
 
       <div class="submit-btn-contents">
-        <%= f.submit "UPDATE", class: "submit-btn" %>
-        <%= link_to 'BACK', root_path, class: "back-btn" %>
+        <%= f.submit "更新", class: "btn submit-btn" %>
+        <%= link_to 'BACK', root_path, class: "btn back-btn" %>
       </div>
     </div>
     <% end %>

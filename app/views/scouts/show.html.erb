@@ -32,8 +32,8 @@
 
     <div class="show-buttons">
       <% if current_user == @scout.user %>
-        <%= link_to '編集', edit_scout_path(@scout), class: "edit-btn" %>
-        <%= link_to '削除', scout_path(@scout), method: :delete, class: "delete-btn" %>
+        <%= link_to '編集', edit_scout_path(@scout), class: "btn edit-btn" %>
+        <%= link_to '削除', scout_path(@scout), method: :delete, class: "btn delete-btn" %>
       <% end %>
     </div>
 

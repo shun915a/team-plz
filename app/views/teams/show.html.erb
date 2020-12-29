@@ -1,0 +1,45 @@
+<%= render 'shared/header' %>
+
+<div class="btn-container">
+  <%= link_to new_team_path do %>
+    <div class="new-rec-button">
+      <p class="new-rec-button-text">投稿</p>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="show-main">
+
+    <h1 class="show-title">TEAM</h1>
+
+    <div class="show-item">
+      <p class="label-text">TITLE:</p>
+      <h3><%= @team.team_title %></h3>
+    </div>
+
+    <div class="show-item">
+      <p class="label-text">NAME:</p>
+      <%= link_to @team.team_game_id, user_path(@team.user_id) %>
+    </div>
+
+    <div class="show-item">
+      <p class="label-text">TEAM NAME:</p>
+      <%= link_to Myteam.find(@team.myteam_id).team_name, myteam_path(@team.myteam_id) %>
+    </div>
+
+    <div class="show-item show-about-bg">
+      <p class="label-text">DESCRIPTION:</p>
+      <%= @team.team_text %>
+    </div>
+
+  </div>
+
+    <div class="show-buttons">
+      <% if current_user.id == @team.user_id %>
+        <%= link_to '編集', edit_team_path(@team), class: "btn edit-btn" %>
+        <%= link_to '削除', team_path(@team), method: :delete, class: "btn delete-btn" %>
+      <% end %>
+    </div>
+
+</div>

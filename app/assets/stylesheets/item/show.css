@@ -1,8 +1,3 @@
-.show-title {
-  background-color: #cf3642;
-  color: #ece8e1;
-}
-
 .show-title h3 {
   padding: 8px 16px;
 }
@@ -10,8 +5,9 @@
 .show-main {
   padding: 3vh 4vh;
   width: 400px;
-  background-color: #ebebeb;
-  border-radius: 8px;
+  background-color: #11111111;
+  border: #ebebeb55 solid 1px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
 }
@@ -19,11 +15,9 @@
 .show-title {
   padding: 4px 8px;
   text-align: center;
-  background-color: #cf3642;
-  border: #ebebeb solid 2px;
+  border: #ff4465 solid 2px;
   border-radius: 8px;
   font-size: 24px;
-  color: #fff;
 }
 
 .label-text {
@@ -38,32 +32,34 @@
 
 .show-about-bg {
   padding: 8px;
-  background-color: #ffffff;
+  background-color: #ffffff11;
   border-radius: 8px;
   word-break: break-all;
 }
 
 .show-buttons {
+  margin-bottom: 4vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.btn {
+  margin-top: 24px;
+  padding: 16px 64px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
 .edit-btn {
-  margin-top: 2vh;
-  padding: 16px 80px;
   border: #ff4655 solid 1px;
-  border-radius: 6px;
-  color: #ebebeb;
   background-color: #ff4655;
-  text-decoration: none;
 }
 
 .delete-btn {
-  margin-top: 2vh;
-  padding: 16px 80px;
-  border: #ebebeb solid 1px;
-  border-radius: 6px;
-  color: #ebebeb;
-  text-decoration: none;
+  border: #aaa solid 1px;
 }

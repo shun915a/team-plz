@@ -11,30 +11,6 @@
 <div class="container">
 
   <ul class="item-lists">
-    <% @scouts.each do |scout| %>
-
-    <li class="list">
-      <%= link_to scout_path(scout) do %>
-
-        <div class="item-title">
-          <h3><%= scout.scout_title %></h3>
-          <span class="category">SCOUT</span>
-        </div>
-
-      <div class="item-info">
-      
-        <div class="item-game-id">
-          <%= scout.scout_game_id %>
-        </div>
-
-        <div class="item-text">
-          <%= scout.scout_text %>
-        </div>
-
-      </div>
-      <% end %>
-    </li>
-
-    <% end %>
+    <%= render partial: 'scout', collection: @scouts %>
   </ul>
 </div>

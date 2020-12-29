@@ -1,9 +1,9 @@
 .login-wrapper {
   padding: 3vh 4vh;
-  width: 300px;
-  background-color: #fff;
-  border-radius: 8px;
-  min-width: 450px;
+  width: 400px;
+  background-color: #11111111;
+  border: #fff solid 1px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -13,10 +13,8 @@
   padding: 4px 8px;
   text-align: center;
   font-size: 24px;
-  background-color: #cf3642;
-  border: #ebebeb solid 2px;
+  border: #cf3642 solid 2px;
   border-radius: 8px;
-  color: #fff;
 }
 
 .login-group {
@@ -31,11 +29,7 @@
 }
 
 .login-btn {
-  margin-top: 2vh;
-  padding: 16px 80px;
   border: #ff4655 solid 1px;
   border-radius: 6px;
-  color: #ebebeb;
   background-color: #ff4655;
-  text-decoration: none;
 }
