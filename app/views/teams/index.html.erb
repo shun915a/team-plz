@@ -11,35 +11,7 @@
 <div class="container">
 
   <ul class="item-lists">
-    <% @teams.each do |team| %>
-
-    <li class="list">
-      <%= link_to team_path(team) do %>
-
-        <div class="item-title">
-          <h3><%= team.team_title %></h3>
-          <span class="category">FRIEND</span>
-        </div>
-
-        <div class="item-info">
-        
-          <div class="item-game-id">
-            <%= team.team_game_id %>
-          </div>
-
-          <div class="item-game-id">
-            <%= Myteam.find(team.myteam_id).team_name %>
-          </div>
-
-          <div class="item-text">
-            <%= team.team_text %>
-          </div>
-
-        </div>
-      <% end %>
-    </li>
-
-    <% end %>
+    <%= render partial: 'team', collection: @teams %>
   </ul>
 
 </div>
