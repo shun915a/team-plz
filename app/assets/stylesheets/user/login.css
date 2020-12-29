@@ -1,6 +1,7 @@
 .login-wrapper {
   padding: 3vh 4vh;
   width: 300px;
+  background-color: #11111111;
   border: #fff solid 1px;
   border-radius: 8px;
   min-width: 450px;
