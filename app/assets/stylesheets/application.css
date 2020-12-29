@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  color: #ebebeb;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 4vh 0;
+  min-height: 100vh;
+  min-width: 500px;
+  background: linear-gradient(to bottom right, #101922, #555);
+  font-size: 14px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

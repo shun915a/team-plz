@@ -32,8 +32,8 @@
 
     <div class="show-buttons">
       <% if current_user == @friend.user %>
-        <%= link_to '編集', edit_friend_path(@friend), class: "edit-btn" %>
-        <%= link_to '削除', friend_path(@friend), method: :delete, class: "delete-btn" %>
+        <%= link_to '編集', edit_friend_path(@friend), class: "btn edit-btn" %>
+        <%= link_to '削除', friend_path(@friend), method: :delete, class: "btn delete-btn" %>
       <% end %>
     </div>
 
