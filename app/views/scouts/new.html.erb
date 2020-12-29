@@ -3,32 +3,6 @@
 <div class="container">
   <div class="new-main">
     <h2 class="new-item-title">スカウト募集</h2>
-    <%= form_with model: @scout, local: true do |f| %>
-
-    <div class="new-item">
-      <div class="weight-bold-text">
-        タイトル
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :scout_title, class: "text-input", id: "item-title", placeholder: "募集タイトル", maxlength: "40"%>
-      <div class="weight-bold-text">
-        ゲームID
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :scout_game_id, class: "text-input", id: "item-game-id", placeholder:"Cypher#0010" %>
-      <div class="new-item-text">
-        <div class="weight-bold-text">
-          募集内容
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :scout_text, class: "text-input text-box", id: "item-text", placeholder: "VALORANTを一緒にプレイするパーティーメンバーを募集します。ランクはシルバー1〜ゴールド3くらいの方を探しています。", rows: "7", maxlength: "1000" %>
-      </div>
-
-      <div class="submit-btn-contents">
-        <%= f.submit "掲載する", class: "btn submit-btn" %>
-        <%= link_to 'BACK', root_path, class: "btn back-btn" %>
-      </div>
-    </div>
-    <% end %>
+    <%= render partial: 'form' %>
   </div>
 </div>
