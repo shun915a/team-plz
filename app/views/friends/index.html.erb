@@ -9,6 +9,8 @@
 </div>
 
 <div class="container">
+  <%= react_component("RecruitmentList", {posts: @friends}) %>
+
 
   <ul class="item-lists">
     <%= render partial: 'friend', collection: @friends %>
