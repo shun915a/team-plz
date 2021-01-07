@@ -56,4 +56,5 @@ gem 'active_hash'
 gem 'devise'
 gem 'image_processing', '~>1.2'
 gem 'mini_magick'
+gem 'react-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
