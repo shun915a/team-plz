@@ -7,5 +7,7 @@
     <%= render partial: 'parties/party', collection: @parties %>
     <%= render partial: 'teams/team', collection: @teams %>
     <%= render partial: 'scouts/scout', collection: @scouts %>
+    <%= react_component("RecruitmentList", {posts: @friends}) %>
   </ul>
 </div>
+
