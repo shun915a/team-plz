@@ -1,0 +1,67 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-inner {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  left: 0;
+  width: 480px;
+  padding: 60px 0;
+  margin: auto;
+  background-color: #101922;
+  border: #333 solid 1px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-header {
+  width: 60%;
+  margin-bottom: 40px;
+  border: #ff4465 solid 1px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+}
+
+.modal-close-btn {
+  border: #aaa solid 1px;
+}
+
+.modal-close-btn:hover {
+  background-color: #ffffff11;
+  transition: 0.15s ease-in-out;
+}
+
+.modal-introduction {
+  width: 80%;
+}
+
+.modal-item-title {
+  margin-bottom: 32px;
+  font-size: 24px;
+}
+
+.modal-item-game-id {
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+
+.modal-item-text {
+  margin-bottom: 32px;
+  padding: 8px;
+  min-height: 100px;
+  font-size: 16px;
+  background-color: #ffffff11;
+  border-radius: 8px;
+  word-break: break-all;
+}
