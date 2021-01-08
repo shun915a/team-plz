@@ -9,7 +9,11 @@
 </div>
 
 <div class="container">
-  <%= react_component("RecruitmentList", {posts: @friends}) %>
+  <% if user_signed_in? %>
+    <%= react_component("RecruitmentList", {posts: @friends, userId: current_user.id}) %>
+  <% else %>
+    <%= react_component("RecruitmentList", {posts: @friends}) %>
+  <% end %>
 
 
   <ul class="item-lists">

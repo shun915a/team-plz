@@ -6,6 +6,7 @@ import RecruitmentItem from "./RecruitmentItem"
 class RecruitmentList extends React.Component {
   render () {
     const posts = this.props.posts
+    const userId = this.props.userId
 
     return (
         <div className="item-lists">
@@ -15,8 +16,10 @@ class RecruitmentList extends React.Component {
             <RecruitmentItem key = {post.id}
               category = "friend"
               id = { post.id }
+              currentUserId = { userId }
+              postUserId = { post.user_id }
               title = { post.friend_title }
-              game_id = { post.friend_game_id }
+              gameId = { post.friend_game_id }
               text = { post.friend_text }
             />
           )

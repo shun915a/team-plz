@@ -33,7 +33,7 @@ class RecruitmentItem extends React.Component {
 
               <div className='modal-item-game-id'>
                 <p className='label-text'>NAME:</p>
-                {this.props.game_id}
+                {this.props.gameId}
               </div>
 
               <div className='modal-item-text'>
@@ -52,7 +52,6 @@ class RecruitmentItem extends React.Component {
       );
     }
 
-    console.log('item loaded')
     return (
       <React.Fragment>  
         <li 
