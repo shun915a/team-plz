@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import reactStringReplace from "react-string-replace";
 
 class RecruitmentItem extends React.Component {
   constructor(props) {

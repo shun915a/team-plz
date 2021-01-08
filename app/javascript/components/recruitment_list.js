@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import RecruitmentItem from "./RecruitmentItem"
+import RecruitmentItem from "./recruitment_item"
 
 
 class RecruitmentList extends React.Component {
