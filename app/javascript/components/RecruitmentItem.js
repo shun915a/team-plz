@@ -9,13 +9,10 @@ class RecruitmentItem extends React.Component {
 
   handleClickRecruitment() {
     this.setState({isModalOpen: true});
-    console.log(this.state.isModalOpen)
   }
 
   handleClickClose() {
     this.setState({isModalOpen: false});
-    console.log("close modal clicked")
-    console.log(this.state.isModalOpen)
   }
 
   render () {
@@ -24,18 +21,32 @@ class RecruitmentItem extends React.Component {
       modal = (
         <div className='modal'>
           <div className='modal-inner'>
-            <div className='modal-header'></div>
+            <div className='modal-header'>{this.props.category}</div>
             <div className='modal-introduction'>
-              <h2>{this.props.title}</h2>
-              <p>{this.props.game_id}</p>
-              <p>{this.props.text}</p>
+
+              <div className='modal-item-title'>
+                <p className='label-text'>
+                  TITLE:
+                </p>
+                {this.props.title}
+              </div>
+
+              <div className='modal-item-game-id'>
+                <p className='label-text'>NAME:</p>
+                {this.props.game_id}
+              </div>
+
+              <div className='modal-item-text'>
+                <p className='label-text'>DESCRIPTION:</p>
+                {this.props.text}
+              </div>
             </div>
-            <button
-              className='modal-close-btn'
+            <a
+              className='modal-close-btn btn'
               onClick={() => this.handleClickClose()}
             >
-              とじる
-            </button>
+              CLOSE
+            </a>
           </div>
         </div>
       );
