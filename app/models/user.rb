@@ -17,6 +17,6 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Password must includes letter and number.', on: :update, allow_blank: true
 
   with_options presence: true do
-    validates :nickname, length: { minimum: 3, maximum: 16, message: '3〜16文字で入力してください。' }
+    validates :nickname
   end
 end
