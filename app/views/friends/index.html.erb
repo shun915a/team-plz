@@ -10,13 +10,13 @@
 
 <div class="container">
   <% if user_signed_in? %>
-    <%= react_component("recruitment_list", {posts: @friends, userId: current_user.id}) %>
+    <%= react_component("RecruitmentList", {posts: @friends, userId: current_user.id}) %>
   <% else %>
-    <%= react_component("recruitment_list", {posts: @friends}) %>
+    <%= react_component("RecruitmentList", {posts: @friends}) %>
   <% end %>
 
 
   <ul class="item-lists">
-    <%= render partial: 'friend', collection: @friends %>
+    <%# render partial: 'friend', collection: @friends %>
   </ul>
 </div>
