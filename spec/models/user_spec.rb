@@ -19,22 +19,37 @@ RSpec.describe User, type: :model do
     end
 
     context 'エラー発生時' do
+      # nickname
       it 'nicknameが空では登録できない' do
         @user.nickname = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Nickname can't be blank")
       end
 
+      it 'nicknameは3文字以下では登録できない' do
+        @user.nickname = 'abc'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Nickname must be 4 - 25 characters.')
+      end
+
+      it 'nicknameは26文字以上では登録できない' do
+        @user.nickname = '123456789012345678901234567'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Nickname must be 4 - 25 characters.')
+      end
+
+      # gender
+      it 'gender_idは1-3以外では登録できない' do
+        @user.gender_id = '0'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Gender must be 1 - 3.')
+      end
+
+      # email
       it 'emailが空では登録できない' do
         @user.email = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Email can't be blank")
-      end
-
-      it 'passwordが空では登録できない' do
-        @user.password = nil
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Password can't be blank")
       end
 
       it 'emailが重複していると登録できない' do
@@ -48,6 +63,13 @@ RSpec.describe User, type: :model do
         @user.email = 'emailemail.com'
         @user.valid?
         expect(@user.errors.full_messages).to include('Email is invalid')
+      end
+
+      # password
+      it 'passwordが空では登録できない' do
+        @user.password = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password can't be blank")
       end
 
       it 'passwordが5文字以下であれば登録できない' do
@@ -87,6 +109,51 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = 'aaa111'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+
+      # twitter
+      it 'twitter_nameは半角英数字でなければ登録できない' do
+        @user.twitter_name = 'ツイッター'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Twitter name must be half-width characters.')
+      end
+
+      it 'twitter_nameは3文字以下では登録できない' do
+        @user.twitter_name = 'abc'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Twitter name must be 4 - 15 characters.')
+      end
+
+      it 'twitter_nameは26文字以上では登録できない' do
+        @user.twitter_name = '12345678901234567'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Twitter name must be 4 - 15 characters.')
+      end
+
+      # twitch
+      it 'twitch_nameは半角英数字でなければ登録できない' do
+        @user.twitch_name = 'ツイッター'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Twitch name must be half-width characters.')
+      end
+
+      it 'twitch_nameは3文字以下では登録できない' do
+        @user.twitch_name = 'abc'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Twitch name must be 4 - 25 characters.')
+      end
+
+      it 'twitch_nameは26文字以上では登録できない' do
+        @user.twitch_name = '123456789012345678901234567'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Twitch name must be 4 - 25 characters.')
+      end
+
+      # mildom
+      it 'mildom_nameは半角数字でなければ登録できない' do
+        @user.mildom_name = 'ツイッター'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Mildom name must be half-width numbers.')
       end
     end
   end
