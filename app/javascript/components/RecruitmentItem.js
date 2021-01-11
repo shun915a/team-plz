@@ -1,7 +1,4 @@
 import React from "react"
-import reactStringReplace from "react-string-replace";
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-
 
 class RecruitmentItem extends React.Component {
   constructor(props) {
@@ -35,40 +32,37 @@ class RecruitmentItem extends React.Component {
     let modal;
     if (this.state.isModalOpen) {
       modal = (
-        <BrowserRouter>
-          <div className='modal'>
-            <div className='modal-inner'>
-              <div className='modal-header'>{this.props.category}</div>
-              <div className='modal-introduction'>
+        <div className='modal'>
+          <div className='modal-inner'>
+            <div className='modal-header'>{this.props.category}</div>
+            <div className='modal-introduction'>
 
-                <div className='modal-item-title'>
-                  <p className='label-text'>
-                    TITLE:
-                  </p>
-                  {this.props.title}
-                </div>
-
-                <div className='modal-item-game-id'>
-                  <p className='label-text'>NAME:</p>
-                  {this.props.gameId}
-                </div>
-
-                <div className='modal-item-text'>
-                  <p className='label-text'>DESCRIPTION:</p>
-                  {this.props.text}
-                </div>
+              <div className='modal-item-title'>
+                <p className='label-text'>
+                  TITLE:
+                </p>
+                {this.props.title}
               </div>
-              {editButton}
-              <a
-                className='modal-close-btn btn'
-                onClick={() => this.handleClickClose()}
-              >
-                CLOSE
-              </a>
-            </div>
-          </div>
 
-        </BrowserRouter>
+              <div className='modal-item-game-id'>
+                <p className='label-text'>NAME:</p>
+                {this.props.gameId}
+              </div>
+
+              <div className='modal-item-text'>
+                <p className='label-text'>DESCRIPTION:</p>
+                {this.props.text}
+              </div>
+            </div>
+            {editButton}
+            <a
+              className='modal-close-btn btn'
+              onClick={() => this.handleClickClose()}
+            >
+              CLOSE
+            </a>
+          </div>
+        </div>
       );
     }
 
