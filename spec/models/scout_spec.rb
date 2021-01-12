@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Scout, type: :model do
   describe '#create' do
     before do
-      @scout = FactoryBot.build(:scout)
+      @scout = FactoryBot.create(:scout)
     end
 
     context '投稿成功' do

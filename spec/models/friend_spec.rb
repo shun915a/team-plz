@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Friend, type: :model do
   describe '#create' do
     before do
-      @friend = FactoryBot.build(:friend)
+      @friend = FactoryBot.create(:friend)
     end
 
     context '投稿成功' do

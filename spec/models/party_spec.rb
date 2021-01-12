@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Party, type: :model do
   describe '#create' do
     before do
-      @party = FactoryBot.build(:party)
+      @party = FactoryBot.create(:party)
     end
 
     context '投稿成功' do
