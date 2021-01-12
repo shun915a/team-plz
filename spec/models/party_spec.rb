@@ -7,7 +7,7 @@ RSpec.describe Party, type: :model do
     end
 
     context '投稿成功' do
-      it 'party_title, party_game_id, firend_textがあれば登録できる' do
+      it 'party_title, party_game_id, party_textがあれば登録できる' do
         expect(@party).to be_valid
       end
     end

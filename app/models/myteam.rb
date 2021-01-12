@@ -3,7 +3,7 @@ class Myteam < ApplicationRecord
   has_many :teams
 
   with_options presence: true do
-    validates :tam_name
-    validates :tam_profile
+    validates :team_name
+    validates :team_profile
   end
 end

@@ -7,7 +7,7 @@ RSpec.describe Scout, type: :model do
     end
 
     context '投稿成功' do
-      it 'scout_title, scout_game_id, firend_textがあれば登録できる' do
+      it 'scout_title, scout_game_id, scout_textがあれば登録できる' do
         expect(@scout).to be_valid
       end
     end
