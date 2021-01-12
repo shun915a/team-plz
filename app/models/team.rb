@@ -1,5 +1,6 @@
 class Team < ApplicationRecord
   belongs_to :user
+  belongs_to :myteam
 
   with_options presence: true do
     validates :team_title
