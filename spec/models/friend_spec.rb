@@ -13,6 +13,12 @@ RSpec.describe Friend, type: :model do
     end
 
     context 'エラー発生時' do
+      it 'user_idが空では登録できない' do
+        @friend.user_id = nil
+        @friend.valid?
+        expect(@friend.errors.full_messages).to include('User must exist')
+      end
+
       it 'friend_titleが空では登録できない' do
         @friend.friend_title = nil
         @friend.valid?

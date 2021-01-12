@@ -13,6 +13,12 @@ RSpec.describe Scout, type: :model do
     end
 
     context 'エラー発生時' do
+      it 'user_idが空では登録できない' do
+        @scout.user_id = nil
+        @scout.valid?
+        expect(@scout.errors.full_messages).to include('User must exist')
+      end
+
       it 'scout_titleが空では登録できない' do
         @scout.scout_title = nil
         @scout.valid?
