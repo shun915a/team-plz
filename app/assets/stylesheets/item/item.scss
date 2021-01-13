@@ -60,17 +60,3 @@
   text-decoration: none;
   word-break: break-all;
 }
-
-// for React
-
-.list {
-  width: 320px;
-  height: 100%;
-  margin: 16px;
-  background-color: #11111111;
-  border: #ebebeb55 solid 1px;
-  border-radius: 4px;
-}
-.list:hover {
-  border: #fff solid 1px;
-}

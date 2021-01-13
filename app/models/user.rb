@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :friends
   has_many :parties
   has_many :scouts
+  has_many :myteams
+  has_many :teams
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,6 +20,15 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Password must includes letter and number.', on: :update, allow_blank: true
 
   with_options presence: true do
-    validates :nickname, length: { minimum: 3, maximum: 16, message: '3〜16文字で入力してください。' }
+    validates :nickname, length: { minimum: 4, maximum: 25, message: 'must be 4 - 25 characters.' }
   end
+
+  validates :gender_id, inclusion: { in: 1..3, message: 'must be 1 - 3.' }
+
+  with_options format: { with: /\A[a-zA-Z0-9]/, message: 'must be half-width characters.' } do
+    validates :twitter_name, length: { minimum: 4, maximum: 15, message: 'must be 4 - 15 characters.' }
+    validates :twitch_name, length: { minimum: 4, maximum: 25, message: 'must be 4 - 25 characters.' }
+  end
+
+  validates :mildom_name, numericality: { only_integer: true, message: 'must be half-width numbers.' }
 end

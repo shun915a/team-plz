@@ -18,7 +18,9 @@
       チーム選択
       <span class="indispensable">必須</span>
     </div>
-    <%= f.collection_select :myteam_id, Myteam.where(user_id: current_user.id).order('created_at DESC'), :id, :team_name, {include_blank: "---"} %> <br>
+    <div class="user-select">
+      <%= f.collection_select :myteam_id, Myteam.where(user_id: current_user.id).order('created_at DESC'), :id, :team_name, {include_blank: "---"} %> <br>
+    </div>
 
     <div class="new-item-text">
       <div class="weight-bold-text">
