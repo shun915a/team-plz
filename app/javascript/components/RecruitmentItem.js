@@ -21,13 +21,26 @@ class RecruitmentItem extends React.Component {
       editButton = (
         <a 
           href={`/${this.props.editUrl}/${this.props.id}/edit`}
-          className='modal-close-btn btn'
+          className='edit-btn btn'
         >
           EDIT
         </a>
       )
     }
     
+    let deleteButton;
+    if (this.props.currentUserId == this.props.postUserId) {
+      deleteButton = (
+        <a 
+          href={`/${this.props.editUrl}/${this.props.id}`}
+          data-method="delete"
+          className='btn delete-btn'
+        >
+          DELETE
+        </a>
+      )
+    }
+
     let modal;
     if (this.state.isModalOpen) {
       modal = (
@@ -54,6 +67,7 @@ class RecruitmentItem extends React.Component {
               </div>
             </div>
             {editButton}
+            {deleteButton}
             <a
               className='modal-close-btn btn'
               onClick={() => this.handleClickClose()}
