@@ -4,7 +4,6 @@ class RecruitmentItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isModalOpen: false};
-    console.log(this.props.gameId)
   }
 
   handleClickRecruitment() {
