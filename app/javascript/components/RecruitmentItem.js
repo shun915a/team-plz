@@ -19,12 +19,11 @@ class RecruitmentItem extends React.Component {
     let editButton;
     if (this.props.currentUserId == this.props.postUserId) {
       editButton = (
-        <a href={`/${this.props.editUrl}/${this.props.id}/edit`}>
-          <div
-            className='modal-close-btn btn'
-          >
-            EDIT
-          </div>
+        <a 
+          href={`/${this.props.editUrl}/${this.props.id}/edit`}
+          className='modal-close-btn btn'
+        >
+          EDIT
         </a>
       )
     }
