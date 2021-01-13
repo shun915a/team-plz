@@ -4,6 +4,7 @@ class RecruitmentItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isModalOpen: false};
+    console.log(this.props.gameId)
   }
 
   handleClickRecruitment() {
@@ -19,7 +20,7 @@ class RecruitmentItem extends React.Component {
     let editButton;
     if (this.props.currentUserId == this.props.postUserId) {
       editButton = (
-        <a href={`/friends/${this.props.id}/edit`}>
+        <a href={`/${this.props.editUrl}/${this.props.id}/edit`}>
           <div
             className='modal-close-btn btn'
           >
@@ -74,13 +75,13 @@ class RecruitmentItem extends React.Component {
         >
           <div className="item-title">
             <h3>{this.props.title}</h3>
-            <span className="category">FRIEND</span>
+            <span className="category">{this.props.category}</span>
           </div>
 
           <div className="item-info">
 
             <div className="item-game-id">
-              {this.props.game_id}
+              {this.props.gameId}
             </div>
 
             <div className="item-text">
