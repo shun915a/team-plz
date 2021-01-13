@@ -1,12 +1,23 @@
 <%= render 'shared/header' %>
 
 <div class="container">
+  <% if user_signed_in? %>
+    <%= react_component("FriendList", {posts: @friends, userId: current_user.id}) %>
+    <%= react_component("PartyList", {posts: @parties, userId: current_user.id}) %>
+    <%= react_component("TeamList", {posts: @teams, userId: current_user.id}) %>
+    <%= react_component("ScoutList", {posts: @scouts, userId: current_user.id}) %>
+  <% else %>
+    <%= react_component("FriendList", {posts: @friends}) %>
+    <%= react_component("PartyList", {posts: @parties}) %>
+    <%= react_component("TeamList", {posts: @teams}) %>
+    <%= react_component("ScoutList", {posts: @scouts}) %>
+  <% end %>
+
   <ul class="item-lists">
-    <%= render partial: 'friends/friend', collection: @friends%>
-    <%= render partial: 'parties/party', collection: @parties %>
-    <%= render partial: 'teams/team', collection: @teams %>
-    <%= render partial: 'scouts/scout', collection: @scouts %>
-    <%= react_component("RecruitmentList", {posts: @friends}) %>
+    <%# render partial: 'friends/friend', collection: @friends%>
+    <%# render partial: 'parties/party', collection: @parties %>
+    <%# render partial: 'teams/team', collection: @teams %>
+    <%# render partial: 'scouts/scout', collection: @scouts %>
   </ul>
 </div>
 

@@ -10,9 +10,9 @@
 
 <div class="container">
   <% if user_signed_in? %>
-    <%= react_component("RecruitmentList", {posts: @friends, userId: current_user.id}) %>
+    <%= react_component("FriendList", {posts: @friends, userId: current_user.id}) %>
   <% else %>
-    <%= react_component("RecruitmentList", {posts: @friends}) %>
+    <%= react_component("FriendList", {posts: @friends}) %>
   <% end %>
 
 
