@@ -12,6 +12,7 @@ class TeamsController < ApplicationController
   end
 
   def create
+    redirect_to teams_path if current_user.id != Myteam.find(params[:team][:myteam_id]).user_id
     @team = Team.new(team_params)
 
     if @team.save
