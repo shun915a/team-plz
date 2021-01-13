@@ -9,8 +9,13 @@
 </div>
 
 <div class="container">
+  <% if user_signed_in? %>
+    <%= react_component("ScoutList", {posts: @scouts, userId: current_user.id}) %>
+  <% else %>
+    <%= react_component("ScoutList", {posts: @scouts}) %>
+  <% end %>
 
   <ul class="item-lists">
-    <%= render partial: 'scout', collection: @scouts %>
+    <%# render partial: 'scout', collection: @scouts %>
   </ul>
 </div>
