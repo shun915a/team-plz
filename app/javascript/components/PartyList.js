@@ -6,7 +6,6 @@ class RecruitmentList extends React.Component {
   render () {
     const posts = this.props.posts
     const userId = this.props.userId
-    console.log(posts)
 
     return (
         <div className="item-lists">
