@@ -52,4 +52,6 @@ production:
   <<: *default
   database: team_plz_production
   username: team_plz
-  password: <%= ENV['TEAM_PLZ_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>

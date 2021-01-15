@@ -57,6 +57,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'active_hash'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'image_processing', '~>1.2'
 gem 'mini_magick'
 gem 'react-rails'
