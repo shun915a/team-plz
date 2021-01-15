@@ -6,5 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: 'tester@test.com', password: 'foobar111', nickname: '1st User', gender_id: 1, birthday: 1990 - 0o1 - 0o1, twitter_name: 'twitterusername', twitch_name: 'twitchusername', mildom_name: '12345678')
-User.create(email: 'tester@test.com', password: 'foobar111', nickname: '2nd User', gender_id: 2, birthday: 1995 - 11 - 11, twitter_name: 'twitterusername2', twitch_name: 'twitchusername2', mildom_name: '123456789')
+User.create(
+  email: 'tester@test.com',
+  password: 'foobar111',
+  nickname: '1st User',
+  gender_id: '1',
+  birthday: '1990-01-01',
+  profile: 'This is my profile text.',
+  twitter_name: 'twittename',
+  twitch_name: 'twitchusername',
+  mildom_name: '12345678'
+)
+User.create(
+  email: 'tester2@test.com',
+  password: 'foobar111',
+  nickname: '2nd User',
+  gender_id: '2',
+  birthday: '1995-05-15',
+  profile: 'This is my profile text.',
+  twitter_name: 'twittername2',
+  twitch_name: 'twitchusername2',
+  mildom_name: '22222222'
+)
