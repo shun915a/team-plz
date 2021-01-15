@@ -2,19 +2,25 @@
 
 <div class="btn-container">
 
-  <%= link_to new_myteam_path do %>
-    <div class="new-rec-button">
-      <p class="new-rec-button-text">チーム作成</p>
-    </div>
-  <% end %>
+  <% if user_signed_in? %>
+    <% if current_user.id == @user.id %>
 
-<% unless Desk.exists?(user_id: @user.id) %>
-  <%= link_to new_user_desk_path(@user) do %>
-    <div class="new-rec-button">
-      <p class="new-rec-button-text">デスク投稿</p>
-    </div>
+      <%= link_to new_myteam_path do %>
+        <div class="new-rec-button">
+          <p class="new-rec-button-text">チーム作成</p>
+        </div>
+      <% end %>
+
+      <% unless Desk.exists?(user_id: @user.id) %>
+        <%= link_to new_user_desk_path(@user) do %>
+          <div class="new-rec-button">
+            <p class="new-rec-button-text">デスク投稿</p>
+          </div>
+        <% end %>
+      <% end %>
+
+    <% end %>
   <% end %>
-<% end %>
 
 </div>
 
