@@ -36,7 +36,7 @@
     <div class="gender-date-group">
     
       <% unless @user.gender_id.blank? %>
-        <div class="show-item">
+        <div class="show-item item-birthday">
           <p class="label-text">GENDER:</p>
           <%= @user.gender.name %>
         </div>
@@ -62,23 +62,23 @@
 
     <div class="show-item">
 
-      <% unless @user.twitter_name.empty? && @user.twitch_name.empty? && @user.mildom_name.empty? %>
+      <% unless @user.twitter_name.blank? && @user.twitch_name.blank? && @user.mildom_name.blank? %>
         <p class="label-text">SNS:</p>
       <% end %>
 
-      <% unless @user.twitter_name.empty? %>
+      <% unless @user.twitter_name.blank? %>
         <div class="twitter">
           <a href="https://twitter.com/<%= @user.twitter_name %>">twitter.com/<%= @user.twitter_name %></a>
         </div>
       <% end %>
 
-      <% unless @user.twitch_name.empty? %>
+      <% unless @user.twitch_name.blank? %>
         <div class="twitch">
           <a href="https://www.twitch.tv/<%= @user.twitch_name %>">twitch.tv/<%= @user.twitch_name %></a>
         </div>
       <% end %>
 
-      <% unless @user.mildom_name.empty? %>
+      <% unless @user.mildom_name.blank? %>
         <div class="mildom">
           <a href="https://www.mildom.com/<%= @user.mildom_name %>">mildom.com/<%= @user.mildom_name %></a>
         </div>

@@ -56,10 +56,12 @@ class RecruitmentItem extends React.Component {
                 {this.props.title}
               </div>
 
-              <div className='modal-item-game-id'>
-                <p className='label-text'>NAME:</p>
-                {this.props.gameId}
-              </div>
+              <a href={`/users/${this.props.postUserId}`}>
+                <div className='modal-item-game-id'>
+                  <p className='label-text'>NAME:</p>
+                  {this.props.gameId}
+                </div>
+              </a>
 
               <div className='modal-item-text'>
                 <p className='label-text'>DESCRIPTION:</p>
