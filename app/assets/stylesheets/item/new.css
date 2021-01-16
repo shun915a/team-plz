@@ -66,6 +66,13 @@
   overflow: auto;
 }
 
+.field_with_errors {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .new-item-text {
   width: 100%;
   display: flex;

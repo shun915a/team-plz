@@ -33,3 +33,11 @@ a {
   flex-wrap: wrap;
   flex-direction: column;
 }
+
+.login-flash-message {
+  margin-top: 2vh;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: red;
+}

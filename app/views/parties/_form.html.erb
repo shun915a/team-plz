@@ -1,6 +1,9 @@
 <%= form_with model: @party, local: true do |f| %>
 
   <div class="new-item">
+
+    <%= render 'shared/error_messages', model: @party %>
+
     <div class="weight-bold-text">
       タイトル
       <span class="indispensable">必須</span>

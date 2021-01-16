@@ -1,6 +1,9 @@
 <%= form_with model: @scout, local: true do |f| %>
 
   <div class="new-item">
+
+    <%= render 'shared/error_messages', model: @scout %>
+
     <div class="weight-bold-text">
       タイトル
       <span class="indispensable">必須</span>
