@@ -1,6 +1,7 @@
 <%= render 'shared/header' %>
 
 <div class="container">
+
   <% if user_signed_in? %>
     <%= react_component("FriendList", {posts: @friends, userId: current_user.id}) %>
     <%= react_component("PartyList", {posts: @parties, userId: current_user.id}) %>

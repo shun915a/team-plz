@@ -4,32 +4,35 @@
 
 
 
-<%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
 
 <div class="container">
-  <div class="login-wrapper">
-    <h1 class="login-title">ログイン</h1>
+  <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
+    <div class="login-wrapper">
+      <h1 class="login-title">ログイン</h1>
 
-    <div class='login-flash-message'>
-      <%= flash[:notice] %>
-      <%= flash[:alert] %>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+
+      <div class="login-group">
+        <div class="weight-bold-text">メールアドレス</div>
+        <%= f.email_field :email, class:"text-input", id:"email", placeholder:"sample@email.com", autofocus: true %>
+      </div>
+
+      <div class="login-group">
+        <p class="weight-bold-text">パスワード</p>
+        <%= f.password_field :password, class:"text-input", id:"password", placeholder:"" %>
+      </div>
+
+      <div class="login-btn-container">
+        <%= f.submit "LOGIN" ,class:"btn login-btn" %>
+      </div>
+
     </div>
-
-    <div class="login-group">
-      <div class="weight-bold-text">メールアドレス</div>
-      <%= f.email_field :email, class:"text-input", id:"email", placeholder:"sample@email.com", autofocus: true %>
-    </div>
-
-    <div class="login-group">
-      <p class="weight-bold-text">パスワード</p>
-      <%= f.password_field :password, class:"text-input", id:"password", placeholder:"" %>
-    </div>
-
-    <div class="login-btn-container">
-      <%= f.submit "LOGIN" ,class:"btn login-btn" %>
-    </div>
-
-  </div>
+  <% end %>
+  <%= link_to 'login with twitter', user_twitter_omniauth_authorize_path, method: :post %>
 </div>
 
-<% end %>
+
+
