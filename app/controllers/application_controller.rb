@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
         twitter_name
         twitch_name
         mildom_name
+        image
+        name
       ]
     )
   end
