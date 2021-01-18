@@ -18,6 +18,6 @@ services:
       - app
     networks:
       - team-plz-network
-  networks:
-    team-plz-network:
-      external: true
+networks:
+  team-plz-network:
+    external: true
