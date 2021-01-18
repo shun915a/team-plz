@@ -2,7 +2,7 @@
   padding: 3vh 4vh;
   width: 400px;
   background-color: #11111111;
-  border: #fff solid 1px;
+  border: #ebebeb55 solid 1px;
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -35,4 +35,13 @@
 .register-btn {
   background-color: #ff4655;
   border: #ff4655 solid 1px;
+}
+
+.sns-twitter {
+  width: 300px;
+  background-color: #00acee;
+}
+
+.sns-google {
+  width: 300px;
 }

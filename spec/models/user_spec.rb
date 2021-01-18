@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
       it 'nicknameは3文字以下では登録できない' do
         @user.nickname = 'abc'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Nickname must be 4 - 25 characters.')
+        expect(@user.errors.full_messages).to include('Nickname must be 1 - 25 characters.')
       end
 
       it 'nicknameは26文字以上では登録できない' do
