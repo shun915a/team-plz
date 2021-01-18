@@ -22,3 +22,4 @@ RUN gem install bundler
 RUN bundle install
 
 RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/pid
