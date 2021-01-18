@@ -1,16 +1,60 @@
 <%= render 'shared/header' %>
 
-<div class="container">
+<section class="video-wrap">
+  <video id="bg-video" src="/videos/team-plz3.mp4" preload="true"  autoplay playsinline muted loop></video> 
+  <div class="video-contents">
+    <div class="copy">
+      <h1>FIND YOUR</h1>
+      <h1>BUDDY</h1>
+    </div>
+      <% unless user_signed_in? %>
+        <div class="btn-border">
+          <%= link_to 'SIGN UP', new_user_registration_path, class: "video-sign-up-btn" %>
+        </div>
+      <% end %>
+  </div>
+</section>
+
+
+<section class="container">
+
+  <div class="rec-title">
+    <h1>FRIEND</h1>
+  </div>
 
   <% if user_signed_in? %>
     <%= react_component("FriendList", {posts: @friends, userId: current_user.id}) %>
-    <%= react_component("PartyList", {posts: @parties, userId: current_user.id}) %>
-    <%= react_component("TeamList", {posts: @teams, userId: current_user.id}) %>
-    <%= react_component("ScoutList", {posts: @scouts, userId: current_user.id}) %>
   <% else %>
     <%= react_component("FriendList", {posts: @friends}) %>
+  <% end %>
+
+  <div class="rec-title">
+    <h1>PARTY</h1>
+  </div>
+
+  <% if user_signed_in? %>
+    <%= react_component("PartyList", {posts: @parties, userId: current_user.id}) %>
+  <% else %>
     <%= react_component("PartyList", {posts: @parties}) %>
+  <% end %>
+
+  <div class="rec-title">
+    <h1>TEAM</h1>
+  </div>
+
+  <% if user_signed_in? %> 
+    <%= react_component("TeamList", {posts: @teams, userId: current_user.id}) %>
+  <% else %>
     <%= react_component("TeamList", {posts: @teams}) %>
+  <% end %>
+
+  <div class="rec-title">
+    <h1>SCOUT</h1>
+  </div>
+
+  <% if user_signed_in? %>
+    <%= react_component("ScoutList", {posts: @scouts, userId: current_user.id}) %>
+  <% else %>
     <%= react_component("ScoutList", {posts: @scouts}) %>
   <% end %>
 
@@ -20,5 +64,5 @@
     <%# render partial: 'teams/team', collection: @teams %>
     <%# render partial: 'scouts/scout', collection: @scouts %>
   </ul>
-</div>
+</section>
 

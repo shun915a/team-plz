@@ -24,11 +24,8 @@
 }
 
 .indispensable {
-  background: #ff4465;
-  margin-left: 8px;
-  padding: 3px;
-  border-radius: 4px;
-  color: #fff;
+  margin-left: 4px;
+  color: #ff4465;
   font-size: 12px;
   font-weight: bold;
 }
