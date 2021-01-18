@@ -311,5 +311,6 @@ Devise.setup do |config|
 
   # twitter api setting
   config.omniauth :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+  config.omniauth :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
   OmniAuth.config.logger = Rails.logger if Rails.env.development?
 end

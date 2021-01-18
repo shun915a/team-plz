@@ -33,7 +33,12 @@
   <% end %>
   <div class="sns-twitter btn">
     <i class="fab fa-twitter"></i>
-    <%= link_to 'Login with twitter', user_twitter_omniauth_authorize_path, method: :post %>
+    <%= link_to 'Login with Twitter', user_twitter_omniauth_authorize_path, method: :post %>
+  </div>
+
+  <div class="sns-google btn">
+    <i class="fab fa-google"></i>
+    <%= link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post%>
   </div>
 </div>
 

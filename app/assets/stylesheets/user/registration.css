@@ -44,4 +44,10 @@
 
 .sns-google {
   width: 300px;
+  background-color: #ebebeb;
+}
+
+.sns-google a,
+.fa-google {
+  color: gray;
 }
