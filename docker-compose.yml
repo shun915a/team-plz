@@ -5,8 +5,6 @@ services:
     command: bundle exec puma -C config/puma.rb -e production
     volumes:
       - .:/team-plz
-    ports:
-      - 80:80
     networks:
       - team-plz-network
   web:
