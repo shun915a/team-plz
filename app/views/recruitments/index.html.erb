@@ -1,7 +1,9 @@
 <%= render 'shared/header' %>
 
 <section class="video-wrap">
-  <video id="bg-video" src="/videos/team-plz3.mp4" preload="true"  autoplay playsinline muted loop></video> 
+
+  <%= video_tag("/videos/video.mp4", autoplay: true, loop: true, muted: true, class: "bg-video") %>
+
   <div class="video-contents">
     <div class="copy">
       <h1>FIND YOUR</h1>
