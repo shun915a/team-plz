@@ -1,5 +1,21 @@
 <%= render 'shared/header' %>
 
+<section class="video-wrap">
+  <video id="bg-video" src="/videos/team-plz3.mp4" preload="true"  autoplay playsinline muted loop></video> 
+  <div class="video-contents">
+    <div class="copy">
+      <h1>FIND YOUR</h1>
+      <h1>BUDDY</h1>
+    </div>
+      <% unless user_signed_in? %>
+        <div class="btn-border">
+          <%= link_to 'SIGN UP', new_user_registration_path, class: "video-sign-up-btn" %>
+        </div>
+      <% end %>
+  </div>
+</section>
+
+
 <div class="container">
 
   <% if user_signed_in? %>
