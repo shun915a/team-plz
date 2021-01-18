@@ -16,7 +16,7 @@
 </section>
 
 
-<div class="container">
+<section class="container">
 
   <% if user_signed_in? %>
     <%= react_component("FriendList", {posts: @friends, userId: current_user.id}) %>
@@ -36,5 +36,5 @@
     <%# render partial: 'teams/team', collection: @teams %>
     <%# render partial: 'scouts/scout', collection: @scouts %>
   </ul>
-</div>
+</section>
 
