@@ -13,7 +13,7 @@ services:
       - team-plz-network
   web:
     build:
-    context: ./nginx_docker
+      context: ./nginx_docker
     ports:
       - 80:80
     depends_on:
