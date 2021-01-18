@@ -18,15 +18,43 @@
 
 <section class="container">
 
+  <div class="rec-title">
+    <h1>FRIEND</h1>
+  </div>
+
   <% if user_signed_in? %>
     <%= react_component("FriendList", {posts: @friends, userId: current_user.id}) %>
-    <%= react_component("PartyList", {posts: @parties, userId: current_user.id}) %>
-    <%= react_component("TeamList", {posts: @teams, userId: current_user.id}) %>
-    <%= react_component("ScoutList", {posts: @scouts, userId: current_user.id}) %>
   <% else %>
     <%= react_component("FriendList", {posts: @friends}) %>
+  <% end %>
+
+  <div class="rec-title">
+    <h1>PARTY</h1>
+  </div>
+
+  <% if user_signed_in? %>
+    <%= react_component("PartyList", {posts: @parties, userId: current_user.id}) %>
+  <% else %>
     <%= react_component("PartyList", {posts: @parties}) %>
+  <% end %>
+
+  <div class="rec-title">
+    <h1>TEAM</h1>
+  </div>
+
+  <% if user_signed_in? %> 
+    <%= react_component("TeamList", {posts: @teams, userId: current_user.id}) %>
+  <% else %>
     <%= react_component("TeamList", {posts: @teams}) %>
+  <% end %>
+
+  <div class="rec-title">
+    <h1>SCOUT</h1>
+  </div>
+
+  <% if user_signed_in? %>
+    <%= react_component("ScoutList", {posts: @scouts, userId: current_user.id}) %>
+  <% else %>
     <%= react_component("ScoutList", {posts: @scouts}) %>
   <% end %>
 

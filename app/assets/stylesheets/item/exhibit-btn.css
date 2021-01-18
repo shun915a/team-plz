@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap");
+
 .btn-container {
   position: fixed;
   bottom: 24px;
@@ -13,7 +15,7 @@
   background-color: #ff4465;
   color: #f9f9f9;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
+  border-radius: 50%;
   text-align: center;
   font-size: 16px;
   display: flex;
@@ -22,5 +24,6 @@
 }
 
 .new-rec-button-text {
+  font-family: "Ramabhadra", sans-serif;
   color: #f9f9f9;
 }

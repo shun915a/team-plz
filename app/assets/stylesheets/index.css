@@ -9,6 +9,7 @@
 video {
   width: 100vw;
   height: auto;
+  z-index: -1;
   display: block;
 }
 
@@ -16,7 +17,7 @@ video {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
@@ -54,4 +55,17 @@ video {
   text-align: center;
   vertical-align: middle;
   background-color: #ff4465;
+}
+
+.rec-title {
+  margin: 4vh 0 2vh;
+  width: 50vw;
+  border-bottom: #ff4465 solid 4px;
+  font-family: "Anton", sans-serif;
+  font-size: 36px;
+  text-align: center;
+}
+
+.rec-title:first-child {
+  margin-top: 0;
 }
