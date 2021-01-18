@@ -11,9 +11,7 @@ services:
 
     volumes:
       - .:/team-plz
-      - public-data:/team-plz/public
       - tmp-data:/team-plz/tmp
-      - log-data:/team-plz/log
     networks:
       - team-plz-network
 
@@ -38,7 +36,6 @@ services:
     build:
       context: ./nginx_docker
     volumes:
-      - public-data:/team-plz/public
       - tmp-data:/team-plz/tmp
     ports:
       - 80:80
@@ -48,10 +45,7 @@ services:
       - team-plz-network
 
 volumes:
-  public-data:
   tmp-data:
-  log-data:
-  db-data:
 
 networks:
   team-plz-network:
