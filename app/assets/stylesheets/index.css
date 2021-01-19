@@ -3,7 +3,7 @@
   overflow: hidden;
 }
 
-video {
+.bg-video {
   width: 100vw;
   height: auto;
   z-index: -1;
