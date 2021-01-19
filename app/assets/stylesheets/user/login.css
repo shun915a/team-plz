@@ -27,9 +27,3 @@
   display: flex;
   justify-content: center;
 }
-
-.login-btn {
-  border: #ff4655 solid 1px;
-  border-radius: 6px;
-  background-color: #ff4655;
-}

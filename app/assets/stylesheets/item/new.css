@@ -85,12 +85,3 @@
   flex-direction: column;
   margin: 2vh 0;
 }
-
-.submit-btn {
-  background: #ff4465;
-  border: 1px solid #ff4465;
-}
-
-.back-btn {
-  border: 1px solid #aaa;
-}

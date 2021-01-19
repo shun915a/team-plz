@@ -31,14 +31,10 @@ class RecruitmentItem extends React.Component {
           variant="contained"
           color="secondary" 
           size="large"
-
           startIcon={<EditIcon />}
+          href={`/${this.props.editUrl}/${this.props.id}/edit`}
         >
-          <a 
-            href={`/${this.props.editUrl}/${this.props.id}/edit`}
-          >
-            EDIT
-          </a>
+          EDIT
         </Button>
       )
     }
@@ -48,19 +44,14 @@ class RecruitmentItem extends React.Component {
 
       deleteButton = (
         <Button
-          variant="contained"
-          color="primary"
+          variant="outlined"
+          color="inherit"
           size="large"
-
-
+          data-method="delete"
           startIcon={<DeleteIcon />}
+          href={`/${this.props.editUrl}/${this.props.id}`}
         >
-          <a 
-            href={`/${this.props.editUrl}/${this.props.id}`}
-            data-method="delete"
-          >
-            DELETE
-          </a>
+          DELETE
         </Button>
       )
     }

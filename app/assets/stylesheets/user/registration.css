@@ -31,23 +31,3 @@
   display: flex;
   justify-content: center;
 }
-
-.register-btn {
-  background-color: #ff4655;
-  border: #ff4655 solid 1px;
-}
-
-.sns-twitter {
-  width: 300px;
-  background-color: #00acee;
-}
-
-.sns-google {
-  width: 300px;
-  background-color: #ebebeb;
-}
-
-.sns-google a,
-.fa-google {
-  color: gray;
-}
