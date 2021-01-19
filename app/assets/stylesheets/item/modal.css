@@ -7,6 +7,10 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.modal a {
+  color: #ebebeb;
+}
+
 .modal-inner {
   position: absolute;
   top: 10%;
@@ -31,6 +35,10 @@
   text-transform: uppercase;
   text-align: center;
   font-size: 16px;
+}
+
+.modal-btn-container button {
+  margin: 0 6px;
 }
 
 .modal-close-btn {

@@ -1,4 +1,12 @@
 import React from "react"
+import Link from '@material-ui/core/Link';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+
+import { makeStyles } from '@material-ui/core/styles';
+
 
 class RecruitmentItem extends React.Component {
   constructor(props) {
@@ -19,25 +27,41 @@ class RecruitmentItem extends React.Component {
     let editButton;
     if (this.props.currentUserId == this.props.postUserId) {
       editButton = (
-        <a 
-          href={`/${this.props.editUrl}/${this.props.id}/edit`}
-          className='edit-btn btn'
+        <Button 
+          variant="contained"
+          color="secondary" 
+          size="large"
+
+          startIcon={<EditIcon />}
         >
-          EDIT
-        </a>
+          <a 
+            href={`/${this.props.editUrl}/${this.props.id}/edit`}
+          >
+            EDIT
+          </a>
+        </Button>
       )
     }
     
     let deleteButton;
     if (this.props.currentUserId == this.props.postUserId) {
+
       deleteButton = (
-        <a 
-          href={`/${this.props.editUrl}/${this.props.id}`}
-          data-method="delete"
-          className='btn delete-btn'
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+
+
+          startIcon={<DeleteIcon />}
         >
-          DELETE
-        </a>
+          <a 
+            href={`/${this.props.editUrl}/${this.props.id}`}
+            data-method="delete"
+          >
+            DELETE
+          </a>
+        </Button>
       )
     }
 
@@ -56,26 +80,33 @@ class RecruitmentItem extends React.Component {
                 {this.props.title}
               </div>
 
-              <a href={`/users/${this.props.postUserId}`}>
+              <Link
+                color="inherit"
+                href={`/users/${this.props.postUserId}`}
+              >
                 <div className='modal-item-game-id'>
                   <p className='label-text'>NAME:</p>
                   {this.props.gameId}
                 </div>
-              </a>
+              </Link>
 
               <div className='modal-item-text'>
                 <p className='label-text'>DESCRIPTION:</p>
                 {this.props.text}
               </div>
             </div>
-            {editButton}
-            {deleteButton}
-            <a
-              className='modal-close-btn btn'
-              onClick={() => this.handleClickClose()}
-            >
-              CLOSE
-            </a>
+            <div className="modal-btn-container">
+              {editButton}
+              {deleteButton}
+              <Button 
+                variant="contained"
+                size="large"
+                color="default"
+                onClick={() => this.handleClickClose()}
+              >
+                CLOSE
+              </Button>
+            </div>
           </div>
         </div>
       );
