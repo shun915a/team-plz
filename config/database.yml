@@ -20,8 +20,8 @@ default: &default
 
 development:
   <<: *default
-  password: 
-  host: localhost
+  password: password
+  host: db
   database: team_plz_development
 
 # Warning: The database defined as "test" will be erased and

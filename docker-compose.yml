@@ -3,11 +3,12 @@ services:
   app:
     build:
       context: .
-      # =========ローカルと本番切り替え===========
     command:
-      bundle exec puma -C config/puma.rb -e production
-      # command: bundle exec puma -C config/puma.rb
-      # ======================================
+      # =========本番===========
+      # bundle exec puma -C config/puma.rb -e production
+      # ========ローカル==========
+      bundle exec puma -C config/puma.rb
+      # ========================
 
     volumes:
       - .:/team-plz
@@ -18,23 +19,28 @@ services:
       - team-plz-network
 
     # =========ローカルと本番切り替え===========
-  #   depends_on:
-  #     - db
+    # ===========本番コメントアウト=============
+    depends_on:
+      - db
 
-  # db:
-  #   image: mysql:5.7
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: password
-  #     MYSQL_USER: user
-  #     MYSQL_PASSWORD: password
-  #     MYSQL_DATABASE: team_plz_development
-  #   volumes:
-  #     - db-data:/var/lib/mysql
-  #   networks:
-  #     - team-plz-network
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: team_plz_development
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - team-plz-network
   # ======================================
 
   web:
+    # =======for pry-rails=======
+    stdin_open: true
+    tty: true
+    # ===========================
     build:
       context: ./nginx_docker
     volumes:
