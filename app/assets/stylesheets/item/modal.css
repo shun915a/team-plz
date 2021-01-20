@@ -13,7 +13,7 @@
   right: 0;
   left: 0;
   width: 480px;
-  padding: 60px 0;
+  padding: 48px 0;
   margin: auto;
   background-color: #242424;
   border: #333 solid 1px;
@@ -24,13 +24,19 @@
 }
 
 .modal-header {
+  margin-bottom: 64px;
+  border-bottom: #ff4465 solid 4px;
+  font-family: "Anton", sans-serif;
+  font-size: 36px;
+  text-align: center;
   width: 60%;
-  margin-bottom: 40px;
-  border: #ff4465 solid 1px;
-  border-radius: 4px;
   text-transform: uppercase;
   text-align: center;
-  font-size: 16px;
+}
+
+.modal-btn-container button,
+.modal-btn-container a {
+  margin: 0 6px;
 }
 
 .modal-close-btn {
@@ -43,6 +49,7 @@
 }
 
 .modal-introduction {
+  margin-bottom: 32px;
   width: 80%;
 }
 

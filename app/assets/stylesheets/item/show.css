@@ -13,16 +13,24 @@
   font-size: 20px;
 }
 
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .show-title {
-  padding: 4px 8px;
+  width: 60%;
+  border-bottom: #ff4465 solid 4px;
+  font-family: "Anton", sans-serif;
+  font-size: 36px;
   text-align: center;
-  border: #ff4465 solid 2px;
-  border-radius: 8px;
-  font-size: 24px;
 }
 
 .label-text {
+  width: auto;
   font-size: 8px;
+  border-bottom: #ffffff44 solid 1px;
 }
 .show-item {
   margin-top: 16px;
@@ -43,29 +51,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.btn,
-a.btn {
-  margin-top: 24px;
-  height: 56px;
-  line-height: 56px;
-  width: 80%;
-  border-radius: 4px;
-  font-size: 16px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.btn:hover {
-  cursor: pointer;
-}
-
-.edit-btn {
-  border: #ff4655 solid 1px;
-  background-color: #ff4655;
-}
-
-.delete-btn {
-  border: #aaa solid 1px;
 }

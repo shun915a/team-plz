@@ -1,4 +1,10 @@
 import React from "react"
+import Link from '@material-ui/core/Link';
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+
+
 
 class RecruitmentItem extends React.Component {
   constructor(props) {
@@ -19,25 +25,32 @@ class RecruitmentItem extends React.Component {
     let editButton;
     if (this.props.currentUserId == this.props.postUserId) {
       editButton = (
-        <a 
+        <Button 
+          variant="contained"
+          color="secondary" 
+          size="large"
+          startIcon={<EditIcon />}
           href={`/${this.props.editUrl}/${this.props.id}/edit`}
-          className='edit-btn btn'
         >
           EDIT
-        </a>
+        </Button>
       )
     }
     
     let deleteButton;
     if (this.props.currentUserId == this.props.postUserId) {
+
       deleteButton = (
-        <a 
-          href={`/${this.props.editUrl}/${this.props.id}`}
+        <Button
+          variant="outlined"
+          color="inherit"
+          size="large"
           data-method="delete"
-          className='btn delete-btn'
+          startIcon={<DeleteIcon />}
+          href={`/${this.props.editUrl}/${this.props.id}`}
         >
           DELETE
-        </a>
+        </Button>
       )
     }
 
@@ -56,26 +69,33 @@ class RecruitmentItem extends React.Component {
                 {this.props.title}
               </div>
 
-              <a href={`/users/${this.props.postUserId}`}>
+              <Link
+                color="inherit"
+                href={`/users/${this.props.postUserId}`}
+              >
                 <div className='modal-item-game-id'>
                   <p className='label-text'>NAME:</p>
                   {this.props.gameId}
                 </div>
-              </a>
+              </Link>
 
               <div className='modal-item-text'>
                 <p className='label-text'>DESCRIPTION:</p>
                 {this.props.text}
               </div>
             </div>
-            {editButton}
-            {deleteButton}
-            <a
-              className='modal-close-btn btn'
-              onClick={() => this.handleClickClose()}
-            >
-              CLOSE
-            </a>
+            <div className="modal-btn-container">
+              {editButton}
+              {deleteButton}
+              <Button 
+                variant="contained"
+                size="large"
+                color="default"
+                onClick={() => this.handleClickClose()}
+              >
+                CLOSE
+              </Button>
+            </div>
           </div>
         </div>
       );

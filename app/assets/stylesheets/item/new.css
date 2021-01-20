@@ -2,7 +2,7 @@
   padding: 3vh 4vh;
   width: 500px;
   background-color: #11111111;
-  border: #fff solid 1px;
+  border: #ebebeb55 solid 1px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,7 @@
   border: none;
   background-color: #ffffff11;
   border-radius: 6px;
+  color: #ebebeb;
   font-size: 16px;
   outline: none;
   overflow: hidden;
@@ -61,6 +62,10 @@
 .text-box {
   height: 160px;
   overflow: auto;
+}
+
+.user-select select {
+  color: #ebebeb;
 }
 
 .field_with_errors {
@@ -84,13 +89,4 @@
   align-items: center;
   flex-direction: column;
   margin: 2vh 0;
-}
-
-.submit-btn {
-  background: #ff4465;
-  border: 1px solid #ff4465;
-}
-
-.back-btn {
-  border: 1px solid #aaa;
 }

@@ -25,8 +25,7 @@
     <ul class='lists-right'>
       <%# ログイン状態でheaderの表示を変更 %>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, user_path(current_user), class: "user-nickname" %></li>
-        <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "logout"%></li>
+        <%= react_component("HeaderUserMenu", {uid: current_user.id, name: current_user.nickname}) %>
       <% else %>
         <li><%= link_to 'LOGIN', new_user_session_path, class: "login" %></li>
         <li><%= link_to 'JOIN NOW', new_user_registration_path, class: "sign-up" %></li>

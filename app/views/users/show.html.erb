@@ -26,10 +26,10 @@
 
 <div class="container">
   <div class="show-main">
+    <div class="title-wrapper">
+      <h1 class="show-title">PROFILE</h1>
+    </div>
 
-    <h1 class="show-title">
-      PROFILE
-    </h1>
 
     <div class="show-item">
       <p class="label-text">NAME:</p>
@@ -74,19 +74,25 @@
 
       <% unless @user.twitter_name.blank? %>
         <div class="twitter">
-          <a href="https://twitter.com/<%= @user.twitter_name %>">twitter.com/<%= @user.twitter_name %></a>
+          <a href="https://twitter.com/<%= @user.twitter_name %>" class="user-sns">
+            <i class="fab fa-twitter"></i> <%= @user.twitter_name %>
+          </a>
         </div>
       <% end %>
 
       <% unless @user.twitch_name.blank? %>
         <div class="twitch">
-          <a href="https://www.twitch.tv/<%= @user.twitch_name %>">twitch.tv/<%= @user.twitch_name %></a>
+          <a href="https://www.twitch.tv/<%= @user.twitch_name %>" class="user-sns">
+            <i class="fab fa-twitch"></i> <%= @user.twitch_name %>
+          </a>
         </div>
       <% end %>
 
       <% unless @user.mildom_name.blank? %>
         <div class="mildom">
-          <a href="https://www.mildom.com/<%= @user.mildom_name %>">mildom.com/<%= @user.mildom_name %></a>
+          <a href="https://www.mildom.com/<%= @user.mildom_name %>" class="user-sns">
+            <i class="fas fa-video"></i> <%= @user.mildom_name %>
+          </a>
         </div>
       <% end %>
 
@@ -112,9 +118,9 @@
   <% if Desk.exists?(user_id: @user.id) %>
 
     <div class="show-main">
-      <h1 class="show-title">
-        DESK
-      </h1>
+    <div class="title-wrapper">
+      <h1 class="show-title">DESK</h1>
+    </div>
       <div class="desk-img-container">
         <%= image_tag @desk.image, class: "img-desk" %>
       </div>
@@ -142,8 +148,9 @@
   <% if Myteam.exists?(user_id: @user.id) %>
 
     <div class="show-main">
-      <h1 class="show-title">MYTEAM</h1>
-
+      <div class="title-wrapper">
+        <h1 class="show-title">TEAMS</h1>
+      </div>
       <ul class="myteam-lists">
         <% @myteams.each do |myteam| %>
           <li class="myteam-list">
