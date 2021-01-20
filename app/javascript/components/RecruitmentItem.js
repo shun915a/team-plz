@@ -1,11 +1,9 @@
 import React from "react"
 import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 
-import { makeStyles } from '@material-ui/core/styles';
 
 
 class RecruitmentItem extends React.Component {

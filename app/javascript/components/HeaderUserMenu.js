@@ -18,7 +18,7 @@ export default function HeaderUserMenu(props) {
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        <p className="user-nickname">{props.name}<ExpandMoreIcon color="secondary" fontSize="large" /></p> 
+        <p className="user-nickname"><ExpandMoreIcon color="secondary" fontSize="large" />{props.name}</p> 
       </Button>
       <Menu
         color="primary"
