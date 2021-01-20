@@ -26,10 +26,10 @@
 
 <div class="container">
   <div class="show-main">
+    <div class="title-wrapper">
+      <h1 class="show-title">PROFILE</h1>
+    </div>
 
-    <h1 class="show-title">
-      PROFILE
-    </h1>
 
     <div class="show-item">
       <p class="label-text">NAME:</p>
@@ -118,9 +118,9 @@
   <% if Desk.exists?(user_id: @user.id) %>
 
     <div class="show-main">
-      <h1 class="show-title">
-        DESK
-      </h1>
+    <div class="title-wrapper">
+      <h1 class="show-title">DESK</h1>
+    </div>
       <div class="desk-img-container">
         <%= image_tag @desk.image, class: "img-desk" %>
       </div>
@@ -148,8 +148,9 @@
   <% if Myteam.exists?(user_id: @user.id) %>
 
     <div class="show-main">
-      <h1 class="show-title">MYTEAM</h1>
-      
+      <div class="title-wrapper">
+        <h1 class="show-title">TEAMS</h1>
+      </div>
       <ul class="myteam-lists">
         <% @myteams.each do |myteam| %>
           <li class="myteam-list">

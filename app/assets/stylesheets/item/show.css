@@ -13,16 +13,24 @@
   font-size: 20px;
 }
 
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .show-title {
-  padding: 4px 8px;
+  width: 60%;
+  border-bottom: #ff4465 solid 4px;
+  font-family: "Anton", sans-serif;
+  font-size: 36px;
   text-align: center;
-  border: #ff4465 solid 1px;
-  border-radius: 4px;
-  font-size: 24px;
 }
 
 .label-text {
+  width: auto;
   font-size: 8px;
+  border-bottom: #ffffff44 solid 1px;
 }
 .show-item {
   margin-top: 16px;

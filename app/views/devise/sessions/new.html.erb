@@ -8,7 +8,9 @@
 <div class="container">
   <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
     <div class="login-wrapper">
-      <h1 class="login-title">ログイン</h1>
+      <div class="title-wrapper">
+        <h1 class="show-title">LOGIN</h1>
+      </div>
 
       <div class='login-flash-message'>
         <%= flash[:notice] %>
