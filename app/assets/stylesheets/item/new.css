@@ -46,6 +46,7 @@
   border: none;
   background-color: #ffffff11;
   border-radius: 6px;
+  color: #ebebeb;
   font-size: 16px;
   outline: none;
   overflow: hidden;
@@ -61,6 +62,10 @@
 .text-box {
   height: 160px;
   overflow: auto;
+}
+
+.user-select select {
+  color: #ebebeb;
 }
 
 .field_with_errors {

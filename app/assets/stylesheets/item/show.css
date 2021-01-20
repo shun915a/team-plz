@@ -16,8 +16,8 @@
 .show-title {
   padding: 4px 8px;
   text-align: center;
-  border: #ff4465 solid 2px;
-  border-radius: 8px;
+  border: #ff4465 solid 1px;
+  border-radius: 4px;
   font-size: 24px;
 }
 

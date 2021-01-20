@@ -1,24 +1,27 @@
 <%= render 'shared/header' %>
 
 <div class="container">
-  <div class="show-main">
-    <div class="show-title">デスク画像フォーム</div>
-    <%= form_with model: [@user, @desk], local: true do |f|%>
+  <div class="new-main">
+    <h2 class="new-item-title">デスク画像</h2>
+      <%= form_with model: [@user, @desk], local: true do |f|%>
+        <div class="new-item">
+          <h2 class="weight-bold-text">
+            デスク画像:
+          </h2>
+          <%= f.file_field :image %>
 
-      <div class="field">
-        <%= f.label :image, "デスク画像" %><br />
-        <%= f.file_field :image %>
-      </div>
 
-        <div class="field">
-        <%= f.label :desk_text, "コメント" %><br />
-        <%= f.text_area :desk_text%>
-      </div>
+          <h2 class="weight-bold-text">
+            テキスト:
+          </h2>
+          <%= f.text_area :desk_text, class: "text-input text-box"%>
 
-      <div class="actions">
-        <%= f.submit "保存する", class: :form__btn  %>
-      </div>
-    <% end %>  
+          <div class="submit-btn-contents">
+            <%= f.submit "SAVE", class: "btn submit-btn" %>
+            <%= link_to 'BACK', root_path, class: "btn back-btn" %>
+          </div>
+        </div>
+      <% end %>  
   </div>
 </div>
 
