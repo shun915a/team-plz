@@ -5,9 +5,9 @@ services:
       context: .
     command:
       # =========本番===========
-      # bundle exec puma -C config/puma.rb -e production
+      bundle exec puma -C config/puma.rb -e production
       # ========ローカル==========
-      bundle exec puma -C config/puma.rb
+      # bundle exec puma -C config/puma.rb
       # ========================
 
     volumes:
@@ -18,22 +18,21 @@ services:
     networks:
       - team-plz-network
 
-    # =========ローカルと本番切り替え===========
     # ===========本番コメントアウト=============
-    depends_on:
-      - db
+  #   depends_on:
+  #     - db
 
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: team_plz_development
-    volumes:
-      - db-data:/var/lib/mysql
-    networks:
-      - team-plz-network
+  # db:
+  #   image: mysql:5.7
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_USER: user
+  #     MYSQL_PASSWORD: password
+  #     MYSQL_DATABASE: team_plz_development
+  #   volumes:
+  #     - db-data:/var/lib/mysql
+  #   networks:
+  #     - team-plz-network
   # ======================================
 
   web:
