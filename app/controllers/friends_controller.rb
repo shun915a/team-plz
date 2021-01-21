@@ -52,7 +52,8 @@ class FriendsController < ApplicationController
     params.require(:friend).permit(
       :friend_title,
       :friend_game_id,
-      :friend_text
+      :friend_text,
+      friend_tag_ids: []
     ).merge(user_id: current_user.id)
   end
 end

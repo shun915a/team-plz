@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_090450) do
+ActiveRecord::Schema.define(version: 2021_01_21_020643) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +39,21 @@ ActiveRecord::Schema.define(version: 2021_01_17_090450) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_desks_on_user_id"
+  end
+
+  create_table "friend_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "friend_id", null: false
+    t.bigint "friend_tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["friend_id"], name: "index_friend_tag_relations_on_friend_id"
+    t.index ["friend_tag_id"], name: "index_friend_tag_relations_on_friend_tag_id"
+  end
+
+  create_table "friend_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "friends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -125,6 +140,8 @@ ActiveRecord::Schema.define(version: 2021_01_17_090450) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "desks", "users"
+  add_foreign_key "friend_tag_relations", "friend_tags"
+  add_foreign_key "friend_tag_relations", "friends"
   add_foreign_key "friends", "users"
   add_foreign_key "myteams", "users"
   add_foreign_key "parties", "users"

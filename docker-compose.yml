@@ -3,11 +3,12 @@ services:
   app:
     build:
       context: .
-      # =========ローカルと本番切り替え===========
     command:
+      # =========本番===========
       bundle exec puma -C config/puma.rb -e production
-      # command: bundle exec puma -C config/puma.rb
-      # ======================================
+      # ========ローカル==========
+      # bundle exec puma -C config/puma.rb
+      # ========================
 
     volumes:
       - .:/team-plz
@@ -17,7 +18,7 @@ services:
     networks:
       - team-plz-network
 
-    # =========ローカルと本番切り替え===========
+    # ===========本番コメントアウト=============
   #   depends_on:
   #     - db
 
@@ -35,6 +36,10 @@ services:
   # ======================================
 
   web:
+    # =======for pry-rails=======
+    stdin_open: true
+    tty: true
+    # ===========================
     build:
       context: ./nginx_docker
     volumes:

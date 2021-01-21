@@ -28,6 +28,10 @@
       <%= @friend.friend_text %>
     </div>
 
+    <% @friend.friend_tags.each do |tag| %>
+      <span class= 'badge badge-primary'><%= tag.name %></span>
+    <% end %>
+
   </div>
 
     <div class="show-buttons">

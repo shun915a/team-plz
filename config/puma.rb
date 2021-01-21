@@ -7,4 +7,6 @@ plugin :tmp_restart
 app_root = File.expand_path('..', __dir__)
 bind "unix://#{app_root}/tmp/sockets/puma.sock"
 
-stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
+# binding.pry がとまる
+# 標準出力/標準エラーを出力するファイルを設定する
+# stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
