@@ -36,10 +36,6 @@ services:
   # ======================================
 
   web:
-    # =======for pry-rails=======
-    stdin_open: true
-    tty: true
-    # ===========================
     build:
       context: ./nginx_docker
     volumes:
