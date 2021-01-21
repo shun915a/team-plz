@@ -3,12 +3,11 @@ services:
   app:
     build:
       context: .
+      # =========ローカルと本番切り替え===========
     command:
-      # =========本番===========
       bundle exec puma -C config/puma.rb -e production
-      # ========ローカル==========
-      # bundle exec puma -C config/puma.rb
-      # ========================
+      # command: bundle exec puma -C config/puma.rb
+      # ======================================
 
     volumes:
       - .:/team-plz
@@ -18,7 +17,7 @@ services:
     networks:
       - team-plz-network
 
-    # ===========本番コメントアウト=============
+    # =========ローカルと本番切り替え===========
   #   depends_on:
   #     - db
 
