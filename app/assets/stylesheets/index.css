@@ -51,7 +51,7 @@
   font-size: 16px;
   text-align: center;
   vertical-align: middle;
-  background-color: #ff4465;
+  background-color: #ff4655;
   color: #ebebeb;
 }
 
@@ -69,7 +69,7 @@
 .rec-title {
   margin: 4vh 0 2vh;
   width: 50vw;
-  border-bottom: #ff4465 solid 4px;
+  border-bottom: #ff4655 solid 4px;
   font-family: "Anton", sans-serif;
   font-size: 36px;
   text-align: center;

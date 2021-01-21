@@ -28,7 +28,7 @@
 
 .show-title {
   width: 60%;
-  border-bottom: #ff4465 solid 4px;
+  border-bottom: #ff4655 solid 4px;
   font-family: "Anton", sans-serif;
   font-size: 36px;
   text-align: center;
@@ -63,19 +63,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.tag-container {
-  margin: 8px 0 0;
-  padding: 8px 10px 0;
-}
-
-.tag {
-  margin: 2px 2px;
-  padding: 1px 4px;
-  display: inline-block;
-  background-color: #ff3d4bbb;
-  border-radius: 4px;
-  font-size: 13px;
-  word-break: break-all;
 }

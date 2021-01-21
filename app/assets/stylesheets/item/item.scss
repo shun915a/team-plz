@@ -35,7 +35,7 @@
   margin-right: 8px;
   padding: 2px 4px;
   font-size: 8px;
-  border: #ff4465 solid 1px;
+  border: #ff4655 solid 1px;
   border-radius: 4px;
   font-weight: bold;
 }
@@ -56,6 +56,20 @@
   padding: 8px 16px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.tag-container {
+  padding: 10px 10px 0;
+}
+
+.tag {
+  margin: 2px 2px;
+  padding: 1px 4px;
+  display: inline-block;
+  background-color: #ff4655;
+  border-radius: 4px;
+  font-size: 13px;
+  word-break: break-all;
 }
 
 .item-text {
