@@ -199,7 +199,7 @@ Team.create(user_id: creator.id, myteam_id: myteam.id, team_title: 'ランクメ
 Team.create(user_id: creator.id, myteam_id: myteam.id, team_title: 'チームメンバー募集', team_game_id: 'Gamer#0915', team_text: '先月できたばかりのチームなのでメンバー募集中です！', team_tag_ids: %w[1 3 8 13 17 18 19 21 25 28 36])
 
 # scouts table
-Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_id: 'Gamer#0915', scout_text: 'チーム探してます', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37 38])
-Scout.create(user_id: creator.id, scout_title: 'スクリムしたいです', scout_game_id: 'Gamer#0915', scout_text: 'スクリム中心のチームを探しています。', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37 38])
-Scout.create(user_id: creator.id, scout_title: 'スナイパースカウト募集', scout_game_id: 'Gamer#0915', scout_text: 'スナイパーメインで活動しています。参加させていただけるチームを募集！', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37 38])
-Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_id: 'Gamer#0915', scout_text: '加入するチームを探しています！', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37 38])
+Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_id: 'Gamer#0915', scout_text: 'チーム探してます', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37])
+Scout.create(user_id: creator.id, scout_title: 'スクリムしたいです', scout_game_id: 'Gamer#0915', scout_text: 'スクリム中心のチームを探しています。', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37])
+Scout.create(user_id: creator.id, scout_title: 'スナイパースカウト募集', scout_game_id: 'Gamer#0915', scout_text: 'スナイパーメインで活動しています。参加させていただけるチームを募集！', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37])
+Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_id: 'Gamer#0915', scout_text: '加入するチームを探しています！', scout_tag_ids: %w[1 7 9 13 14 17 19 20 22 26 29 37])
