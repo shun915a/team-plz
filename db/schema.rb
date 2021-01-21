@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_060255) do
+ActiveRecord::Schema.define(version: 2021_01_21_064145) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -119,6 +119,21 @@ ActiveRecord::Schema.define(version: 2021_01_21_060255) do
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
+  create_table "team_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.bigint "team_tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_team_tag_relations_on_team_id"
+    t.index ["team_tag_id"], name: "index_team_tag_relations_on_team_tag_id"
+  end
+
+  create_table "team_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "myteam_id", null: false
@@ -164,6 +179,8 @@ ActiveRecord::Schema.define(version: 2021_01_21_060255) do
   add_foreign_key "party_tag_relations", "party_tags"
   add_foreign_key "scouts", "users"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "team_tag_relations", "team_tags"
+  add_foreign_key "team_tag_relations", "teams"
   add_foreign_key "teams", "myteams"
   add_foreign_key "teams", "users"
 end
