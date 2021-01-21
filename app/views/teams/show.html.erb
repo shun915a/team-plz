@@ -20,12 +20,12 @@
 
       <div class="show-item">
         <p class="label-text">NAME:</p>
-        <%= link_to @team.team_game_id, user_path(@team.user_id) %>
+        <%= link_to @team.team_game_id, user_path(@team.user_id), class:"game-id" %>
       </div>
 
       <div class="show-item">
         <p class="label-text">TEAM NAME:</p>
-        <%= link_to Myteam.find(@team.myteam_id).team_name, myteam_path(@team.myteam_id) %>
+        <%= link_to Myteam.find(@team.myteam_id).team_name, myteam_path(@team.myteam_id), class:"game-id" %>
       </div>
 
       <div class="show-item">

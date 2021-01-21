@@ -49,7 +49,8 @@ class TeamsController < ApplicationController
       :myteam_id,
       :team_title,
       :team_game_id,
-      :team_text
+      :team_text,
+      team_tag_ids: []
     ).merge(user_id: current_user.id, myteam_id: params[:team][:myteam_id])
   end
 end
