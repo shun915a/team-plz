@@ -9,4 +9,4 @@ bind "unix://#{app_root}/tmp/sockets/puma.sock"
 
 # binding.pry がとまる
 # 標準出力/標準エラーを出力するファイルを設定する
-# stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
+stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
