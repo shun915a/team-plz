@@ -66,14 +66,14 @@
 
 .tag-container {
   margin: 8px 0 0;
-  padding: 8px 10px;
+  padding: 8px 10px 0;
 }
 
 .tag {
   margin: 2px 2px;
   padding: 1px 4px;
   display: inline-block;
-  background-color: #ff4465;
+  background-color: #ff3d4bbb;
   border-radius: 4px;
   font-size: 13px;
   word-break: break-all;

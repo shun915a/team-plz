@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Friend Tags
+# Tags
 FriendTag.create(
   [
     { name: 'ランク' },
@@ -28,6 +28,114 @@ FriendTag.create(
     { name: '大会入賞歴あり' }
   ]
 )
+
+PartyTag.create(
+  [
+    { name: 'ランク' },
+    { name: 'アンレート' },
+    { name: '大学生' },
+    { name: '高校生' },
+    { name: '中学生' },
+    { name: '社会人' },
+    { name: 'だれでも' },
+    { name: '楽しく' },
+    { name: '勝ち重視' },
+    { name: 'まったり' },
+    { name: 'ガッツリ' },
+    { name: 'Discord' },
+    { name: 'TS3' },
+    { name: 'Skype' },
+    { name: 'ゲーム内VC' },
+    { name: '1~2回' },
+    { name: '3~5回' },
+    { name: '5回以上' }
+  ]
+)
+
+# TeamTag.create(
+#   [
+#     { name: 'ランク' },
+#     { name: 'アンレート' },
+#     { name: 'スクリム' },
+#     { name: '大学生' },
+#     { name: '高校生' },
+#     { name: '中学生' },
+#     { name: '社会人' },
+#     { name: 'だれでも' },
+#     { name: '楽しく' },
+#     { name: '勝ち重視' },
+#     { name: 'まったり' },
+#     { name: 'ガッツリ' },
+#     { name: 'Discord' },
+#     { name: 'TS3' },
+#     { name: 'Skype' },
+#     { name: 'ゲーム内VC' },
+#     { name: '新設チーム' },
+#     { name: '平日活動' },
+#     { name: '土日活動' },
+#     { name: '週1~2活動' },
+#     { name: '週3~4活動' },
+#     { name: '週5~6活動' },
+#     { name: '毎日活動' },
+#     { name: '1~2時間' },
+#     { name: '3~4時間' },
+#     { name: '5時間以上' },
+#     { name: 'フルタイム' },
+#     { name: 'ロール不問' },
+#     { name: 'IGL' },
+#     { name: 'Attacker' },
+#     { name: 'Suport' },
+#     { name: 'Sniper' },
+#     { name: 'Lurker' },
+#     { name: '作戦会議' },
+#     { name: '反省会' },
+#     { name: '大会出場予定' },
+#     { name: '大会出場経験あり' },
+#     { name: '大会入賞' }
+#   ]
+# )
+
+# ScoutTag.create(
+#   [
+#     { name: 'ランク' },
+#     { name: 'アンレート' },
+#     { name: 'スクリム' },
+#     { name: '大学生' },
+#     { name: '高校生' },
+#     { name: '中学生' },
+#     { name: '社会人' },
+#     { name: 'だれでも' },
+#     { name: '楽しく' },
+#     { name: '勝ち重視' },
+#     { name: 'まったり' },
+#     { name: 'ガッツリ' },
+#     { name: 'Discord' },
+#     { name: 'TS3' },
+#     { name: 'Skype' },
+#     { name: 'ゲーム内VC' },
+#     { name: '新設チーム' },
+#     { name: '平日活動' },
+#     { name: '土日活動' },
+#     { name: '週1~2活動' },
+#     { name: '週3~4活動' },
+#     { name: '週5~6活動' },
+#     { name: '毎日活動' },
+#     { name: '1~2時間' },
+#     { name: '3~4時間' },
+#     { name: '5時間以上' },
+#     { name: 'フルタイム' },
+#     { name: 'ロール希望なし' },
+#     { name: 'IGL' },
+#     { name: 'Attacker' },
+#     { name: 'Suport' },
+#     { name: 'Sniper' },
+#     { name: 'Lurker' },
+#     { name: '作戦会議' },
+#     { name: '反省会' },
+#     { name: '大会出場経験あり' },
+#     { name: '大会入賞' }
+#   ]
+# )
 
 creator = User.create(
   email: 'tester@test.com',
