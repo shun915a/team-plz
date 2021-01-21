@@ -51,7 +51,8 @@ class ScoutsController < ApplicationController
     params.require(:scout).permit(
       :scout_title,
       :scout_game_id,
-      :scout_text
+      :scout_text,
+      scout_tag_ids: []
     ).merge(user_id: current_user.id)
   end
 end
