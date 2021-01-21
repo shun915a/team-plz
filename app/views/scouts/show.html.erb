@@ -10,22 +10,32 @@
 
 <div class="container">
   <div class="show-main">
-
     <h1 class="show-title">SCOUT</h1>
 
-    <div class="show-item">
-      <p class="label-text">TITLE:</p>
-      <h3><%= @scout.scout_title %></h3>
-    </div>
+    <div class="show-container">
+      <div class="show-item">
+        <p class="label-text">TITLE:</p>
+        <h3><%= @scout.scout_title %></h3>
+      </div>
 
-    <div class="show-item">
-      <p class="label-text">NAME:</p>
-      <%= link_to @scout.scout_game_id, user_path(@scout.user_id) %>
-    </div>
+      <div class="show-item">
+        <p class="label-text">NAME:</p>
+        <%= link_to @scout.scout_game_id, user_path(@scout.user_id), class:"game-id" %>
+      </div>
 
-    <div class="show-item show-about-bg">
-      <p class="label-text">DESCRIPTION:</p>
-      <%= @scout.scout_text %>
+      <div class="show-item">
+        <p class="label-text">TAGS:</p>
+        <div class="tag-container">
+          <% @scout.scout_tags.each do |tag| %>
+            <span class='tag'><%= tag.name %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="show-item show-about-bg">
+        <p class="label-text">DESCRIPTION:</p>
+        <%= @scout.scout_text %>
+      </div>
     </div>
 
   </div>

@@ -16,6 +16,20 @@
     </div>
     <%= f.text_area :scout_game_id, class: "text-input", id: "item-game-id", placeholder:"Cypher#0010" %>
 
+    <div class="weight-bold-text">
+      タグ
+      <div class="tag-container">
+        <%= f.collection_check_boxes(:scout_tag_ids, ScoutTag.all, :id, :name) do |tag| %>
+          <div class='form-check'>
+            <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
     <div class="new-item-text">
       <div class="weight-bold-text">
         募集内容
