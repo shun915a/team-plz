@@ -51,7 +51,8 @@ class PartiesController < ApplicationController
     params.require(:party).permit(
       :party_title,
       :party_game_id,
-      :party_text
+      :party_text,
+      party_tag_ids: []
     ).merge(user_id: current_user.id)
   end
 end

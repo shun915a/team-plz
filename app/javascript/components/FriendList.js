@@ -2,7 +2,7 @@ import React from "react"
 import RecruitmentItem from "./RecruitmentItem"
 
 
-class RecruitmentList extends React.Component {
+class FriendList extends React.Component {
   render () {
     const post = this.props.post
     const tags = this.props.tags
@@ -24,4 +24,4 @@ class RecruitmentList extends React.Component {
   }
 }
 
-export default RecruitmentList
+export default FriendList

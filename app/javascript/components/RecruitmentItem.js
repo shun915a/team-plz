@@ -120,6 +120,7 @@ class RecruitmentItem extends React.Component {
     return (
       <React.Fragment>  
         <li 
+          key={this.props.id}
           className="list"
           onClick={() => {this.handleClickRecruitment()}}
         >
