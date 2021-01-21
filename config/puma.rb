@@ -1,12 +1,8 @@
-threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }.to_i
-threads threads_count, threads_count
-port        ENV.fetch('PORT') { 3000 }
-environment ENV.fetch('RAILS_ENV') { 'development' }
-plugin :tmp_restart
+FROM nginx:1.15.8
 
-app_root = File.expand_path('..', __dir__)
-bind "unix://#{app_root}/tmp/sockets/puma.sock"
+RUN rm -f /etc/nginx/conf.d/*
 
-# binding.pry がとまる
-# 標準出力/標準エラーを出力するファイルを設定する
-stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
+ADD nginx.conf /etc/nginx/conf.d/team-plz.conf
+
+# ビルド完了後にNginxを起動
+CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
