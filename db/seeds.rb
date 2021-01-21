@@ -6,6 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Friend Tags
+FriendTag.create(
+  [
+    { name: 'ランク' },
+    { name: 'アンレート' },
+    { name: '大学生' },
+    { name: '高校生' },
+    { name: '中学生' },
+    { name: '社会人' },
+    { name: 'だれでも' },
+    { name: '楽しく' },
+    { name: '勝ち重視' },
+    { name: 'まったり' },
+    { name: 'ガッツリ' },
+    { name: 'Discord' },
+    { name: 'TS3' },
+    { name: 'Skype' },
+    { name: 'ゲーム内VC' },
+    { name: '大会参加経験あり' },
+    { name: '大会入賞歴あり' }
+  ]
+)
+
 creator = User.create(
   email: 'tester@test.com',
   password: 'foobar111',
@@ -50,10 +73,10 @@ myteam = Myteam.create(user_id: creator.id, team_name: 'BestTeamEver', team_prof
 end
 
 # friends table
-Friend.create(user_id: creator.id, friend_title: '初心者です', friend_game_id: 'Gamer#0915', friend_text: '初心者のフレンドを募集しています。')
-Friend.create(user_id: creator.id, friend_title: 'ランクフレンド募集', friend_game_id: 'Gamer#0915', friend_text: 'ランクで勝ちに行くフレンドを募集。')
-Friend.create(user_id: creator.id, friend_title: 'アンレートフレンド募集', friend_game_id: 'Gamer#0915', friend_text: '一緒にアンレートをプレイするフレンド募集中！')
-Friend.create(user_id: creator.id, friend_title: 'フレンド募集！', friend_game_id: 'Gamer#0915', friend_text: '一緒にゲームをするフレンド募集中！楽しくプレイできる方！')
+Friend.create(user_id: creator.id, friend_title: '初心者です', friend_game_id: 'Gamer#0915', friend_text: '初心者のフレンドを募集しています。', friend_tag_ids: %w[1 2 6 7 8 12 13 15])
+Friend.create(user_id: creator.id, friend_title: 'ランクフレンド募集', friend_game_id: 'Gamer#0915', friend_text: 'ランクで勝ちに行くフレンドを募集。', friend_tag_ids: %w[1 2 6 7 8 12 13 15])
+Friend.create(user_id: creator.id, friend_title: 'アンレートフレンド募集', friend_game_id: 'Gamer#0915', friend_text: '一緒にアンレートをプレイするフレンド募集中！', friend_tag_ids: %w[1 2 6 7 8 12 13 15])
+Friend.create(user_id: creator.id, friend_title: 'フレンド募集！', friend_game_id: 'Gamer#0915', friend_text: '一緒にゲームをするフレンド募集中！楽しくプレイできる方！', friend_tag_ids: %w[1 2 6 7 8 12 13 15])
 
 # parties table
 Party.create(user_id: creator.id, party_title: '5人でプレイしたい！', party_game_id: 'Gamer#0915', party_text: '一人なので5人パーティーでプレイしてみたいです！')
@@ -72,26 +95,3 @@ Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_
 Scout.create(user_id: creator.id, scout_title: 'スクリムしたいです', scout_game_id: 'Gamer#0915', scout_text: 'スクリム中心のチームを探しています。')
 Scout.create(user_id: creator.id, scout_title: 'スナイパースカウト募集', scout_game_id: 'Gamer#0915', scout_text: 'スナイパーメインで活動しています。参加させていただけるチームを募集！')
 Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_id: 'Gamer#0915', scout_text: '加入するチームを探しています！')
-
-# Friend Tags
-FriendTag.create(
-  [
-    { name: 'ランク' },
-    { name: 'アンレート' },
-    { name: '大学生' },
-    { name: '高校生' },
-    { name: '中学生' },
-    { name: '社会人' },
-    { name: 'だれでも' },
-    { name: '楽しく' },
-    { name: '勝ち重視' },
-    { name: 'まったり' },
-    { name: 'ガッツリ' },
-    { name: 'Discord' },
-    { name: 'TS3' },
-    { name: 'Skype' },
-    { name: 'ゲーム内VC' },
-    { name: '大会参加経験あり' },
-    { name: '大会入賞歴あり' }
-  ]
-)

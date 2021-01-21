@@ -65,7 +65,8 @@
 }
 
 .tag-container {
-  margin: 8px 0;
+  margin: 8px 0 0;
+  padding: 8px 10px;
 }
 
 .tag {
@@ -75,4 +76,5 @@
   background-color: #ff4465;
   border-radius: 4px;
   font-size: 13px;
+  word-break: break-all;
 }

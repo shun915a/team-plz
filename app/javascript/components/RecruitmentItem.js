@@ -54,6 +54,13 @@ class RecruitmentItem extends React.Component {
       )
     }
 
+    const tagProps = this.props.tags;
+    const tagList = tagProps.map((tag) =>
+      <span className="tag">{tag.name}</span>
+    );
+
+
+
     let modal;
     if (this.state.isModalOpen) {
       modal = (
@@ -79,14 +86,23 @@ class RecruitmentItem extends React.Component {
                 </div>
               </Link>
 
+              <div className="modal-item-title">
+                <p className="label-text">
+                  TAGS:
+                </p>
+                {tagList}
+              </div>
+
               <div className='modal-item-text'>
                 <p className='label-text'>DESCRIPTION:</p>
                 {this.props.text}
               </div>
             </div>
             <div className="modal-btn-container">
+
               {editButton}
               {deleteButton}
+
               <Button 
                 variant="contained"
                 size="large"
@@ -113,6 +129,10 @@ class RecruitmentItem extends React.Component {
           </div>
 
           <div className="item-info">
+
+            <div className="tag-container">
+              {tagList}
+            </div>
 
             <div className="item-game-id">
               {this.props.gameId}
