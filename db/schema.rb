@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_064145) do
+ActiveRecord::Schema.define(version: 2021_01_21_071404) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -100,6 +100,21 @@ ActiveRecord::Schema.define(version: 2021_01_21_064145) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "scout_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "scout_id", null: false
+    t.bigint "scout_tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["scout_id"], name: "index_scout_tag_relations_on_scout_id"
+    t.index ["scout_tag_id"], name: "index_scout_tag_relations_on_scout_tag_id"
+  end
+
+  create_table "scout_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "scouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "scout_title", null: false
@@ -177,6 +192,8 @@ ActiveRecord::Schema.define(version: 2021_01_21_064145) do
   add_foreign_key "parties", "users"
   add_foreign_key "party_tag_relations", "parties"
   add_foreign_key "party_tag_relations", "party_tags"
+  add_foreign_key "scout_tag_relations", "scout_tags"
+  add_foreign_key "scout_tag_relations", "scouts"
   add_foreign_key "scouts", "users"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "team_tag_relations", "team_tags"
