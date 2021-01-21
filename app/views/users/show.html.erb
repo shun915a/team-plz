@@ -26,83 +26,82 @@
 
 <div class="container">
   <div class="show-main">
-    <div class="title-wrapper">
-      <h1 class="show-title">PROFILE</h1>
-    </div>
+    <h1 class="show-title">PROFILE</h1>
 
-
-    <div class="show-item">
-      <p class="label-text">NAME:</p>
-      <div class="nickname">
-        <%= @user.nickname %>
-      </div>
-    </div>
-
-
-    <div class="gender-date-group">
-    
-      <% unless @user.gender_id.blank? %>
-        <div class="show-item item-birthday">
-          <p class="label-text">GENDER:</p>
-          <%= @user.gender.name %>
+    <div class="show-container">
+      <div class="show-item">
+        <p class="label-text">NAME:</p>
+        <div class="nickname">
+          <%= @user.nickname %>
         </div>
-      <% end %>
+      </div>
 
-      <% unless @user.birthday.blank? %>
+
+      <div class="gender-date-group">
+      
+        <% unless @user.gender_id.blank? %>
+          <div class="show-item item-birthday">
+            <p class="label-text">GENDER:</p>
+            <%= @user.gender.name %>
+          </div>
+        <% end %>
+
+        <% unless @user.birthday.blank? %>
+          <div class="show-item item-birthday">
+            <p class="label-text">BIRTHDAY:</p>
+            <div class="birthday">
+              <%= @user.birthday %>
+            </div>
+          </div>
+        <% end %>
+
         <div class="show-item item-birthday">
-          <p class="label-text">BIRTHDAY:</p>
-          <div class="birthday">
-            <%= @user.birthday %>
+          <p class="label-text">JOIN DATE:</p>
+          <div class="joindate">
+            <%= @user.created_at.strftime('%Y/%m/%d') %>
           </div>
         </div>
-      <% end %>
 
-      <div class="show-item item-birthday">
-        <p class="label-text">JOIN DATE:</p>
-        <div class="joindate">
-          <%= @user.created_at.strftime('%Y/%m/%d') %>
-        </div>
       </div>
 
-    </div>
+      <div class="show-item">
 
-    <div class="show-item">
+        <% unless @user.twitter_name.blank? && @user.twitch_name.blank? && @user.mildom_name.blank? %>
+          <p class="label-text">SNS:</p>
+        <% end %>
 
-      <% unless @user.twitter_name.blank? && @user.twitch_name.blank? && @user.mildom_name.blank? %>
-        <p class="label-text">SNS:</p>
-      <% end %>
+        <% unless @user.twitter_name.blank? %>
+          <div class="twitter">
+            <a href="https://twitter.com/<%= @user.twitter_name %>" class="user-sns">
+              <i class="fab fa-twitter"></i> <%= @user.twitter_name %>
+            </a>
+          </div>
+        <% end %>
 
-      <% unless @user.twitter_name.blank? %>
-        <div class="twitter">
-          <a href="https://twitter.com/<%= @user.twitter_name %>" class="user-sns">
-            <i class="fab fa-twitter"></i> <%= @user.twitter_name %>
-          </a>
-        </div>
-      <% end %>
+        <% unless @user.twitch_name.blank? %>
+          <div class="twitch">
+            <a href="https://www.twitch.tv/<%= @user.twitch_name %>" class="user-sns">
+              <i class="fab fa-twitch"></i> <%= @user.twitch_name %>
+            </a>
+          </div>
+        <% end %>
 
-      <% unless @user.twitch_name.blank? %>
-        <div class="twitch">
-          <a href="https://www.twitch.tv/<%= @user.twitch_name %>" class="user-sns">
-            <i class="fab fa-twitch"></i> <%= @user.twitch_name %>
-          </a>
-        </div>
-      <% end %>
+        <% unless @user.mildom_name.blank? %>
+          <div class="mildom">
+            <a href="https://www.mildom.com/<%= @user.mildom_name %>" class="user-sns">
+              <i class="fas fa-video"></i> <%= @user.mildom_name %>
+            </a>
+          </div>
+        <% end %>
 
-      <% unless @user.mildom_name.blank? %>
-        <div class="mildom">
-          <a href="https://www.mildom.com/<%= @user.mildom_name %>" class="user-sns">
-            <i class="fas fa-video"></i> <%= @user.mildom_name %>
-          </a>
-        </div>
-      <% end %>
+      </div>
 
-    </div>
-
-    <div class="show-item">
-      <div class="show-about-bg">      
-        <p class="label-text">ABOUT ME:</p>
-        <div class="profile">
-          <%= @user.profile %>
+      <div class="show-item">
+        <div class="show-about-bg">      
+          <p class="label-text">ABOUT ME:</p>
+          <div class="profile">
+            <%= @user.profile %>
+          </div>
         </div>
       </div>
     </div>
@@ -118,18 +117,19 @@
   <% if Desk.exists?(user_id: @user.id) %>
 
     <div class="show-main">
-    <div class="title-wrapper">
       <h1 class="show-title">DESK</h1>
-    </div>
-      <div class="desk-img-container">
-        <%= image_tag @desk.image, class: "img-desk" %>
-      </div>
 
-      <div class="show-item">
-        <div class="show-about-bg">          
-          <p class="label-text">ABOUT DESK:</p>
-          <div class="profile">
-            <%= @desk.desk_text %>
+      <div class="show-container">
+        <div class="desk-img-container">
+          <%= image_tag @desk.image, class: "img-desk" %>
+        </div>
+
+        <div class="show-item">
+          <div class="show-about-bg">          
+            <p class="label-text">ABOUT DESK:</p>
+            <div class="profile">
+              <%= @desk.desk_text %>
+            </div>
           </div>
         </div>
       </div>
@@ -148,18 +148,19 @@
   <% if Myteam.exists?(user_id: @user.id) %>
 
     <div class="show-main">
-      <div class="title-wrapper">
-        <h1 class="show-title">TEAMS</h1>
+      <h1 class="show-title">TEAMS</h1>
+
+      <div class="show-container">
+        <ul class="myteam-lists">
+          <% @myteams.each do |myteam| %>
+            <li class="myteam-list">
+              <%= link_to myteam_path(myteam) do %>
+                <%= myteam.team_name %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
       </div>
-      <ul class="myteam-lists">
-        <% @myteams.each do |myteam| %>
-          <li class="myteam-list">
-            <%= link_to myteam_path(myteam) do %>
-              <%= myteam.team_name %>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
 
     </div>
   <% end %>
