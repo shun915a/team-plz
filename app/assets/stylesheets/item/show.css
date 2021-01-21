@@ -9,8 +9,14 @@
   border: #ebebeb55 solid 1px;
   border-radius: 4px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   font-size: 20px;
+}
+
+.show-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .title-wrapper {
@@ -32,10 +38,15 @@
   font-size: 8px;
   border-bottom: #ffffff11 solid 1px;
 }
+
 .show-item {
   margin-top: 16px;
   display: flex;
   flex-direction: column;
+}
+
+.game-id {
+  color: #ebebeb;
 }
 
 .show-about-bg {
@@ -53,7 +64,15 @@
   align-items: center;
 }
 
-.form-check {
-  margin-right: 8px;
+.tag-container {
+  margin: 8px 0;
+}
+
+.tag {
+  margin: 2px 4px;
+  padding: 2px 4px;
   display: inline-block;
+  background-color: #ff4465;
+  border-radius: 4px;
+  font-size: 14px;
 }

@@ -68,6 +68,11 @@
   color: #ebebeb;
 }
 
+.form-check {
+  margin-right: 8px;
+  display: inline-block;
+}
+
 .field_with_errors {
   width: 100%;
   display: flex;
