@@ -72,3 +72,26 @@ Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_
 Scout.create(user_id: creator.id, scout_title: 'スクリムしたいです', scout_game_id: 'Gamer#0915', scout_text: 'スクリム中心のチームを探しています。')
 Scout.create(user_id: creator.id, scout_title: 'スナイパースカウト募集', scout_game_id: 'Gamer#0915', scout_text: 'スナイパーメインで活動しています。参加させていただけるチームを募集！')
 Scout.create(user_id: creator.id, scout_title: 'スカウト募集', scout_game_id: 'Gamer#0915', scout_text: '加入するチームを探しています！')
+
+# Friend Tags
+FriendTag.create(
+  [
+    { name: 'ランク' },
+    { name: 'アンレート' },
+    { name: '大学生' },
+    { name: '高校生' },
+    { name: '中学生' },
+    { name: '社会人' },
+    { name: 'だれでも' },
+    { name: '楽しく' },
+    { name: '勝ち重視' },
+    { name: 'まったり' },
+    { name: 'ガッツリ' },
+    { name: 'Discord' },
+    { name: 'TS3' },
+    { name: 'Skype' },
+    { name: 'ゲーム内VC' },
+    { name: '大会参加経験あり' },
+    { name: '大会入賞歴あり' }
+  ]
+)
