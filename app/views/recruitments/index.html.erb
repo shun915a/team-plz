@@ -73,11 +73,17 @@
     <h1>SCOUT</h1>
   </div>
 
-  <% if user_signed_in? %>
-    <%= react_component("ScoutList", {posts: @scouts, userId: current_user.id}) %>
-  <% else %>
-    <%= react_component("ScoutList", {posts: @scouts}) %>
-  <% end %>
+  <div class="item-lists">
+    <% if user_signed_in? %>
+      <% @scouts.each do |scout| %>
+        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags, userId: current_user.id}) %>
+      <% end %>
+    <% else %>
+      <% @scouts.each do |scout| %>
+        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags}) %>
+      <% end %>
+    <% end %>
+  </div>
 
   <ul class="item-lists">
     <%# render partial: 'friends/friend', collection: @friends%>
