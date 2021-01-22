@@ -52,7 +52,7 @@
           <div class="show-item item-birthday">
             <p class="label-text">BIRTHDAY:</p>
             <div class="birthday">
-              <%= @user.birthday %>
+              <%= @user.birthday.strftime('%Y/%m/%d') %>
             </div>
           </div>
         <% end %>
@@ -101,7 +101,7 @@
       <div class="show-item">
         <div class="show-about-bg">      
           <p class="label-text">ABOUT ME:</p>
-          <div class="profile">
+          <div class="profile text-box">
             <%= @user.profile %>
           </div>
         </div>

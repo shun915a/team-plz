@@ -2,7 +2,9 @@
 
 <div class="container">
   <div class="new-main">
-    <h2 class="new-item-title">PROFILE</h2>
+    <div class="title-wrapper">
+      <h1 class="show-title">PROFILE</h1>
+    </div>
     <%= form_with model: @user, local: true do |f| %>
 
     <div class="new-item">
@@ -54,7 +56,7 @@
         <div class="weight-bold-text">
           プロフィール
         </div>
-        <%= f.text_area :profile, class: "text-input text-box", id: "item-text", placeholder: "VALORANTをメインに活動中。メインキャラクターはソーヴァ、レイズやセージなども好きです。", rows: "7", maxlength: "1000" %>
+        <%= f.text_area :profile, class: "text-input text-box", id: "item-text", placeholder: "Profile text", rows: "7", maxlength: "1000" %>
       </div>
 
       <div class="submit-btn-contents">
