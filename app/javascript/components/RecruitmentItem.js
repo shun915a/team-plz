@@ -76,15 +76,17 @@ class RecruitmentItem extends React.Component {
                 {this.props.title}
               </div>
 
-              <Link
-                color="inherit"
-                href={`/users/${this.props.postUserId}`}
-              >
-                <div className='modal-item-game-id'>
-                  <p className='label-text'>NAME:</p>
-                  {this.props.gameId}
-                </div>
-              </Link>
+
+              <div className='modal-item-game-id'>
+                <p className='label-text'>NAME:</p>
+                <Link
+                  color="inherit"
+                  href={`/users/${this.props.postUserId}`}
+                  className="game-id"
+                >
+                    {this.props.gameId}
+                </Link>
+              </div>
 
               <div className="modal-item-title">
                 <p className="label-text">
