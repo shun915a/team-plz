@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
   before_action :user_id_check, only: %i[edit destroy]
 
   def index
-    @teams = Team.order('created_at DESC')
+    @teams = Team.order('created_at DESC').limit(24)
   end
 
   def new

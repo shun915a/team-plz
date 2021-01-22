@@ -2,19 +2,20 @@
   position: fixed;
   z-index: 1;
   bottom: 24px;
-  right: 24px;
+  right: -1px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .new-rec-button {
-  margin-left: 1vh;
+  margin-bottom: 2vh;
   padding: 30px 10px;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 100px;
   background-color: #ff4655;
   color: #f9f9f9;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
   text-align: center;
   font-size: 16px;
   display: flex;
@@ -23,6 +24,9 @@
 }
 
 .new-rec-button-text {
-  font-family: "Ramabhadra", sans-serif;
+  font-family: "Anton", sans-serif;
+  transform: rotate(-90deg);
+
+  font-size: 24px;
   color: #f9f9f9;
 }

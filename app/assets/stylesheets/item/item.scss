@@ -10,12 +10,12 @@
 }
 
 .list {
-  width: 320px;
+  width: 360px;
   height: 100%;
   margin: 16px;
   background-color: #11111122;
   border: #ebebeb55 solid 1px;
-  border-radius: 4px;
+  border-radius: 3px;
   list-style: none;
 }
 .list:hover {
@@ -42,9 +42,9 @@
 
 .item-info {
   margin: 0 8px 8px;
-  height: 240px;
+  height: 280px;
   background-color: #ffffff11;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #d2d9e2;
 }
 
@@ -66,7 +66,7 @@
   margin: 2px 2px;
   padding: 1px 4px;
   display: inline-block;
-  background-color: #ff4655;
+  background-color: #ff4655cc;
   border-radius: 4px;
   font-size: 13px;
   word-break: break-all;

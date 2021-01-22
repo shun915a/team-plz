@@ -7,14 +7,14 @@
 
       <%= link_to new_myteam_path do %>
         <div class="new-rec-button">
-          <p class="new-rec-button-text">チーム作成</p>
+          <p class="new-rec-button-text">TEAM</p>
         </div>
       <% end %>
 
       <% unless Desk.exists?(user_id: @user.id) %>
         <%= link_to new_user_desk_path(@user) do %>
           <div class="new-rec-button">
-            <p class="new-rec-button-text">デスク投稿</p>
+            <p class="new-rec-button-text">DESK</p>
           </div>
         <% end %>
       <% end %>
@@ -25,6 +25,8 @@
 </div>
 
 <div class="container">
+  <h1 class="list-title-text">// <%= current_user.nickname %> DETAIL</h1>
+
   <div class="show-main">
     <h1 class="show-title">PROFILE</h1>
 

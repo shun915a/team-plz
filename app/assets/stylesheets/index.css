@@ -63,10 +63,11 @@
   left: 0;
   font-family: "Anton", sans-serif;
   font-size: 48px;
+  text-transform: uppercase;
   color: #ebebeb44;
 }
 
-.rec-title {
+.title {
   margin: 4vh 0 2vh;
   width: 50vw;
   border-bottom: #ff4655 solid 4px;
@@ -75,6 +76,6 @@
   text-align: center;
 }
 
-.rec-title:first-child {
+.title-top {
   margin-top: 0;
 }

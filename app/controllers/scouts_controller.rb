@@ -4,7 +4,7 @@ class ScoutsController < ApplicationController
   before_action :user_id_check, only: %i[edit destroy]
 
   def index
-    @scouts = Scout.order('created_at DESC')
+    @scouts = Scout.order('created_at DESC').limit(24)
   end
 
   def new

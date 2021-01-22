@@ -5,7 +5,7 @@ class FriendsController < ApplicationController
   before_action :user_id_check, only: %i[edit destroy]
 
   def index
-    @friends = Friend.order('created_at DESC')
+    @friends = Friend.order('created_at DESC').limit(24)
   end
 
   def new

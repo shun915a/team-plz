@@ -4,7 +4,7 @@ class PartiesController < ApplicationController
   before_action :user_id_check, only: %i[edit destroy]
 
   def index
-    @parties = Party.order('created_at DESC')
+    @parties = Party.order('created_at DESC').limit(24)
   end
 
   def new
