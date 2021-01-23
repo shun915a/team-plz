@@ -1,7 +1,6 @@
 import React from "react"
 import RecruitmentItem from "./RecruitmentItem"
 
-
 export default function(props) {
   const post = props.post
   const tags = props.tags
