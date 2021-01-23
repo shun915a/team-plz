@@ -4,9 +4,22 @@ import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import Modal from "react-modal";
-import "./modal.css";
 
 Modal.setAppElement("#root");
+
+
+const modalStyle = {
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    backgroundColor: "rgba(0,0,0,0.85)"
+  },
+  content: {
+    backgroundColor: "#00000000",
+    border: 'none'
+  }
+};
 
 export default function RecruitmentItem(props) {
 
@@ -63,20 +76,7 @@ export default function RecruitmentItem(props) {
 
 
   let modal = (
-    <Modal 
-      isOpen={modalIsOpen}
-      onRequestClose={() => setIsOpen(false)}
-      overlayClassName={{
-          base: "overlay-base",
-          afterOpen: "overlay-after",
-          beforeClose: "overlay-before"
-        }}
-        className={{
-          base: "content-base",
-          afterOpen: "content-after",
-          beforeClose: "content-before"
-        }}
-    >
+    <Modal isOpen={modalIsOpen} style={modalStyle}>
         <div className='modal-inner'>
           <div className='modal-header'>{props.category}</div>
           <div className='modal-introduction'>
