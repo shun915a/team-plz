@@ -1,10 +1,12 @@
-[](https://i.imgur.com/V41HCTC.png)
+<img src="https://i.imgur.com/9FcJ6UJ.png" width="200">　
+<img src="https://i.imgur.com/Tr1oWT2.png" width="200">　
+<img src="https://i.imgur.com/9ctd54w.png" width="200">
 
 # アプリケーション概要
 
-このアプリケーションはゲーマー向け SNS です。
-ゲーマーが、一緒にプレイする友達を探したり、チームを作成する際にメンバーの募集などを行う事ができます。
-募集の掲載、編集、削除や、自分やチームのプロフィールページを作成出来ます。
+このアプリケーションはゲーマー向けの SNS です。
+ゲーマーが一緒にプレイする友達を探したり、チームを作成する際にメンバーの募集などを行う際に利用することを想定しています。
+募集の掲載、編集、削除や、自分やチームのプロフィールページを作成できます。
 
 # 開発環境
 
@@ -19,144 +21,68 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC) / Docker / M
 
 # 課題
 
-- ゲーマー同士のつながりを作る
-  学校の友人や、会社の同僚と一緒にゲームをすることは出来るが、FPS などの競技性の高いゲームをプレイしていると、どうしてもプレイ時間やモチベーションによって、プレイヤーのスキルレベルに差が出てしまう。そういった場合に同じレベルのプレイヤーを手軽に探せるサービスを作る。
+## ゲーマー同士のつながりを作る
+
+- ゲーム内で新しい関係を作ることは、何かきっかけがないと意外と難しい。
+  そのきっかけをこのアプリケーションで代わりに提供したい。
+
+## 近いスキルレベルレベル同士でプレイする
+
+- 学校の友人や、会社の同僚と一緒にゲームをすることは出来るが、FPS などの競技性の高いゲームをプレイしていると、どうしてもプレイ時間やモチベーションによって、プレイヤーのスキルレベルに差が出てしまう。そういった場合に同じレベルのプレイヤーを手軽に探せるサービスを目指す。
 
 # 必要機能
 
-- ユーザー管理機能
-  ユーザー登録を行い、情報を整理する。
+### ユーザー管理機能
 
-- フレンド募集機能
-  ゲーム内でのフレンドや、Discord 等のコミュニケーションツール上のフレンドなどを募集する。
+- ユーザー登録を行い、情報を整理する。
 
-- パーティー募集機能
-  一緒にプレイするパーティーメンバーを募集する。
+### フレンド募集機能
 
-- チームメンバー募集機能
-  チームが一緒に活動するメンバーを募集する。
+- ゲーム内でのフレンドや、Discord 等のコミュニケーションツール上のフレンドなどを募集する。
 
-- スカウト募集機能
-  チームに参加したいユーザーが、チームからのスカウトを募集する。
+### パーティー募集機能
 
-- 投稿編集・削除機能
-  募集情報の更新、削除を行う。
+- 一緒にプレイするパーティーメンバーを募集する。
 
-- LP
-  最新の募集や、利用したくなるような雰囲気作りをすることで、ユーザー数を増やす。
+### チームメンバー募集機能
 
-- プロフィール機能
-  ユーザーのプロフィールを掲載するページ。
+- チームが一緒に活動するメンバーを募集する。
 
-- マイデスクページ
-  自分のプレイ環境を掲載するマイデスクページ。
+### スカウト募集機能
 
-  - 画像投稿機能
-    デスク画像を投稿するため。
+- チームに参加したいユーザーが、チームからのスカウトを募集する。
 
-- マイチーム機能
-  チームのプロフィールを掲載するページ。
+### 投稿編集・削除機能
 
-- SNS 認証(Twitter, Google)
-  募集を掲載するアプリケーションのため、登録を簡単にしてユーザー数を増やすことで UX の向上へつなげる。
+- 募集情報の更新、削除を行う。
 
-- タグ機能
-  募集にタグを付与することにより、募集の性質をわかりやすくする。
+### LP
 
-# 要件定義
+- 最新の募集の掲載や、利用したくなるような雰囲気作りをすることで、ユーザー数を増やす。
 
-## トップページ
+### プロフィール機能
 
-【ヘッダー】
+- ユーザーのプロフィールを掲載するページ。
 
-- サインイン/ログインページへ遷移出来るボタンがある。
-- ログイン時はログアウトボタンがある。
-- ログイン時はマイプロフィールページへ遷移できるボタンがある。
-- ログイン時かつ自身の所属しているチームページがある場合はチームページへ遷移できるボタンがある。
+### マイデスクページ
 
-【サイドバー】
+- 自分のプレイ環境を掲載するマイデスクページ。
 
-- フレンド募集、パーティー募集、チームメンバー募集、スカウト募集それぞれの一覧ページへ遷移するボタンがある。
+  #### 画像投稿機能
 
-【コンテンツ】
+  - デスク画像を投稿するため。
 
-- すべての募集が一覧で表示される。
-- 募集を作成するページへ遷移するボタンが有る
+### マイチーム機能
 
-## フレンド募集 一覧ページ
+- チームのプロフィールを掲載するページ。
 
-- フレンド募集が一覧で表示される。
-- クリックすると募集の詳細ページへ遷移する。
+### SNS 認証 (Twitter, Google)
 
-## フレンド募集 詳細ページ
+- 募集を掲載するアプリケーションのため、登録を簡単にしてユーザー数を増やすことで UX の向上へつなげる。
 
-- ログインしている掲載者の場合、編集と削除ボタンが表示される。
-- ログインしているユーザーの場合、コメント欄が表示される。
+### タグ機能
 
-## フレンド募集 編集ページ
-
-- 募集を編集出来るフォームがある。
-- 更新ボタンがある。
-
-## パーティー募集 一覧ページ
-
-- パーティー募集が一覧で表示される。
-- クリックすると募集の詳細ページへ遷移する。
-
-## パーティー募集 詳細ページ
-
-- ログインしている掲載者の場合、編集と削除ボタンが表示される。
-- ログインしているユーザーの場合、コメント欄が表示される。
-
-## パーティー募集 編集ページ
-
-- 募集を編集出来るフォームがある。
-- 更新ボタンがある。
-
-## チームメンバー募集 一覧ページ
-
-- チームメンバー募集が一覧で表示される。
-- クリックすると募集の詳細ページへ遷移する。
-
-## チームメンバー募集 詳細ページ
-
-- ログインしている掲載者の場合、編集と削除ボタンが表示される。
-- ログインしているユーザーの場合、コメント欄が表示される。
-
-## チームメンバー募集 編集ページ
-
-- 募集を編集出来るフォームがある。
-- 更新ボタンがある。
-
-## スカウト募集 一覧ページ
-
-- スカウト募集が一覧で表示される。
-- クリックすると募集の詳細ページへ遷移する。
-
-## スカウト募集 詳細ページ
-
-- ログインしている掲載者の場合、編集と削除ボタンが表示される。
-- ログインしているユーザーの場合、コメント欄が表示される。
-
-## スカウト募集 編集ページ
-
-- 募集を編集出来るフォームがある。
-- 更新ボタンがある。
-
-## マイプロフィールページ
-
-- ユーザーのプロフィールを表示する
-- ログインしているユーザーが作成したプロフィールの場合、編集、削除ボタンが表示される。
-
-## マイデスクページ
-
-- ユーザーのデスク画像を表示する
-- ログインしているユーザーの場合コメント欄と投稿フォームが表示される
-
-## マイチームページ
-
-- チームのプロフィールを表示する。
-- ログインしているユーザーが作成したチームの場合、編集、削除ボタンが表示される。
+- 募集にタグを付与することにより、募集の性質をわかりやすくする。
 
 # Table Design
 
@@ -177,15 +103,12 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC) / Docker / M
 ## users association
 
 - has_one :desk
-- has_many :myteams
 - has_many :friends
-- has_many :friend_comments
 - has_many :parties
-- has_many :party_comments
+- has_many :myteams
 - has_many :scouts
-- has_many :scout_comments
 - has_many :teams
-- has_many :team_comments
+- has_many :sns_credentials
 
 ## desks table
 
@@ -196,6 +119,7 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC) / Docker / M
 
 ## desks association
 
+- has_one_attached: image
 - belongs_to :user
 
 ## myteams table
@@ -223,20 +147,8 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC) / Docker / M
 ## friends association
 
 - belongs_to :user
-- has_many :friend_comments
-
-## friend_comments table
-
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| friend_comment | text       | null: false                    |
-| user_id        | references | null: false, foreign_key: true |
-| friend_id      | references | null: false, foreign_key: true |
-
-## friend association
-
-- belongs_to :user
-- belongs_to :friend
+- has_many :friend_tag_relations, dependent: :destroy
+- has_many :friend_tags, through: :friend_tag_relations, dependent: :destroy
 
 ## parties table
 
@@ -250,42 +162,8 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC) / Docker / M
 ## parties association
 
 - belongs_to :user
-- has_many :party_comments
-
-## party_comments table
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| party_comment | text       | null: false                    |
-| user_id       | references | null: false, foreign_key: true |
-| party_id      | references | null: false, foreign_key: true |
-
-## party_comments association
-
-- belongs_to :user
-- belongs_to :party
-
-## scouts table
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user_id       | references | null: false, foreign_key: true |
-| scout_title   | string     | null: false                    |
-| scout_game_id | string     | null: false                    |
-| scout_text    | text       | null: false, foreign_key: true |
-
-## scouts association
-
-- belongs_to :user
-- has_many :scout_comments
-
-## scout_comments table
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| scout_comment | text       | null: false                    |
-| user_id       | references | null: false, foreign_key: true |
-| party_id      | references | null: false, foreign_key: true |
+- has_many :party_tag_relations, dependent: :destroy
+- has_many :party_tags, through: :party_tag_relations, dependent: :destroy
 
 ## team table
 
@@ -301,17 +179,135 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC) / Docker / M
 
 - belongs_to :user
 - belongs_to :myteam
-- has_many :team_comments
+- has_many :team_tag_relations, dependent: :destroy
+- has_many :team_tags, through: :team_tag_relations, dependent: :destroy
 
-## team_comments table
+## scouts table
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user_id       | references | null: false, foreign_key: true |
+| scout_title   | string     | null: false                    |
+| scout_game_id | string     | null: false                    |
+| scout_text    | text       | null: false, foreign_key: true |
+
+## scouts association
+
+- belongs_to :user
+- has_many :scout_tag_relations, dependent: :destroy
+- has_many :scout_tags, through: :scout_tag_relations, dependent: :destroy
+
+## friend_tags table
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+## friend_tags association
+
+- has_many :friend_tag_relations, dependent: :destroy
+- has_many :friends, through: :friend_tag_relations, dependent: :destroy
+
+## friend_tag_relations table
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| friend_id     | references | null: false, foreign_key: true |
+| friend_tag_id | references | null: false, foreign_key: true |
+
+## friend_tag_relations association
+
+- belongs_to :friend
+- belongs_to :friend_tag
+
+## friend_tags table
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+## friend_tags association
+
+- has_many :friend_tag_relations, dependent: :destroy
+- has_many :friends, through: :friend_tag_relations, dependent: :destroy
+
+## friend_tag_relations table
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| friend_id     | references | null: false, foreign_key: true |
+| friend_tag_id | references | null: false, foreign_key: true |
+
+## friend_tag_relations association
+
+- belongs_to :friend
+- belongs_to :friend_tag
+
+## party_tags table
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+## party_tags association
+
+- has_many :party_tag_relations, dependent: :destroy
+- has_many :parties, through: :party_tag_relations, dependent: :destroy
+
+## party_tag_relations table
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| team_comment | text       | null: false                    |
-| user_id      | references | null: false, foreign_key: true |
-| team_id      | references | null: false, foreign_key: true |
+| party_id     | references | null: false, foreign_key: true |
+| party_tag_id | references | null: false, foreign_key: true |
 
-## team_comments association
+## party_tag_relations association
 
-- belongs_to :user
+- belongs_to :party
+- belongs_to :party_tag
+
+## team_tags table
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+## team_tags association
+
+- has_many :team_tag_relations, dependent: :destroy
+- has_many :teams, through: :team_tag_relations, dependent: :destroy
+
+## team_tag_relations table
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| team_id     | references | null: false, foreign_key: true |
+| team_tag_id | references | null: false, foreign_key: true |
+
+## team_tag_relations association
+
 - belongs_to :team
+- belongs_to :team_tag
+
+## scout_tags table
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+## scout_tags association
+
+- has_many :scout_tag_relations, dependent: :destroy
+- has_many :scouts, through: :scout_tag_relations, dependent: :destroy
+
+## scout_tag_relations table
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| scout_id     | references | null: false, foreign_key: true |
+| scout_tag_id | references | null: false, foreign_key: true |
+
+## scout_tag_relations association
+
+- belongs_to :scout
+- belongs_to :scout_tag
