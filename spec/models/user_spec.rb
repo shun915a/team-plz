@@ -26,18 +26,6 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Nickname can't be blank")
       end
 
-      it 'nicknameは3文字以下では登録できない' do
-        @user.nickname = 'abc'
-        @user.valid?
-        expect(@user.errors.full_messages).to include('Nickname must be 1 - 25 characters.')
-      end
-
-      it 'nicknameは26文字以上では登録できない' do
-        @user.nickname = '123456789012345678901234567'
-        @user.valid?
-        expect(@user.errors.full_messages).to include('Nickname must be 4 - 25 characters.')
-      end
-
       # gender
       it 'gender_idは1-3以外では登録できない' do
         @user.gender_id = '0'
