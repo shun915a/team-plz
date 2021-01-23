@@ -1,12 +1,10 @@
 import React from "react"
 import RecruitmentItem from "./RecruitmentItem"
 
-
-class TeamList extends React.Component {
-  render () {
-    const post = this.props.post
-    const tags = this.props.tags
-    const userId = this.props.userId
+export default function(props) {
+  const post = props.post
+  const tags = props.tags
+  const userId = props.userId
 
     return (
         <RecruitmentItem key = {post.id}
