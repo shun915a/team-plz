@@ -8,6 +8,7 @@ import "./modal.css";
 
 Modal.setAppElement("#root");
 
+
 export default function RecruitmentItem(props) {
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
