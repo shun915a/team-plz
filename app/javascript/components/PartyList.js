@@ -6,17 +6,20 @@ export default function PartyList(props) {
   const tags = props.tags
   const userId = props.userId
 
-  return (
-    <RecruitmentItem
-      category = "PARTY"
-      editUrl = "parties"
-      id = { post.id }
-      currentUserId = { userId }
-      postUserId = { post.user_id }
-      title = { post.party_title }
-      gameId = { post.party_game_id }
-      tags = { tags }
-      text = { post.party_text }
-    />
-  );
+    return (
+        <RecruitmentItem
+          category = "PARTY"
+          editUrl = "parties"
+          id = { post.id }
+          currentUserId = { userId }
+          postUserId = { post.user_id }
+          title = { post.party_title }
+          gameId = { post.party_game_id }
+          tags = { tags }
+          text = { post.party_text }
+        />
+    );
+  }
 }
+
+export default PartyList
