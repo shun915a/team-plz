@@ -139,8 +139,9 @@ header {
 
 .sign-up {
   padding: 12px 40px;
-  border-radius: 2px;
   background-color: #ff4655;
+  border: #ff4655 solid 1px;
+  border-radius: 2px;
   text-decoration: none;
   color: #fff;
 }
