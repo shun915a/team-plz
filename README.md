@@ -4,13 +4,15 @@
 
 # アプリケーション概要
 
+[team-plz.com](http://team-plz.com/)
+
 このアプリケーションはゲーマー向けの SNS です。
 ゲーマーが一緒にプレイする友達を探したり、チームを作成する際にメンバーの募集などを行う際に利用することを想定しています。
 募集の掲載、編集、削除や、自分やチームのプロフィールページを作成できます。
 
 # 開発環境
 
-Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC) / Docker / MySQL / GitHub / Visual Studio Code
+Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC, Route53) / Docker / MySQL / GitHub / Visual Studio Code
 開発期間：約 4 週間 (2020/12/18~)
 
 # ペルソナ
