@@ -5,6 +5,7 @@
 # アプリケーション概要
 
 - URL:
+
   [team-plz.com](http://team-plz.com/)
 
 このアプリケーションはゲーマー向けの SNS です。
