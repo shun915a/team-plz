@@ -1,11 +1,6 @@
-<div style="
-  display: flex;
-  justify-content: space-around;
-">
-  <img src="https://i.imgur.com/9FcJ6UJ.png" width="200">
-  <img src="https://i.imgur.com/MlI8sHR.png" width="200">
-  <img src="https://i.imgur.com/9ctd54w.png" width="200">
-</div>
+<img src="https://i.imgur.com/9FcJ6UJ.png" width="200">　
+<img src="https://i.imgur.com/MlI8sHR.png" width="200">　
+<img src="https://i.imgur.com/9ctd54w.png" width="200">
 
 # アプリケーション概要
 
