@@ -10,26 +10,44 @@
   <h1 class="list-title-text">// FRIEND RECRUITMENTS</h1>
   <h1 class="title title-top">FRIEND</h1>
 
+  <section class="search-form">
     <%= search_form_for @q, class: "search-section" do |f| %>
-    <%= f.label :friend_title_cont, 'タイトル検索' %>
-    <%= f.search_field :friend_title_cont %>
-    <%= f.label :friend_game_id_cont, 'ユーザー名検索' %>
-    <%= f.search_field :friend_game_id_cont %>
-    <%= f.label :friend_text_cont, '本文検索' %>
-    <%= f.search_field :friend_text_cont %>
 
-    <%= f.label :friend_tags_name_in, 'タグ検索' %>
-      <%= f.collection_check_boxes(:friend_tags_name_in, FriendTag.all, :name, :name) do |tag| %>
-        <div class='form-check'>
-          <%= tag.label class: 'form-check-label' do %>
-            <%= tag.check_box class: 'form-check-input' %>
-            <%= tag.text %>
-          <% end %>
-        </div>
-      <% end %>
-      
-    <%= f.submit %>
+    <div class="search-item">
+
+      <%= f.search_field :friend_title_cont, placeholder:"TITLE" %>
+    </div>
+
+    <div class="search-item">
+
+      <%= f.search_field :friend_game_id_cont, placeholder:"NAME" %>
+    </div>
+
+    <div class="search-item">
+
+      <%= f.search_field :friend_text_cont, placeholder:"BODY" %>
+    </div>
+
+    <div class="tag-search-item">
+
+
+      <div class="">
+        <%= f.collection_check_boxes(:friend_tags_name_in, FriendTag.all, :name, :name) do |tag| %>
+          <div class='form-check'>
+            <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="search-submit-btn-container">
+      <%= f.submit "SEARCH", class: "btn submit-btn" %>
+    </div>
     <% end %>
+  </section>
 
   <div class="item-lists">
     <% if user_signed_in? %>
