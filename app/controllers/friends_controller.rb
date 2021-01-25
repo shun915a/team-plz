@@ -3,9 +3,11 @@ class FriendsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_friend, only: %i[show edit update destroy]
   before_action :user_id_check, only: %i[edit destroy]
+  before_action :search_friend, only: %i[index search]
 
   def index
     @friends = Friend.order('created_at DESC').limit(24)
+    set_friend_column
   end
 
   def new
@@ -38,6 +40,10 @@ class FriendsController < ApplicationController
     redirect_to friends_path if @friend.destroy
   end
 
+  def search
+    @results = @p.result.includes(:category)
+  end
+
   private
 
   def user_id_check
@@ -55,5 +61,13 @@ class FriendsController < ApplicationController
       :friend_text,
       friend_tag_ids: []
     ).merge(user_id: current_user.id)
+  end
+
+  def search_friend
+    @p = Friend.ransack(params[:q]) # 検索オブジェクトを生成
+  end
+
+  def set_friend_column
+    @product_name = Friend.select('friend_title').distinct  # 重複なくnameカラムのデータを取り出す
   end
 end

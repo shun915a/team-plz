@@ -9,6 +9,13 @@
 <div class="container" id="root">
   <h1 class="list-title-text">// FRIEND RECRUITMENTS</h1>
 
+  <%= search_form_for @p, url: friends_search_path do |f| %>
+    <%= f.label :friend_title_cont, '募集タイトル' %>
+    <%= f.search_field :friend_title_cont %>
+    <br>
+  <%= f.submit '検索' %>
+<% end %>
+
   <h1 class="title title-top">FRIEND</h1>
 
   <div class="item-lists">
