@@ -17,9 +17,17 @@
     <%= f.search_field :friend_game_id_cont %>
     <%= f.label :friend_text_cont, '本文検索' %>
     <%= f.search_field :friend_text_cont %>
-    <%= f.label :friend_tags_name_cont, 'タグ検索' %>
-    <%= f.search_field :friend_tags_name_cont %>
 
+    <%= f.label :friend_tags_name_in, 'タグ検索' %>
+      <%= f.collection_check_boxes(:friend_tags_name_in, FriendTag.all, :name, :name) do |tag| %>
+        <div class='form-check'>
+          <%= tag.label class: 'form-check-label' do %>
+            <%= tag.check_box class: 'form-check-input' %>
+            <%= tag.text %>
+          <% end %>
+        </div>
+      <% end %>
+      
     <%= f.submit %>
     <% end %>
 
