@@ -1,5 +1,7 @@
 .search-form {
+  padding: 24px 24px 0;
   width: 80%;
+  border: #444 solid 1px;
 }
 
 .search-item {

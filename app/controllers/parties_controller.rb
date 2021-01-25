@@ -2,9 +2,12 @@ class PartiesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_party, only: %i[show edit update destroy]
   before_action :user_id_check, only: %i[edit destroy]
+  before_action :search_party, only: %i[index]
 
   def index
-    @parties = Party.order('created_at DESC').limit(24)
+    # @parties = Party.order('created_at DESC').limit(24)
+    @q = Party.ransack(params[:q])
+    @parties = @q.result(distinct: true).order('created_at DESC')
   end
 
   def new
@@ -54,5 +57,9 @@ class PartiesController < ApplicationController
       :party_text,
       party_tag_ids: []
     ).merge(user_id: current_user.id)
+  end
+
+  def search_party
+    @q = Party.ransack(params[:q]) # 検索オブジェクトを生成
   end
 end

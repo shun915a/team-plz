@@ -2,9 +2,12 @@ class ScoutsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_scout, only: %i[show edit update destroy]
   before_action :user_id_check, only: %i[edit destroy]
+  before_action :search_scout, only: %i[index]
 
   def index
-    @scouts = Scout.order('created_at DESC').limit(24)
+    # @scouts = Scout.order('created_at DESC').limit(24)
+    @q = Scout.ransack(params[:q])
+    @scouts = @q.result(distinct: true).order('created_at DESC')
   end
 
   def new
@@ -54,5 +57,9 @@ class ScoutsController < ApplicationController
       :scout_text,
       scout_tag_ids: []
     ).merge(user_id: current_user.id)
+  end
+
+  def search_scout
+    @q = Scout.ransack(params[:q]) # 検索オブジェクトを生成
   end
 end

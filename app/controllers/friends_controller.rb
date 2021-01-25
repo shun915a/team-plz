@@ -63,8 +63,4 @@ class FriendsController < ApplicationController
   def search_friend
     @q = Friend.ransack(params[:q]) # 検索オブジェクトを生成
   end
-
-  def set_friend_column
-    @product_name = Friend.select('friend_title').distinct  # 重複なくnameカラムのデータを取り出す
-  end
 end
