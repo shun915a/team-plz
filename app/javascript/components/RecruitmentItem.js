@@ -8,32 +8,6 @@ import { jsx, css, ClassNames } from '@emotion/react'
 
 Modal.setAppElement("#root");
 
-const modalStyle = {
-  overlay: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: "rgba(0,0,0,0.85)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    transitionProperty: "background-color, opacity",
-    transitionDuration: "500ms",
-    transitionTimingFunction: "ease-in-out"
-  },
-  content: {
-    position: "unset",
-    width: "480px",
-    backgroundColor: "#00000000",
-    border: "none",
-    transitionProperty: "background-color, height",
-    transitionDuration: "500ms",
-    transitionTimingFunction: "ease-in-out"
-  }
-};
-
 export default function RecruitmentItem(props) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -197,7 +171,7 @@ export default function RecruitmentItem(props) {
                   variant="contained"
                   size="large"
                   color="default"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsOpen(false)} 
                 >
                   CLOSE
                 </Button>

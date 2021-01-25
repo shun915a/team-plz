@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :myteams
   resources :recruitments, only: [:index]
   resources :friends
-  get 'friends/search'
   resources :parties
   resources :teams
   resources :scouts

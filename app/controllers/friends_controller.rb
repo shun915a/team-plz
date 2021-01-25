@@ -3,11 +3,12 @@ class FriendsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_friend, only: %i[show edit update destroy]
   before_action :user_id_check, only: %i[edit destroy]
-  before_action :search_friend, only: %i[index search]
+  before_action :search_friend, only: %i[index]
 
   def index
-    @friends = Friend.order('created_at DESC').limit(24)
-    set_friend_column
+    # @friends = Friend.order('created_at DESC').limit(24)
+    @q = Friend.ransack(params[:q])
+    @friends = @q.result(distinct: true).order('created_at DESC')
   end
 
   def new
@@ -40,10 +41,6 @@ class FriendsController < ApplicationController
     redirect_to friends_path if @friend.destroy
   end
 
-  def search
-    @results = @p.result.includes(:category)
-  end
-
   private
 
   def user_id_check
@@ -51,7 +48,7 @@ class FriendsController < ApplicationController
   end
 
   def set_friend
-    @friend = Friend.find(params[:id])
+    @friend = Friend.find(params[:id]) unless params[:id] == search
   end
 
   def friend_params
@@ -64,7 +61,7 @@ class FriendsController < ApplicationController
   end
 
   def search_friend
-    @p = Friend.ransack(params[:q]) # 検索オブジェクトを生成
+    @q = Friend.ransack(params[:q]) # 検索オブジェクトを生成
   end
 
   def set_friend_column
