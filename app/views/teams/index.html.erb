@@ -49,17 +49,7 @@
     <% end %>
   </section>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @teams.each do |team| %>
-        <%= react_component("TeamList", {post: team, tags: team.team_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @teams.each do |team| %>
-        <%= react_component("TeamList", {post: team, tags: team.team_tags}) %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'list' %>
 
   <ul class="item-lists">
     <%# render partial: 'team', collection: @teams %>

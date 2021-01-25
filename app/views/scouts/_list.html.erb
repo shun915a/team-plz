@@ -1,0 +1,11 @@
+  <div class="item-lists">
+    <% if user_signed_in? %>
+      <% @scouts.each do |scout| %>
+        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags, userId: current_user.id, date: scout.updated_at.strftime('%Y/%m/%d %H:%M')}) %>
+      <% end %>
+    <% else %>
+      <% @scouts.each do |scout| %> 
+        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags, date: scout.updated_at.strftime('%Y/%m/%d %H:%M')}) %>
+      <% end %>
+    <% end %>
+  </div>

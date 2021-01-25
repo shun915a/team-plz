@@ -49,18 +49,7 @@
     <% end %>
   </section>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @friends.each do |friend| %>
-        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @friends.each do |friend| %>
-        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags}) %>
-      <% end %>
-    <% end %>
-  </div>
-
+  <%= render 'list' %>
 
   <ul class="item-lists">
     <%# render partial: 'friend', collection: @friends %>

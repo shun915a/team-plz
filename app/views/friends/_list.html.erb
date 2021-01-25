@@ -1,0 +1,11 @@
+  <div class="item-lists">
+    <% if user_signed_in? %>
+      <% @friends.each do |friend| %>
+        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags, userId: current_user.id, date: friend.updated_at.strftime('%Y/%m/%d %H:%M')}) %>
+      <% end %>
+    <% else %>
+      <% @friends.each do |friend| %>
+        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags, date: friend.updated_at.strftime('%Y/%m/%d %H:%M')}) %>
+      <% end %>
+    <% end %>
+  </div>

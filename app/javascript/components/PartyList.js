@@ -5,6 +5,7 @@ export default function PartyList(props) {
   const post = props.post
   const tags = props.tags
   const userId = props.userId
+  const date = props.date
 
   return (
       <RecruitmentItem
@@ -17,6 +18,7 @@ export default function PartyList(props) {
         gameId = { post.party_game_id }
         tags = { tags }
         text = { post.party_text }
+        date = { date }
       />
   );
 }
