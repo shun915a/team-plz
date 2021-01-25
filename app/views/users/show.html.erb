@@ -167,4 +167,12 @@
     </div>
   <% end %>
 
+  <div class="show-main user-post-list">
+    <h1 class="show-title"><%= @user.nickname %>'s POSTs</h1>
+      <%= render 'friends/list' %>
+      <%= render 'parties/list' %>
+      <%= render 'teams/list' %>
+      <%= render 'scouts/list' %>
+  </div>
+
 </div>

@@ -7,7 +7,6 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import Modal from "react-modal";
 import { jsx, css, ClassNames } from '@emotion/react'
 
-Modal.setAppElement("#root");
 
 export default function RecruitmentItem(props) {
   const [modalIsOpen, setIsOpen] = React.useState(false);

@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @desk = Desk.find_by(user_id: @user.id)
     @myteams = Myteam.where(user_id: @user.id).order('created_at DESC')
+    @friends = Friend.where(user_id: @user.id).order('created_at DESC')
+    @parties = Party.where(user_id: @user.id).order('created_at DESC')
+    @teams = Team.where(user_id: @user.id).order('created_at DESC')
+    @scouts = Scout.where(user_id: @user.id).order('created_at DESC')
   end
 
   def edit
