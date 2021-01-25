@@ -24,59 +24,20 @@
 
   <h1 class="title title-top">FRIEND</h1>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @friends.each do |friend| %>
-        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @friends.each do |friend| %>
-        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags}) %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'friends/list' %>
 
   <h1 class="title">PARTY</h1>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @parties.each do |party| %>
-        <%= react_component("PartyList", {post: party, tags: party.party_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @parties.each do |party| %>
-        <%= react_component("PartyList", {post: party, tags: party.party_tags}) %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'parties/list' %>
 
   <h1 class="title">TEAM</h1>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @teams.each do |team| %>
-        <%= react_component("TeamList", {post: team, tags: team.team_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @teams.each do |team| %>
-        <%= react_component("TeamList", {post: team, tags: team.team_tags}) %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'teams/list' %>
 
   <h1 class="title">SCOUT</h1>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @scouts.each do |scout| %>
-        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @scouts.each do |scout| %>
-        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags}) %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'scouts/list' %>
+
 
   <ul class="item-lists">
     <%# render partial: 'friends/friend', collection: @friends%>

@@ -8,21 +8,48 @@
 
 <div class="container" id="root">
   <h1 class="list-title-text">// FRIEND RECRUITMENTS</h1>
-
   <h1 class="title title-top">FRIEND</h1>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @friends.each do |friend| %>
-        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @friends.each do |friend| %>
-        <%= react_component("FriendList", {post: friend, tags: friend.friend_tags}) %>
-      <% end %>
-    <% end %>
-  </div>
+  <section class="search-form">
+    <%= search_form_for @q, class: "search-section" do |f| %>
 
+    <div class="search-item">
+
+      <%= f.search_field :friend_title_cont, placeholder:"TITLE" %>
+    </div>
+
+    <div class="search-item">
+
+      <%= f.search_field :friend_game_id_cont, placeholder:"NAME" %>
+    </div>
+
+    <div class="search-item">
+
+      <%= f.search_field :friend_text_cont, placeholder:"BODY" %>
+    </div>
+
+    <div class="tag-search-item">
+
+
+      <div class="">
+        <%= f.collection_check_boxes(:friend_tags_name_in, FriendTag.all, :name, :name) do |tag| %>
+          <div class='form-check'>
+            <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="search-submit-btn-container">
+      <%= f.submit "SEARCH", class: "btn submit-btn" %>
+    </div>
+    <% end %>
+  </section>
+
+  <%= render 'list' %>
 
   <ul class="item-lists">
     <%# render partial: 'friend', collection: @friends %>

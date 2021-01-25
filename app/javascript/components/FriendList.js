@@ -5,6 +5,7 @@ export default function FriendList(props) {
   const post = props.post
   const tags = props.tags
   const userId = props.userId
+  const date = props.date
 
   return (
       <RecruitmentItem key = {post.id}
@@ -17,6 +18,7 @@ export default function FriendList(props) {
         gameId = { post.friend_game_id }
         tags = { tags }
         text = { post.friend_text }
+        date = { date }
       />
   );
 }

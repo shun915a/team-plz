@@ -5,6 +5,7 @@ export default function ScoutList(props) {
   const post = props.post
   const tags = props.tags
   const userId = props.userId
+  const date = props.date
 
   return (
       <RecruitmentItem key = {post.id}
@@ -17,6 +18,7 @@ export default function ScoutList(props) {
         gameId = { post.scout_game_id }
         tags = { tags }
         text = { post.scout_text }
+        date = { date }
       />
   );
 }

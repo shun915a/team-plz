@@ -2,9 +2,12 @@ class TeamsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_team, only: %i[show edit update destroy]
   before_action :user_id_check, only: %i[edit destroy]
+  before_action :search_team, only: %i[index]
 
   def index
-    @teams = Team.order('created_at DESC').limit(24)
+    # @teams = Team.order('created_at DESC').limit(24)
+    @q = Team.ransack(params[:q])
+    @teams = @q.result(distinct: true).order('created_at DESC')
   end
 
   def new
@@ -52,5 +55,9 @@ class TeamsController < ApplicationController
       :team_text,
       team_tag_ids: []
     ).merge(user_id: current_user.id, myteam_id: params[:team][:myteam_id])
+  end
+
+  def search_team
+    @q = Team.ransack(params[:q]) # 検索オブジェクトを生成
   end
 end

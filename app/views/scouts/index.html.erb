@@ -8,21 +8,48 @@
 
 <div class="container" id="root">
   <h1 class="list-title-text">// SCOUT RECRUITMENTS</h1>
-
   <h1 class="title title-top">SCOUT</h1>
 
+    <section class="search-form">
+    <%= search_form_for @q, class: "search-section" do |f| %>
 
-  <div class="item-lists">
-    <% if user_signed_in? %>
-      <% @scouts.each do |scout| %>
-        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags, userId: current_user.id}) %>
-      <% end %>
-    <% else %>
-      <% @scouts.each do |scout| %>
-        <%= react_component("ScoutList", {post: scout, tags: scout.scout_tags}) %>
-      <% end %>
+    <div class="search-item">
+
+      <%= f.search_field :scout_title_cont, placeholder:"TITLE" %>
+    </div>
+
+    <div class="search-item">
+
+      <%= f.search_field :scout_game_id_cont, placeholder:"NAME" %>
+    </div>
+
+    <div class="search-item">
+
+      <%= f.search_field :scout_text_cont, placeholder:"BODY" %>
+    </div>
+
+    <div class="tag-search-item">
+
+
+      <div class="">
+        <%= f.collection_check_boxes(:scout_tags_name_in, ScoutTag.all, :name, :name) do |tag| %>
+          <div class='form-check'>
+            <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="search-submit-btn-container">
+      <%= f.submit "SEARCH", class: "btn submit-btn" %>
+    </div>
     <% end %>
-  </div>
+  </section>
+
+  <%= render 'list' %>
 
   <ul class="item-lists">
     <%# render partial: 'scout', collection: @scouts %>

@@ -3,36 +3,11 @@ import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import Modal from "react-modal";
 import { jsx, css, ClassNames } from '@emotion/react'
 
 Modal.setAppElement("#root");
-
-const modalStyle = {
-  overlay: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: "rgba(0,0,0,0.85)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    transitionProperty: "background-color, opacity",
-    transitionDuration: "500ms",
-    transitionTimingFunction: "ease-in-out"
-  },
-  content: {
-    position: "unset",
-    width: "480px",
-    backgroundColor: "#00000000",
-    border: "none",
-    transitionProperty: "background-color, height",
-    transitionDuration: "500ms",
-    transitionTimingFunction: "ease-in-out"
-  }
-};
 
 export default function RecruitmentItem(props) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -166,15 +141,15 @@ export default function RecruitmentItem(props) {
                   {props.title}
                 </div>
 
-                <Link
-                  color="inherit"
-                  href={`/users/${props.postUserId}`}
-                >
-                  <div className='modal-item-game-id'>
-                    <p className='label-text'>NAME:</p>
+                <div className='modal-item-game-id'>
+                  <p className='label-text'>NAME:</p>
+                  <Link
+                    color="inherit"
+                    href={`/users/${props.postUserId}`}
+                  >
                     {props.gameId}
-                  </div>
-                </Link>
+                  </Link>
+                </div>
 
                 <div className="modal-item-title">
                   <p className="label-text">
@@ -187,6 +162,13 @@ export default function RecruitmentItem(props) {
                   <p className='label-text'>DESCRIPTION:</p>
                   {props.text}
                 </div>
+
+                <div className="modal-item-title">
+                  <p className="modal-date">
+                    <AccessTimeIcon />
+                    {props.date}
+                  </p>
+                </div>
               </div>
               <div className="modal-btn-container">
 
@@ -197,7 +179,7 @@ export default function RecruitmentItem(props) {
                   variant="contained"
                   size="large"
                   color="default"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsOpen(false)} 
                 >
                   CLOSE
                 </Button>
