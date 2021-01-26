@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
   def index
     # @teams = Team.order('created_at DESC').limit(24)
     @q = Team.ransack(params[:q])
-    @teams = @q.result(distinct: true).order('created_at DESC')
+    @teams = @q.result(distinct: true).order('created_at DESC').page(params[:page]).per(12)
   end
 
   def new
