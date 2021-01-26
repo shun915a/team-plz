@@ -11,8 +11,9 @@
 }
 
 .search-item input {
+  padding: 4px 8px;
   height: 28px;
-  font-size: 24px;
+  font-size: 16px;
   background-color: transparent;
   border: none;
   border-bottom: #444 solid 1px;

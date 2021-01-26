@@ -63,9 +63,8 @@ gem 'mini_magick'
 gem 'react-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'bootstrap-will_paginate', '1.0.0'
+gem 'kaminari'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-twitter'
 gem 'ransack'
-gem 'will_paginate', '3.1.6'
