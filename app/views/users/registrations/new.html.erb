@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div class="container">
+<div class="main-container">
 
   <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 
@@ -21,7 +21,7 @@
 
       <div class="form-group">
         <div class='weight-bold-text'>
-          <label class="form-text">メールアドレス</label>
+          メールアドレス
           <span class="indispensable">*</span>
         </div>
         <%= f.email_field :email, class:"text-input", id:"email", placeholder:"sample@email.com" %>
@@ -32,7 +32,7 @@
       <% else %>
         <div class="form-group">
           <div class='weight-bold-text'>
-            <label class="form-text">パスワード</label>
+            パスワード
             <span class="indispensable">*</span>
           </div>
           <%= f.password_field :password, class:"text-input", id:"password", placeholder:"6文字以上の半角英数字" %>
@@ -41,7 +41,7 @@
 
         <div class="form-group">
           <div class='weight-bold-text'>
-            <label class="form-text">パスワード(確認)</label>
+            パスワード(確認)
             <span class="indispensable">*</span>
           </div>
           <%= f.password_field :password_confirmation, class:"text-input", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
@@ -49,7 +49,7 @@
       <% end %>
 
       <div class='register-btn-container'>
-        <%= f.submit "会員登録" ,class:"btn register-btn" %>
+        <%= f.submit "会員登録" ,class:"register-btn btn" %>
       </div>      
     </div>
 

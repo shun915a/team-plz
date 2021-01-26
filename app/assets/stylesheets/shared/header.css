@@ -6,6 +6,11 @@ header {
   font-family: "Ramabhadra", sans-serif;
 }
 
+.top-page-header a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .top-page-header {
   width: 100vw;
   height: 80px;
