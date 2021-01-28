@@ -83,6 +83,7 @@
 .page-link {
   color: #ebebeb;
   background-color: transparent;
+  border-color: #ebebeb55;
 }
 
 .page-link:hover {
@@ -92,5 +93,5 @@
 
 .page-item.active .page-link {
   background-color: #ff4655;
-  border-color: #dee2e6;
+  border-color: #ebebeb55;
 }
