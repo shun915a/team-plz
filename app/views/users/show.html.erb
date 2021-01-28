@@ -167,6 +167,8 @@
     </div>
   <% end %>
 
+  <% if @friends.present? || @parties.present? || @teams.present? || @scouts.present? %>
+
   <div class="show-main user-post-list">
     <h1 class="show-title"><%= @user.nickname %>'s POSTs</h1>
       <%= render 'friends/list' %>
@@ -174,5 +176,7 @@
       <%= render 'teams/list' %>
       <%= render 'scouts/list' %>
   </div>
+
+  <% end %>
 
 </div>

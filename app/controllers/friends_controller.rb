@@ -48,7 +48,7 @@ class FriendsController < ApplicationController
   end
 
   def set_friend
-    @friend = Friend.find(params[:id]) unless params[:id] == search
+    @friend = Friend.find(params[:id])
   end
 
   def friend_params
