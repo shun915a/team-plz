@@ -32,6 +32,7 @@
   width: 60%;
   text-transform: uppercase;
   text-align: center;
+  justify-content: center;
 }
 
 .modal-btn-container button,
@@ -60,7 +61,15 @@
 
 .modal-item-game-id {
   margin-bottom: 32px;
-  font-size: 16px;
+  font-size: 24px;
+}
+
+.modal-item-game-id a {
+  text-decoration: none;
+}
+
+.modal-item-game-id a:hover {
+  color: #ff4655;
 }
 
 .modal-item-text {

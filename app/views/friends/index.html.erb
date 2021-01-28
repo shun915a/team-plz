@@ -1,12 +1,12 @@
 <%= render 'shared/header' %>
 
 <div class="btn-container">
-  <%= link_to new_friend_path do %>
+  <%= link_to new_friend_path,class: "text-decoration-none" do %>
     <%= render 'shared/new_rec_button' %>
   <% end %>
 </div>
 
-<div class="container" id="root">
+<div class="main-container" id="root">
   <h1 class="list-title-text">// FRIEND RECRUITMENTS</h1>
   <h1 class="title title-top">FRIEND</h1>
 
@@ -44,12 +44,13 @@
     </div>
 
     <div class="search-submit-btn-container">
-      <%= f.submit "SEARCH", class: "btn submit-btn" %>
+      <%= f.submit "SEARCH", class: "btn submit-btn text-decoration-none" %>
     </div>
     <% end %>
   </section>
 
   <%= render 'list' %>
+  <%= paginate @friends %>
 
   <ul class="item-lists">
     <%# render partial: 'friend', collection: @friends %>

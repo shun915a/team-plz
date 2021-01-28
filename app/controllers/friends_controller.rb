@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
   def index
     # @friends = Friend.order('created_at DESC').limit(24)
     @q = Friend.ransack(params[:q])
-    @friends = @q.result(distinct: true).order('created_at DESC')
+    @friends = @q.result(distinct: true).order('created_at DESC').page(params[:page]).per(12)
   end
 
   def new
@@ -48,7 +48,7 @@ class FriendsController < ApplicationController
   end
 
   def set_friend
-    @friend = Friend.find(params[:id]) unless params[:id] == search
+    @friend = Friend.find(params[:id])
   end
 
   def friend_params

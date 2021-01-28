@@ -6,19 +6,26 @@ a.btn {
   width: 80%;
   border-radius: 4px;
   font-size: 16px;
-  text-align: center;
-  vertical-align: middle;
   color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:hover {
   cursor: pointer;
+  color: #ebebeb;
+}
+
+a:hover {
+  color: #ebebeb;
 }
 
 // registration buttons
 .register-btn {
   background-color: #ff4655;
   border: #ff4655 solid 1px;
+  line-height: 32px;
 }
 
 .sns-twitter {
@@ -44,6 +51,7 @@ a.btn {
   border: #ff4655 solid 1px;
   border-radius: 6px;
   background-color: #ff4655;
+  line-height: 32px;
 }
 
 // new item buttons
@@ -51,6 +59,7 @@ a.btn {
 .submit-btn {
   background: #ff4655;
   border: 1px solid #ff4655;
+  line-height: 32px;
 }
 
 .back-btn {

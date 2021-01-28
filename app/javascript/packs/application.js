@@ -3,10 +3,15 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+require("jquery") //jQueryを追加
+require("bootstrap") //Bootstrapを追加
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

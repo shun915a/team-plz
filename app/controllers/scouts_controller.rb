@@ -7,7 +7,7 @@ class ScoutsController < ApplicationController
   def index
     # @scouts = Scout.order('created_at DESC').limit(24)
     @q = Scout.ransack(params[:q])
-    @scouts = @q.result(distinct: true).order('created_at DESC')
+    @scouts = @q.result(distinct: true).order('created_at DESC').page(params[:page]).per(12)
   end
 
   def new

@@ -1,12 +1,12 @@
 <%= render 'shared/header' %>
 
 <div class="btn-container">
-  <%= link_to new_party_path do %>
+  <%= link_to new_party_path,class: "text-decoration-none" do %>
     <%= render 'shared/new_rec_button' %>
   <% end %>
 </div>
 
-<div class="container" id="root">
+<div class="main-container" id="root">
   <h1 class="list-title-text">// PARTY RECRUITMENTS</h1>
   <h1 class="title title-top">PARTY</h1>
 
@@ -50,6 +50,7 @@
   </section>
 
   <%= render 'list' %>
+  <%= paginate @parties %>
 
   <ul class="item-lists">
     <%# render partial: 'party', collection: @parties %>
