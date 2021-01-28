@@ -73,8 +73,10 @@
 }
 
 .item-text {
+  height: 128px;
   padding: 0 16px 8px;
   font-size: 16px;
   text-decoration: none;
   word-break: break-all;
+  overflow: hidden;
 }

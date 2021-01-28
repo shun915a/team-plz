@@ -8,19 +8,6 @@
 }
 
 .modal-inner {
-  position: absolute;
-  top: 10%;
-  right: 0;
-  left: 0;
-  width: 480px;
-  padding: 48px 0;
-  margin: auto;
-  background-color: #242424;
-  border: #333 solid 1px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .modal-header {
@@ -80,6 +67,7 @@
   background-color: #ffffff11;
   border-radius: 8px;
   word-break: break-all;
+  overflow: scroll;
 }
 
 .modal-date {

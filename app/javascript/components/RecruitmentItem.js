@@ -7,6 +7,7 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import Modal from "react-modal";
 import { jsx, css, ClassNames } from '@emotion/react'
 
+Modal.setAppElement("#root");
 
 export default function RecruitmentItem(props) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -80,12 +81,11 @@ export default function RecruitmentItem(props) {
           closeTimeoutMS={500}
           portalClassName={css`
             .overlay-base {
-              padding: 1rem;
               position: fixed;
-              top: 0;   
-              bottom: 0;
-              right: 0;
+              top: 0;
               left: 0;
+              width: 100%;
+              height: 100vh;
               background-color: rgba(0, 0, 0, 0);
               opacity: 0;
               transition-property: background-color, opacity;
@@ -108,82 +108,81 @@ export default function RecruitmentItem(props) {
             }
 
             .content-base {
-              margin: 0 auto;
-              border: 0;
-              outline: 0;
+              position: fixed;
+              top: 4%;
+              width: 480px;
+              max-height: 100vh;
+              padding: 48px 0;
+              margin: auto;
+              background-color: #242424;
+              outline: none;
               display: flex;
-              justify-content: center;
               align-items: center;
-              height: 0%;
-              width: 0%;
-              background-color: transparent;
+              flex-direction: column;
+              overflow: scroll;
             }
 
             .content-after {
+
             }
 
             .content-before {
-              width: 0%;
-              height: 0%;
-              background-color: transparent;
             }
           `}
         >
-            <div className='modal-inner'>
-              <div className='modal-header'>{props.category}</div>
-              <div className='modal-introduction'>
+          <div className='modal-header'>{props.category}</div>
+          <div className='modal-introduction'>
 
-                <div className='modal-item-title'>
-                  <p className='label-text'>
-                    TITLE:
-                  </p>
-                  {props.title}
-                </div>
-
-                <div className='modal-item-game-id'>
-                  <p className='label-text'>NAME:</p>
-                  <Link
-                    color="inherit"
-                    href={`/users/${props.postUserId}`}
-                  >
-                    {props.gameId}
-                  </Link>
-                </div>
-
-                <div className="modal-item-title">
-                  <p className="label-text">
-                    TAGS:
-                  </p>
-                  {tagList}
-                </div>
-
-                <div className='modal-item-text'>
-                  <p className='label-text'>DESCRIPTION:</p>
-                  {props.text}
-                </div>
-
-                <div className="modal-item-title">
-                  <p className="modal-date">
-                    <AccessTimeIcon />
-                    {props.date}
-                  </p>
-                </div>
-              </div>
-              <div className="modal-btn-container">
-
-                {editButton}
-                {deleteButton}
-
-                <Button 
-                  variant="contained"
-                  size="large"
-                  color="default"
-                  onClick={() => setIsOpen(false)} 
-                >
-                  CLOSE
-                </Button>
-              </div>
+            <div className='modal-item-title'>
+              <p className='label-text'>
+                TITLE:
+              </p>
+              {props.title}
             </div>
+
+            <div className='modal-item-game-id'>
+              <p className='label-text'>NAME:</p>
+              <Link
+                color="inherit"
+                href={`/users/${props.postUserId}`}
+              >
+                {props.gameId}
+              </Link>
+            </div>
+
+            <div className="modal-item-title">
+              <p className="label-text">
+                TAGS:
+              </p>
+              {tagList}
+            </div>
+
+            <div className='modal-item-text'>
+              <p className='label-text'>DESCRIPTION:</p>
+              {props.text}
+            </div>
+
+            <div className="modal-item-title">
+              <p className="modal-date">
+                <AccessTimeIcon />
+                {props.date}
+              </p>
+            </div>
+          </div>
+          <div className="modal-btn-container">
+
+            {editButton}
+            {deleteButton}
+
+            <Button 
+              variant="contained"
+              size="large"
+              color="default"
+              onClick={() => setIsOpen(false)} 
+            >
+              CLOSE
+            </Button>
+          </div>
         </Modal>
       )}
     </ClassNames>

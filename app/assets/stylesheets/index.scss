@@ -92,6 +92,7 @@
 }
 
 .page-item.active .page-link {
+  z-index: 0;
   background-color: #ff4655;
   border-color: #ebebeb55;
 }
