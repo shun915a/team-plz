@@ -79,3 +79,18 @@
 .title-top {
   margin-top: 0;
 }
+
+.page-link {
+  color: #ebebeb;
+  background-color: transparent;
+}
+
+.page-link:hover {
+  color: #ebebeb;
+  background-color: #ffffff22;
+}
+
+.page-item.active .page-link {
+  background-color: #ff4655;
+  border-color: #dee2e6;
+}
