@@ -120,6 +120,13 @@ export default function RecruitmentItem(props) {
               align-items: center;
               flex-direction: column;
               overflow: scroll;
+              -ms-overflow-style: none; /* IE, Edge 対応 */
+              scrollbar-width: none; /* Firefox 対応 */
+            }
+
+            .content-base::-webkit-scrollbar {
+              /* Chrome, Safari 対応 */
+              display:none;
             }
 
             .content-after {
