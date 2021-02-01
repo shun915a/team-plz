@@ -109,17 +109,9 @@ export default function RecruitmentItem(props) {
 
             .content-base {
               position: fixed;
-              top: 4%;
-              width: 480px;
               max-height: 100vh;
-              padding: 48px 0;
-              margin: auto;
-              background-color: #242424;
-              outline: none;
-              display: flex;
-              align-items: center;
-              flex-direction: column;
               overflow: scroll;
+              outline: none;
               -ms-overflow-style: none; /* IE, Edge 対応 */
               scrollbar-width: none; /* Firefox 対応 */
             }
@@ -131,64 +123,67 @@ export default function RecruitmentItem(props) {
 
             .content-after {
 
+              padding: 16px 0 120px;
             }
 
             .content-before {
             }
           `}
         >
-          <div className='modal-header'>{props.category}</div>
-          <div className='modal-introduction'>
+          <div className="modal-inner">
+            <div className='modal-header'>{props.category}</div>
+            <div className='modal-introduction'>
 
-            <div className='modal-item-title'>
-              <p className='label-text'>
-                TITLE:
-              </p>
-              {props.title}
+              <div className='modal-item-title'>
+                <p className='label-text'>
+                  TITLE:
+                </p>
+                {props.title}
+              </div>
+
+              <div className='modal-item-game-id'>
+                <p className='label-text'>NAME:</p>
+                <Link
+                  color="inherit"
+                  href={`/users/${props.postUserId}`}
+                >
+                  {props.gameId}
+                </Link>
+              </div>
+
+              <div className="modal-item-title">
+                <p className="label-text">
+                  TAGS:
+                </p>
+                {tagList}
+              </div>
+
+              <div className='modal-item-text'>
+                <p className='label-text'>DESCRIPTION:</p>
+                {props.text}
+              </div>
+
+              <div className="modal-item-title">
+                <p className="modal-date">
+                  <AccessTimeIcon />
+                  {props.date}
+                </p>
+              </div>
             </div>
+            <div className="modal-btn-container">
 
-            <div className='modal-item-game-id'>
-              <p className='label-text'>NAME:</p>
-              <Link
-                color="inherit"
-                href={`/users/${props.postUserId}`}
+              {editButton}
+              {deleteButton}
+
+              <Button 
+                variant="contained"
+                size="large"
+                color="default"
+                onClick={() => setIsOpen(false)} 
               >
-                {props.gameId}
-              </Link>
+                CLOSE
+              </Button>
             </div>
-
-            <div className="modal-item-title">
-              <p className="label-text">
-                TAGS:
-              </p>
-              {tagList}
-            </div>
-
-            <div className='modal-item-text'>
-              <p className='label-text'>DESCRIPTION:</p>
-              {props.text}
-            </div>
-
-            <div className="modal-item-title">
-              <p className="modal-date">
-                <AccessTimeIcon />
-                {props.date}
-              </p>
-            </div>
-          </div>
-          <div className="modal-btn-container">
-
-            {editButton}
-            {deleteButton}
-
-            <Button 
-              variant="contained"
-              size="large"
-              color="default"
-              onClick={() => setIsOpen(false)} 
-            >
-              CLOSE
-            </Button>
           </div>
         </Modal>
       )}

@@ -8,6 +8,19 @@
 }
 
 .modal-inner {
+  width: 480px;
+  padding: 48px 0;
+  margin: auto;
+  background-color: #242424;
+  outline: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-inner::-webkit-scrollbar {
+  /* Chrome, Safari 対応 */
+  display: none;
 }
 
 .modal-header {
