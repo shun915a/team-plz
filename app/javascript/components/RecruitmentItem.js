@@ -5,7 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import Modal from "react-modal";
-import { jsx, css, ClassNames } from '@emotion/react'
+import { jsx, css, ClassNames } from '@emotion/react';
 
 Modal.setAppElement("#root");
 
