@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'awesome_print'
 end
 
 group :development do
@@ -69,3 +70,4 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-twitter'
 gem 'ransack'
+gem "aws-sdk-s3", require: false
