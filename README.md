@@ -104,6 +104,20 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC, Route53) / D
 
 - チームのプロフィールを掲載するページです。
 
+# インフラ
+
+| 名称                   | 説明                       |
+| ---------------------- | -------------------------- |
+| AWS EC2                | スケーラブルな仮想サーバー |
+| AWS RDS                | 本番用 DB                  |
+| AWS S3                 | オブジェクトストレージ     |
+| Docker, docker-compose | コンテナ環境               |
+| Git, Github            | バージョン管理             |
+
+# インフラ構成図
+
+<img src="https://i.imgur.com/93IlJnr.png" width="600">
+
 # Table Design
 
 ## users table
