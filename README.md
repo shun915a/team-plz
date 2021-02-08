@@ -11,12 +11,7 @@
 一緒にプレイする友達を探したり、チームの設立に伴うメンバーの募集などを行う際に利用されることを想定しています。
 募集の掲載、編集、削除や、プレイヤーやチームのプロフィールページを作成できます。
 
-# 開発環境
-
-Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC, Route53) / Docker / MySQL / GitHub / Visual Studio Code
-開発期間：約 4 週間 (2020/12/18~)
-
-# ペルソナ
+# 想定利用者層
 
 - 年齢: 10 代 ~ 30 代
 - 職業: 学生、社会人、その他
@@ -104,6 +99,32 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC, Route53) / D
 
 - チームのプロフィールを掲載するページです。
 
+# 使用技術
+
+Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC, Route53) / Docker / MySQL / GitHub / Visual Studio Code
+開発期間：約 4 週間 (2020/12/18~)
+
+# フロントエンド
+
+| 名称        | 説明               |
+| ----------- | ------------------ |
+| React.js    | react-rails を使用 |
+| Material-UI | UI フレームワーク  |
+| Bootstrap   | UI フレームワーク  |
+
+- React を一部導入することで、Modal などを実装しました。
+- Material-UI を利用して、メニューやボタンのアニメーションを実装しました。
+
+# バックエンド
+
+| 名称          | 説明                               |
+| ------------- | ---------------------------------- |
+| Ruby on Rails | Web アプリケーションフレームワーク |
+| MySQL         | データベース                       |
+
+- データは RDS へ保存されます。
+- 画像データは ActiveStorage 経由で S3 へ保存しています。
+
 # インフラ
 
 | 名称                   | 説明                       |
@@ -114,9 +135,11 @@ Ruby / Ruby on Rails / React.js / Material-UI / AWS (EC2, RDS, VPC, Route53) / D
 | Docker, docker-compose | コンテナ環境               |
 | Git, Github            | バージョン管理             |
 
+- 開発環境からデプロイまで Docker を使用しています。
+
 # インフラ構成図
 
-<img src="https://i.imgur.com/93IlJnr.png" width="600">
+<img src="https://i.imgur.com/93IlJnr.png" width="500">
 
 # Table Design
 
