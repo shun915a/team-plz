@@ -11,9 +11,11 @@ class Party < ApplicationRecord
   end
 
   def new_party
-    transaction do
-      save
-      PartyMember.create(user_id: user.id, party_id: id, role: 1)
+    ApplicationRecord.transaction do
+      save!
+      PartyMember.create!(user_id: user.id, party_id: id, role: 1)
+    rescue ActiveRecord::RecordInvalid
+      false
     end
   end
 end

@@ -10,6 +10,10 @@ RSpec.describe Party, type: :model do
       it 'party_title, party_game_id, party_textがあれば登録できる' do
         expect(@party).to be_valid
       end
+
+      it 'new_party成功' do
+        expect(@party.new_party).not_to be false
+      end
     end
 
     context 'エラー発生時' do
@@ -35,6 +39,11 @@ RSpec.describe Party, type: :model do
         @party.party_text = nil
         @party.valid?
         expect(@party.errors.full_messages).to include("Party text can't be blank")
+      end
+
+      it 'new_party error' do
+        @party.user_id = nil
+        expect(@party.new_party).to be false
       end
     end
   end
