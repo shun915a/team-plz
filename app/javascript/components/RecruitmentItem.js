@@ -61,10 +61,13 @@ export default function RecruitmentItem(props) {
     }
   });
 
-  const memberProps = props.members;
-  const memberList = memberProps.map((member) => (
-    <span className="member">{member}</span>
-  ));
+  let memberList;
+  if (props.category == "PARTY") {
+    const memberProps = props.members;
+    memberList = memberProps.map((member) => (
+      <span className="member">{member}</span>
+    ));
+  }
 
   let modal = (
     <ClassNames>
