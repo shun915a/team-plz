@@ -18,6 +18,7 @@ class PartiesController < ApplicationController
     @party = Party.new(party_params)
 
     if @party.save
+      PartyMember.create(user_id: @party.user.id, party_id: @party.id, role: 1)
       redirect_to parties_path
     else
       render :new

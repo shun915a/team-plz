@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_071404) do
+ActiveRecord::Schema.define(version: 2021_02_25_051435) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -83,6 +83,16 @@ ActiveRecord::Schema.define(version: 2021_01_21_071404) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_parties_on_user_id"
+  end
+
+  create_table "party_members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "party_id", null: false
+    t.integer "role", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["party_id"], name: "index_party_members_on_party_id"
+    t.index ["user_id"], name: "index_party_members_on_user_id"
   end
 
   create_table "party_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -190,6 +200,8 @@ ActiveRecord::Schema.define(version: 2021_01_21_071404) do
   add_foreign_key "friends", "users"
   add_foreign_key "myteams", "users"
   add_foreign_key "parties", "users"
+  add_foreign_key "party_members", "parties"
+  add_foreign_key "party_members", "users"
   add_foreign_key "party_tag_relations", "parties"
   add_foreign_key "party_tag_relations", "party_tags"
   add_foreign_key "scout_tag_relations", "scout_tags"
