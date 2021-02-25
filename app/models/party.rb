@@ -14,6 +14,7 @@ class Party < ApplicationRecord
     ApplicationRecord.transaction do
       save!
       PartyMember.create!(user_id: user.id, party_id: id, role: 1)
+      true
     rescue ActiveRecord::RecordInvalid
       false
     end

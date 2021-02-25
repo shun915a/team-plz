@@ -12,7 +12,7 @@ RSpec.describe Party, type: :model do
       end
 
       it 'new_party成功' do
-        expect(@party.new_party).not_to be false
+        expect(@party.new_party).to be true
       end
     end
 
