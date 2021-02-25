@@ -9,4 +9,11 @@ class Party < ApplicationRecord
     validates :party_game_id
     validates :party_text
   end
+
+  def new_party
+    transaction do
+      save
+      PartyMember.create(user_id: user.id, party_id: id, role: 1)
+    end
+  end
 end

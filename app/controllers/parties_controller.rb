@@ -8,6 +8,8 @@ class PartiesController < ApplicationController
     # @parties = Party.order('created_at DESC').limit(24)
     @q = Party.ransack(params[:q])
     @parties = @q.result(distinct: true).order('created_at DESC').page(params[:page]).per(12)
+
+    @members = PartyMember.where.not(role: :free)
   end
 
   def new
@@ -17,8 +19,7 @@ class PartiesController < ApplicationController
   def create
     @party = Party.new(party_params)
 
-    if @party.save
-      PartyMember.create(user_id: @party.user.id, party_id: @party.id, role: 1)
+    if @party.new_party
       redirect_to parties_path
     else
       render :new
@@ -63,4 +64,6 @@ class PartiesController < ApplicationController
   def search_party
     @q = Party.ransack(params[:q]) # 検索オブジェクトを生成
   end
+
+  def party_new; end
 end
