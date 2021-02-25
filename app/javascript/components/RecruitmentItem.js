@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import React, { useState, useEffect } from "react";
+import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button";
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import Modal from "react-modal";
-import { jsx, css, ClassNames } from '@emotion/react';
+import { jsx, css, ClassNames } from "@emotion/react";
 
 Modal.setAppElement("#root");
 
@@ -15,21 +15,20 @@ export default function RecruitmentItem(props) {
   let editButton;
   if (props.currentUserId == props.postUserId) {
     editButton = (
-      <Button 
+      <Button
         variant="contained"
-        color="secondary" 
+        color="secondary"
         size="large"
         startIcon={<EditIcon />}
         href={`/${props.editUrl}/${props.id}/edit`}
       >
         EDIT
       </Button>
-    )
+    );
   }
-  
+
   let deleteButton;
   if (props.currentUserId == props.postUserId) {
-
     deleteButton = (
       <Button
         variant="outlined"
@@ -41,42 +40,47 @@ export default function RecruitmentItem(props) {
       >
         DELETE
       </Button>
-    )
+    );
   }
 
   const tagProps = props.tags;
-  const tagList = tagProps.map((tag) =>
-    <span className="tag" key={tag.id}>{tag.name}</span>
-  );
+  const tagList = tagProps.map((tag) => (
+    <span className="tag" key={tag.id}>
+      {tag.name}
+    </span>
+  ));
 
   useEffect(() => {
     // Update the document title using the browser API
-    if (modalIsOpen){
-      document.body.style.overflow = 'hidden';
-    } 
+    if (modalIsOpen) {
+      document.body.style.overflow = "hidden";
+    }
 
-    if (!modalIsOpen){
-      document.body.style.overflow = 'unset';
-    } 
+    if (!modalIsOpen) {
+      document.body.style.overflow = "unset";
+    }
   });
 
-
+  const memberProps = props.members;
+  const memberList = memberProps.map((member) => (
+    <span className="member">{member}</span>
+  ));
 
   let modal = (
     <ClassNames>
       {({ css, cx }) => (
-        <Modal 
+        <Modal
           isOpen={modalIsOpen}
           onRequestClose={() => setIsOpen(false)}
           overlayClassName={{
             base: "overlay-base",
             afterOpen: "overlay-after",
-            beforeClose: "overlay-before"
+            beforeClose: "overlay-before",
           }}
           className={{
             base: "content-base",
             afterOpen: "content-after",
-            beforeClose: "content-before"
+            beforeClose: "content-before",
           }}
           closeTimeoutMS={500}
           portalClassName={css`
@@ -118,11 +122,10 @@ export default function RecruitmentItem(props) {
 
             .content-base::-webkit-scrollbar {
               /* Chrome, Safari 対応 */
-              display:none;
+              display: none;
             }
 
             .content-after {
-
               padding: 16px 0 120px;
             }
 
@@ -131,35 +134,32 @@ export default function RecruitmentItem(props) {
           `}
         >
           <div className="modal-inner">
-            <div className='modal-header'>{props.category}</div>
-            <div className='modal-introduction'>
-
-              <div className='modal-item-title'>
-                <p className='label-text'>
-                  TITLE:
-                </p>
+            <div className="modal-header">{props.category}</div>
+            <div className="modal-introduction">
+              <div className="modal-item-title">
+                <p className="label-text">TITLE:</p>
                 {props.title}
               </div>
 
-              <div className='modal-item-game-id'>
-                <p className='label-text'>NAME:</p>
-                <Link
-                  color="inherit"
-                  href={`/users/${props.postUserId}`}
-                >
+              <div className="modal-item-game-id">
+                <p className="label-text">NAME:</p>
+                <Link color="inherit" href={`/users/${props.postUserId}`}>
                   {props.gameId}
                 </Link>
               </div>
 
+              <div className="modal-item-game-id">
+                <p className="label-text">MEMBERS:</p>
+                {memberList}
+              </div>
+
               <div className="modal-item-title">
-                <p className="label-text">
-                  TAGS:
-                </p>
+                <p className="label-text">TAGS:</p>
                 {tagList}
               </div>
 
-              <div className='modal-item-text'>
-                <p className='label-text'>DESCRIPTION:</p>
+              <div className="modal-item-text">
+                <p className="label-text">DESCRIPTION:</p>
                 {props.text}
               </div>
 
@@ -171,15 +171,14 @@ export default function RecruitmentItem(props) {
               </div>
             </div>
             <div className="modal-btn-container">
-
               {editButton}
               {deleteButton}
 
-              <Button 
+              <Button
                 variant="contained"
                 size="large"
                 color="default"
-                onClick={() => setIsOpen(false)} 
+                onClick={() => setIsOpen(false)}
               >
                 CLOSE
               </Button>
@@ -188,33 +187,22 @@ export default function RecruitmentItem(props) {
         </Modal>
       )}
     </ClassNames>
-  )
+  );
 
   return (
-    <React.Fragment>  
-      <div 
-        key={props.id}
-        className="list"
-        onClick={() => setIsOpen(true)}
-      >
+    <React.Fragment>
+      <div key={props.id} className="list" onClick={() => setIsOpen(true)}>
         <div className="item-title">
           <h3>{props.title}</h3>
           <span className="category">{props.category}</span>
         </div>
 
         <div className="item-info">
+          <div className="tag-container">{tagList}</div>
 
-          <div className="tag-container">
-            {tagList}
-          </div>
+          <div className="item-game-id">{props.gameId}</div>
 
-          <div className="item-game-id">
-            {props.gameId}
-          </div>
-
-          <div className="item-text">
-            {props.text}
-          </div>
+          <div className="item-text">{props.text}</div>
         </div>
       </div>
       {modal}

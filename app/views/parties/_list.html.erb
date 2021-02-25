@@ -1,11 +1,11 @@
   <div class="item-lists">
     <% if user_signed_in? %>
       <% @parties.each do |party| %>
-        <%= react_component("PartyList", {post: party, tags: party.party_tags, userId: current_user.id, date: party.updated_at.strftime('%Y/%m/%d %H:%M')}) %>
+        <%= react_component("PartyList", {post: party, tags: party.party_tags, userId: current_user.id, date: party.updated_at.strftime('%Y/%m/%d %H:%M'), members: User.where(id: PartyMember.where(party_id: party.id).where.not(role: :free).pluck(:user_id)).pluck(:nickname)}) %>
       <% end %>
     <% else %>
       <% @parties.each do |party| %>
-        <%= react_component("PartyList", {post: party, tags: party.party_tags, date: party.updated_at.strftime('%Y/%m/%d %H:%M')}) %>
+        <%= react_component("PartyList", {post: party, tags: party.party_tags, date: party.updated_at.strftime('%Y/%m/%d %H:%M'), members: User.where(id: PartyMember.where(party_id: party.id).where.not(role: :free).pluck(:user_id)).pluck(:nickname)}) %>
       <% end %>
     <% end %>
   </div>

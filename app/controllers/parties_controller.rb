@@ -8,8 +8,6 @@ class PartiesController < ApplicationController
     # @parties = Party.order('created_at DESC').limit(24)
     @q = Party.ransack(params[:q])
     @parties = @q.result(distinct: true).order('created_at DESC').page(params[:page]).per(12)
-
-    @members = PartyMember.where.not(role: :free)
   end
 
   def new
