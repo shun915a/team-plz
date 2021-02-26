@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   resources :myteams
   resources :recruitments, only: [:index]
   resources :friends
-  resources :parties
+  resources :parties do
+    resources :party_members do
+      patch :accept_request
+      patch :decline_request
+    end
+  end
   resources :teams
   resources :scouts
 end

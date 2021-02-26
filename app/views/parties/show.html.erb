@@ -42,6 +42,7 @@
 
     <div class="show-buttons">
       <% if current_user == @party.user %>
+        <%= link_to 'リクエストリスト', party_party_members_path(@party), class: "btn edit-btn" %>
         <%= link_to '編集', edit_party_path(@party), class: "btn edit-btn" %>
         <%= link_to '削除', party_path(@party), method: :delete, class: "btn delete-btn" %>
       <% end %>

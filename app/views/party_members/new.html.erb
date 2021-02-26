@@ -1,0 +1,12 @@
+<%= render 'shared/header' %>
+
+<div class="main-container" id='root'>
+
+  <p>パーティーへ参加しますか？</p>
+  <%= form_with url: party_party_members_path, model: @member, method: :post, local: true do |f| %>
+    <div class="submit-btn-contents">
+      <%= f.submit "参加希望を送る", class: "btn submit-btn" %>
+    </div>
+  <% end %>
+
+</div> 

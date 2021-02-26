@@ -1,0 +1,13 @@
+<%= render 'shared/header' %>
+
+<div class="main-container" id='root'>
+  <p>参加希望者リスト</p>
+
+  <% @requests.each do |request| %>
+    <%= User.where(id: request.user_id).pluck(:nickname) %>
+    <br>
+    <%= link_to '許可', party_party_member_accept_request_path(request.party_id, request.id), method: :patch %>
+    <%= link_to '拒否', party_party_member_decline_request_path(request.party_id, request.id), party_member_id: request.id, method: :patch %>
+  <% end %>
+
+</div>

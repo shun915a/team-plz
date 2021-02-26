@@ -12,8 +12,35 @@ Modal.setAppElement("#root");
 export default function RecruitmentItem(props) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
+  let requestButton;
   let editButton;
+  let deleteButton;
   if (props.currentUserId == props.postUserId) {
+    requestButton = (
+      <Button
+        variant="contained"
+        color="secondary"
+        size="large"
+        startIcon={<EditIcon />}
+        href={`/parties/${props.id}`}
+      >
+        REQUESTS
+      </Button>
+    );
+
+    deleteButton = (
+      <Button
+        variant="outlined"
+        color="inherit"
+        size="large"
+        data-method="delete"
+        startIcon={<DeleteIcon />}
+        href={`/${props.editUrl}/${props.id}`}
+      >
+        DELETE
+      </Button>
+    );
+
     editButton = (
       <Button
         variant="contained"
@@ -27,18 +54,17 @@ export default function RecruitmentItem(props) {
     );
   }
 
-  let deleteButton;
-  if (props.currentUserId == props.postUserId) {
-    deleteButton = (
+  let joinButton;
+  if (props.currentUserId != props.postUserId && props.category == "PARTY") {
+    joinButton = (
       <Button
         variant="outlined"
         color="inherit"
         size="large"
-        data-method="delete"
-        startIcon={<DeleteIcon />}
-        href={`/${props.editUrl}/${props.id}`}
+        data-method="get"
+        href={`/parties/${props.id}/party_members/new`}
       >
-        DELETE
+        JOIN
       </Button>
     );
   }
@@ -174,8 +200,10 @@ export default function RecruitmentItem(props) {
               </div>
             </div>
             <div className="modal-btn-container">
+              {requestButton}
               {editButton}
               {deleteButton}
+              {joinButton}
 
               <Button
                 variant="contained"
