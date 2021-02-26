@@ -55,7 +55,11 @@ export default function RecruitmentItem(props) {
   }
 
   let joinButton;
-  if (props.currentUserId != props.postUserId && props.category == "PARTY") {
+  if (
+    props.currentUserId != props.postUserId &&
+    props.category == "PARTY" &&
+    !props.requested
+  ) {
     joinButton = (
       <Button
         variant="outlined"

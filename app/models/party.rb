@@ -13,7 +13,7 @@ class Party < ApplicationRecord
   def new_party
     ApplicationRecord.transaction do
       save!
-      PartyMember.create!(user_id: user.id, party_id: id, role: 1)
+      PartyMember.create!(user_id: user.id, party_id: id, role: :manager, status: :accept)
       true
     rescue ActiveRecord::RecordInvalid
       false

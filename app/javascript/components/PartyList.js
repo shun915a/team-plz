@@ -7,6 +7,7 @@ export default function PartyList(props) {
   const userId = props.userId;
   const date = props.date;
   const members = props.members;
+  const requested = props.requested;
 
   return (
     <RecruitmentItem
@@ -21,6 +22,7 @@ export default function PartyList(props) {
       text={post.party_text}
       date={date}
       members={members}
+      requested={requested}
     />
   );
 }
