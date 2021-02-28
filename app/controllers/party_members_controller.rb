@@ -39,7 +39,7 @@ class PartyMembersController < ApplicationController
   end
 
   def set_requests
-    @requests = PartyMember.where(party_id: params[:party_id]).where(status: :request).where(role: :free)
+    @requested_party_members = PartyMember.where(party_id: params[:party_id]).where(status: :request).where(role: :free)
   end
 
   def set_request
