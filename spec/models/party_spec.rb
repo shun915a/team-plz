@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Party, type: :model do
-  describe '#create' do
+  describe '.create' do
     before do
       @party = FactoryBot.create(:party)
     end
@@ -9,10 +9,6 @@ RSpec.describe Party, type: :model do
     context '投稿成功' do
       it 'party_title, party_game_id, party_textがあれば登録できる' do
         expect(@party).to be_valid
-      end
-
-      it 'new_party成功' do
-        expect(@party.new_party).to be true
       end
     end
 
@@ -40,8 +36,22 @@ RSpec.describe Party, type: :model do
         @party.valid?
         expect(@party.errors.full_messages).to include("Party text can't be blank")
       end
+    end
+  end
 
-      it 'new_party error' do
+  describe '#new_party' do
+    before do
+      @party = FactoryBot.create(:party)
+    end
+
+    context '作成成功' do
+      it 'success create party_member record' do
+        expect(@party.new_party).to be true
+      end
+    end
+
+    context '作成失敗' do
+      it 'fail create party_member record' do
         @party.user_id = nil
         expect(@party.new_party).to be false
       end
