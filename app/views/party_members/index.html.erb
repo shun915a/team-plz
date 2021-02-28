@@ -4,7 +4,7 @@
   <p>参加希望者リスト</p>
 
   <% @requested_party_members.each do |request| %>
-    <%= User.where(id: request.user_id).pluck(:nickname) %>
+    <%= request.user.nickname %>
     <br>
     <%= link_to '許可', party_party_member_accept_request_path(request.party_id, request.id), method: :patch %>
     <%= link_to '拒否', party_party_member_decline_request_path(request.party_id, request.id), party_member_id: request.id, method: :patch %>
