@@ -12,8 +12,10 @@ class PartyMember < ApplicationRecord
 
   def accept_request
     if request?
-      accept!
-      member!
+      ApplicationRecord.transaction do
+        accept!
+        member!
+      end
     end
   end
 
